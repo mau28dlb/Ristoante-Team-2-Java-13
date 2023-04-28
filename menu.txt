@@ -4,28 +4,32 @@ Menu di carne
 
 Antipasti
 
-- Bruschette                                   € 1
-- Prociutto                                    € 2
-- Tortine salate                               € 3
-- Burrata                                      € 3
+- Bruschette                                              € 1
+- Prosciutto                                              € 2
+- Tortine salate                                          € 3
+- Burrata                                                 € 3
 
-Primi piatti:
-- Lasagne alla bolognese        €12
-- Tagliatelle al ragù           €10
-- Rigatoni alla carbonara       €11
-- Cappelletti in brodo          €14
-- Tris di ravioli               €13
+
+Primi piatti
+
+- Lasagne alla bolognese                                  € 12
+- Tagliatelle al ragù                                     € 10
+- Rigatoni alla carbonara                                 € 11
+- Cappelletti in brodo                                    € 14
+- Tris di ravioli                                         € 13
+
 
 Secondi Piatti
 
 -	Hamburger Di Manzo                                      € 9
 -	Hamburger Di Manzo con Salsa al Gorgonzola              € 11
--	Polepette Di Manzo Alla Siciliana                       € 10
+-	Polpette Di Manzo Alla Siciliana                        € 10
 -	Cotolettine Di Arista Arrosto                           € 10
 -	Scaloppine Limone e Zenzero                             € 10
--   Scaloppina All'arancia Con Granella Di Pistacchio       € 11
--   Straccetti Di Vitello Con Salsa All'aceto Balsamico     € 13
--   Baccalà Pastellato al Mais                             € 12
+- Scaloppina All'arancia Con Granella Di Pistacchio       € 11
+- Straccetti Di Vitello Con Salsa All'aceto Balsamico     € 13
+- Baccalà Pastellato al Mais                              € 12
+
 
 Desserts
 
@@ -35,9 +39,10 @@ Desserts
 -	Creme brulée                                            € 5
 -	Sorbetto al limone                                      € 3
 
+
 Bevande
 
-- Acqua minerale naturale                                   € 1
-- Coca Cola                                                 € 2
-- Vino Rosso                                                € 3
-- Birra alla spina                                          € 3
+- Acqua minerale naturale                                 € 1
+- Coca Cola                                               € 2
+- Vino Rosso                                              € 3
+- Birra alla spina                                        € 3
