@@ -6,9 +6,9 @@ Secondi Piatti
 -	Polepette Di Manzo Alla Siciliana                       € 10
 -	Cotolettine Di Arista Arrosto                           € 10
 -	Scaloppine Limone e Zenzero                             € 10
--   Scaloppina All'arancia Con Granella Di Pistacchio     € 11
--   Straccetti Di Vitello Con Salsa All'aceto Balsamico   € 13
--   Baccalà Pastelllato al Mais                           € 12
+- Scaloppina All'arancia Con Granella Di Pistacchio       € 11
+- Straccetti Di Vitello Con Salsa All'aceto Balsamico     € 13
+- Baccalà Pastelllato al Mais                             € 12
 
 Desserts
 
