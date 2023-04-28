@@ -2,6 +2,12 @@ Ristorante Team 2 Java 13
 
 Menu di carne
 
+Antipasti
+
+- Bruschette                                   € 1
+- Prociutto                                    € 2
+- Tortine salate                               € 3
+- Burrata                                      € 3
 
 Secondi Piatti
 
