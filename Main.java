@@ -7,6 +7,12 @@ public class Main {
         Antipasti antipasto3 = new Antipasti("Tortine Salate", 3);
         Antipasti antipasto4 = new Antipasti("Burrata", 3);
 
+        PrimiPiatti primo1 = new PrimiPiatti("Lasagne alla bolognese", 12);
+        PrimiPiatti primo2 = new PrimiPiatti("Tagliatelle al ragù", 10);
+        PrimiPiatti primo3 = new PrimiPiatti("Rigatoni alla carbonara", 11);
+        PrimiPiatti primo4 = new PrimiPiatti("Cappelletti in brodo", 14);
+        PrimiPiatti primo5 = new PrimiPiatti("Tris di ravioli", 13);
+
         SecondiPiatti secondo1 = new SecondiPiatti("Hamburger Di Manzo", 9);
         SecondiPiatti secondo2 = new SecondiPiatti("Hamburger Di Manzo con Salsa al Gorgonzola", 11);
         SecondiPiatti secondo3 = new SecondiPiatti("Polpette Di Manzo Alla Siciliana", 10);
@@ -36,6 +42,15 @@ public class Main {
         antipasto2.printAntipasti();
         antipasto3.printAntipasti();
         antipasto4.printAntipasti();
+        System.out.println("\n");
+        System.out.println("\n");
+
+        System.out.println("Primi");
+        primo1.printPrimiPiatti();
+        primo2.printPrimiPiatti();
+        primo3.printPrimiPiatti();
+        primo4.printPrimiPiatti();
+        primo5.printPrimiPiatti();
         System.out.println("\n");
         System.out.println("\n");
 
