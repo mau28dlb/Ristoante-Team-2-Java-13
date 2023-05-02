@@ -23,7 +23,7 @@ public class Antipasti {
         this.prezzo = prezzo;
     }
 
-    public void printDessert(){
+    public void printAntipasti(){
         System.out.println("- " + piatto + "       € " + prezzo);
     }
 }

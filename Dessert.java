@@ -24,6 +24,6 @@ public class Dessert {
     }
 
     public void printDessert(){
-        System.out.println("- " + piatto + "       € " + prezzo);
+        System.out.println("- " + piatto + "        € " + prezzo);
     }
 }
