@@ -23,7 +23,7 @@ public class SecondiPiatti {
         this.prezzo = prezzo;
     }
 
-    public void printDessert(){
+    public void printSecondo(){
         System.out.println("- " + piatto + "       € " + prezzo);
     }
 }
