@@ -1,6 +1,10 @@
+import portate.*;
+
 public class Main {
     public static void main(String[] args) {
 
+        //TODO inserire un metodo che calcola la lunghezza della descrizione e ci mette qualcosa per
+        //far stampare tutto con la stessa distanza
 
         Antipasti antipasto1 = new Antipasti("Bruschette                                         ", 1);
         Antipasti antipasto2 = new Antipasti("Prosciutto                                         ", 2);
@@ -37,7 +41,7 @@ public class Main {
         System.out.println("\n");
         System.out.println("\n");
 
-        System.out.println("Antipasti");
+        System.out.println("src.Antipasti");
         antipasto1.printAntipasti();
         antipasto2.printAntipasti();
         antipasto3.printAntipasti();
@@ -66,7 +70,7 @@ public class Main {
         System.out.println("\n");
         System.out.println("\n");
 
-        System.out.println("Dessert");
+        System.out.println("src.Dessert");
         dessert1.printDessert();
         dessert2.printDessert();
         dessert3.printDessert();
@@ -76,7 +80,7 @@ public class Main {
         System.out.println("\n");
 
 
-        System.out.println("Bevande");
+        System.out.println("src.Bevande");
         bevanda1.printBevande();
         bevanda2.printBevande();
         bevanda3.printBevande();

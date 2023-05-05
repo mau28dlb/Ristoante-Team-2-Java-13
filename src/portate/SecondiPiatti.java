@@ -1,4 +1,8 @@
+package portate;
+
 public class SecondiPiatti {
+
+    //TODO chiamare descrizione al posto di piatto
     private String piatto;
     private double prezzo;
 

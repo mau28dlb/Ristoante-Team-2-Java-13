@@ -1,8 +1,10 @@
-public class Dessert {
+package portate;
+
+public class Antipasti {
     private String piatto;
     private double prezzo;
 
-    public Dessert(String piatto, double prezzo) {
+    public Antipasti (String piatto, double prezzo) {
         this.piatto = piatto;
         this.prezzo = prezzo;
     }
@@ -23,7 +25,7 @@ public class Dessert {
         this.prezzo = prezzo;
     }
 
-    public void printDessert(){
-        System.out.println("- " + piatto + "        € " + prezzo);
+    public void printAntipasti(){
+        System.out.println("- " + piatto + "       € " + prezzo);
     }
 }

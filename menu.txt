@@ -2,7 +2,7 @@ Ristorante Team 2 Java 13
 
 Menu di carne
 
-Antipasti
+portate.Antipasti
 
 - Bruschette                                              € 1
 - Prosciutto                                              € 2
@@ -40,7 +40,7 @@ Desserts
 -	Sorbetto al limone                                      € 3
 
 
-Bevande
+portate.Bevande
 
 - Acqua minerale naturale                                 € 1
 - Coca Cola                                               € 2

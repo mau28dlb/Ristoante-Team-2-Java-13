@@ -1,3 +1,5 @@
+package portate;
+
 public class Bevande {
 
     private String descrizione;
