@@ -1,4 +1,5 @@
-import portate.*;
+package src;
+import src.portate.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -41,7 +42,7 @@ public class Main {
         System.out.println("\n");
         System.out.println("\n");
 
-        System.out.println("src.Antipasti");
+        System.out.println("Antipasti");
         antipasto1.printAntipasti();
         antipasto2.printAntipasti();
         antipasto3.printAntipasti();
@@ -70,7 +71,7 @@ public class Main {
         System.out.println("\n");
         System.out.println("\n");
 
-        System.out.println("src.Dessert");
+        System.out.println("Dessert");
         dessert1.printDessert();
         dessert2.printDessert();
         dessert3.printDessert();
@@ -80,7 +81,7 @@ public class Main {
         System.out.println("\n");
 
 
-        System.out.println("src.Bevande");
+        System.out.println("Bevande");
         bevanda1.printBevande();
         bevanda2.printBevande();
         bevanda3.printBevande();
