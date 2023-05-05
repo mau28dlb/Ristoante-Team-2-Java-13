@@ -1,20 +1,20 @@
 package src.portate;
 
 public class Antipasti {
-    private String piatto;
+    private String descrizione;
     private double prezzo;
 
     public Antipasti (String piatto, double prezzo) {
-        this.piatto = piatto;
+        this.descrizione = piatto;
         this.prezzo = prezzo;
     }
 
-    public String getPiatto() {
-        return piatto;
+    public String getDescrizione() {
+        return descrizione;
     }
 
-    public void setPiatto(String piatto) {
-        this.piatto = piatto;
+    public void setDescrizione(String descrizione) {
+        this.descrizione = descrizione;
     }
 
     public double getPrezzo() {
@@ -26,6 +26,6 @@ public class Antipasti {
     }
 
     public void printAntipasti(){
-        System.out.println("- " + piatto + "       € " + prezzo);
+        System.out.println("- " + descrizione + "       € " + prezzo);
     }
 }

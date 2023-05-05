@@ -1,22 +1,20 @@
 package src.portate;
 
 public class SecondiPiatti {
-
-    //TODO chiamare descrizione al posto di piatto
-    private String piatto;
+    private String descrizione;
     private double prezzo;
 
     public SecondiPiatti(String piatto, double prezzo) {
-        this.piatto = piatto;
+        this.descrizione = piatto;
         this.prezzo = prezzo;
     }
 
-    public String getPiatto() {
-        return piatto;
+    public String getDescrizione() {
+        return descrizione;
     }
 
-    public void setPiatto(String piatto) {
-        this.piatto = piatto;
+    public void setDescrizione(String descrizione) {
+        this.descrizione = descrizione;
     }
 
     public double getPrezzo() {
@@ -28,6 +26,6 @@ public class SecondiPiatti {
     }
 
     public void printSecondo(){
-        System.out.println("- " + piatto + "       € " + prezzo);
+        System.out.println("- " + descrizione + "       € " + prezzo);
     }
 }
