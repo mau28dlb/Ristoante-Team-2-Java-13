@@ -65,5 +65,26 @@ public class Menu {
 
         }
     }
+    public void prezzoMedioMenu() {
+        double totBevande = 0;
+        double totPrimi = 0;
+        double totAntipasti = 0;
+
+        for (Bevande bevande : listaBevande) {
+            totBevande = totBevande + bevande.getPrezzo();}
+        double prezzoMedioBevande = totBevande/listaBevande.size();
+
+        for (Antipasti antipasti : listaAntipasti) {
+            totAntipasti = totAntipasti + antipasti.getPrezzo();}
+        double prezzoMedioAntipasti = totAntipasti/listaAntipasti.size();
+
+        for (PrimiPiatti primiPiatti : listaPrimiPiatti) {
+            totPrimi = totPrimi + primiPiatti.getPrezzo();}
+        double prezzoMedioPrimi = totPrimi/listaPrimiPiatti.size();
+
+        double sommaPrezzi = prezzoMedioAntipasti + prezzoMedioBevande + prezzoMedioPrimi;
+        System.out.println("Prezzo medio (un antipasto, un primo ed una bevanda):");
+        System.out.println("€ "+sommaPrezzi);
+    }
 
 }

@@ -68,12 +68,18 @@ public class Main {
         menu.addBevande(bevanda3);
         menu.addBevande(bevanda4);
 
-        System.out.println("\n");
-       System.out.println("RISTORANTE TEAM 2 JAVA 13");
-       System.out.println("\n");
-       System.out.println("\n");
 
-       menu.stampaTutto();
+        System.out.println("\n");
+        System.out.println("RISTORANTE TEAM 2 JAVA 13");
+        System.out.println("\n");
+        System.out.println("\n");
+        menu.prezzoMedioMenu();
+        System.out.println("\n");
+        System.out.println("\n");
+
+
+        menu.stampaTutto();
+
 
        /*
         System.out.println("Antipasti");
