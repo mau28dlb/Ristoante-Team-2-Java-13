@@ -34,35 +34,125 @@ public class Menu {
 
 
     public void stampaTutto() {
+        int maxnumber = 0;
+        for (Antipasti antipasti : listaAntipasti) {
+            for (int i = 0; i < antipasti.getDescrizione().length(); i++) {
+                if (maxnumber < i){
+                    maxnumber = i;
+                }
+            }
+        }
+        for (PrimiPiatti primi : listaPrimiPiatti) {
+            for (int i = 0; i < primi.getDescrizione().length(); i++) {
+                if (maxnumber < i){
+                    maxnumber = i;
+                }
+            }
+        }
+        for (SecondiPiatti secondiPiatti : listaSecondiPiatti) {
+            for (int i = 0; i < secondiPiatti.getDescrizione().length(); i++) {
+                if (maxnumber < i) {
+                    maxnumber = i;
+                }
+            }
+        }
+        for (Dessert dessert : listaDessert) {
+            for (int i = 0; i < dessert.getDescrizione().length(); i++) {
+                if (maxnumber < i){
+                    maxnumber = i;
+                }
+            }
+        }
+        for (Bevande bevande : listaBevande) {
+            for (int i = 0; i < bevande.getDescrizione().length(); i++) {
+                if (maxnumber < i) {
+                    maxnumber = i;
+                }
+            }
+        }
+
         System.out.println("ANTIPASTI");
         System.out.println("");
         for (Antipasti antipasti : listaAntipasti) {
-            System.out.println(antipasti.getDescrizione() + " " + antipasti.getPrezzo());
+            String newDescription = " ";
+            int stringlenght;
+            String spaziatura = " ";
+
+            if (antipasti.getDescrizione().length() <= (maxnumber+1)){
+                stringlenght = maxnumber - antipasti.getDescrizione().length();
+                for (int j = 0; j < stringlenght+1; j++) {
+                    spaziatura += " ";
+                }
+                newDescription = antipasti.getDescrizione() + spaziatura;
+            }
+            System.out.println(newDescription + antipasti.getPrezzo() + " €");
         }
         System.out.println("\n");
         System.out.println("PRIMI");
         System.out.println("");
-        for (PrimiPiatti primi : listaPrimiPiatti) {
-            System.out.println(primi.getDescrizione() + " " + primi.getPrezzo());
+        for (PrimiPiatti primiPiatti : listaPrimiPiatti) {
+            String newDescription = " ";
+            int stringlenght;
+            String spaziatura = " ";
+
+            if (primiPiatti.getDescrizione().length() <= (maxnumber+1)){
+                stringlenght = maxnumber - primiPiatti.getDescrizione().length();
+                for (int j = 0; j < stringlenght+1; j++) {
+                    spaziatura += " ";
+                }
+                newDescription = primiPiatti.getDescrizione() + spaziatura;
+            }
+            System.out.println(newDescription + primiPiatti.getPrezzo() + " €");
         }
         System.out.println("\n");
         System.out.println("SECONDI");
         System.out.println("");
-        for (SecondiPiatti secondi : listaSecondiPiatti) {
-            System.out.println(secondi.getDescrizione() + " " + secondi.getPrezzo());
+        for (SecondiPiatti secondiPiatti : listaSecondiPiatti) {
+            String newDescription = " ";
+            int stringlenght;
+            String spaziatura = " ";
+
+            if (secondiPiatti.getDescrizione().length() <= (maxnumber+1)){
+                stringlenght = maxnumber - secondiPiatti.getDescrizione().length();
+                for (int j = 0; j < stringlenght+1; j++) {
+                    spaziatura += " ";
+                }
+                newDescription = secondiPiatti.getDescrizione() + spaziatura;
+            }
+            System.out.println(newDescription + secondiPiatti.getPrezzo() + " €");
         }
         System.out.println("\n");
         System.out.println("DESSERT ");
         System.out.println("");
         for (Dessert dessert : listaDessert) {
-            System.out.println(dessert.getDescrizione() + " " + dessert.getPrezzo());
+            String newDescription = " ";
+            int stringlenght;
+            String spaziatura = " ";
+
+            if (dessert.getDescrizione().length() <= (maxnumber+1)){
+                stringlenght = maxnumber - dessert.getDescrizione().length();
+                for (int j = 0; j < stringlenght+1; j++) {
+                    spaziatura += " ";
+                }
+                newDescription = dessert.getDescrizione() + spaziatura;
+            }
+            System.out.println(newDescription + dessert.getPrezzo() + " €");
         }
         System.out.println("\n");
         System.out.println("BEVANDE ");
         System.out.println("");
         for (Bevande bevande : listaBevande) {
-            System.out.println(bevande.getDescrizione() + " " + bevande.getPrezzo());
-
+            String newDescription = " ";
+            int stringlenght;
+            String spaziatura = " ";
+            if (bevande.getDescrizione().length() <= (maxnumber+1)){
+                stringlenght = maxnumber - bevande.getDescrizione().length();
+                for (int j = 0; j < stringlenght+1; j++) {
+                    spaziatura += " ";
+                }
+                    newDescription = bevande.getDescrizione() + spaziatura;
+            }
+        System.out.println(newDescription + bevande.getPrezzo() + " €");
         }
     }
     public void prezzoMedioMenu() {
