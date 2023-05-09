@@ -37,18 +37,28 @@ public class Main {
         Bevande bevanda3 = new Bevande("Vino Rosso                                         ", 3);
         Bevande bevanda4 = new Bevande("Birra alla spina                                   ", 3);
 
-       menu.addDessert(dessert1);
-       menu.addDessert(dessert2);
-       menu.addDessert(dessert3);
-       menu.addDessert(dessert4);
-       menu.addDessert(dessert5);
 
-       menu.addAntipasti(antipasto1);
-       menu.addAntipasti(antipasto2);
-       menu.addAntipasti(antipasto3);
-       menu.addAntipasti(antipasto4);
+        menu.addAntipasti(antipasto1);
+        menu.addAntipasti(antipasto2);
+        menu.addAntipasti(antipasto3);
+        menu.addAntipasti(antipasto4);
 
-       menu.stampaTutto();
+        menu.addSecondiPiatti(secondo1);
+        menu.addSecondiPiatti(secondo2);
+        menu.addSecondiPiatti(secondo3);
+        menu.addSecondiPiatti(secondo4);
+        menu.addSecondiPiatti(secondo5);
+        menu.addSecondiPiatti(secondo6);
+        menu.addSecondiPiatti(secondo7);
+        menu.addSecondiPiatti(secondo8);
+
+        menu.addDessert(dessert1);
+        menu.addDessert(dessert2);
+        menu.addDessert(dessert3);
+        menu.addDessert(dessert4);
+        menu.addDessert(dessert5);
+
+        menu.stampaTutto();
 
 
 
