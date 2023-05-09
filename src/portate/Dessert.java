@@ -4,8 +4,8 @@ public class Dessert {
     private String descrizione;
     private double prezzo;
 
-    public Dessert(String piatto, double prezzo) {
-        this.descrizione = piatto;
+    public Dessert(String descrizione, double prezzo) {
+        this.descrizione = descrizione;
         this.prezzo = prezzo;
     }
 
@@ -26,6 +26,6 @@ public class Dessert {
     }
 
     public void printDessert(){
-        System.out.println("- " + descrizione + "        € " + prezzo);
+        System.out.println("- " + this.descrizione + "        € " + this.prezzo);
     }
 }

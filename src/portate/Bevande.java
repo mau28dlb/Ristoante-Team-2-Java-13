@@ -28,6 +28,6 @@ public class Bevande {
 
     public void printBevande() {
 
-        System.out.println("- " + descrizione + "       € " + prezzo);
+        System.out.println("- " + this.descrizione + "       € " + this.prezzo);
     }
 }

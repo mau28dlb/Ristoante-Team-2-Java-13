@@ -4,8 +4,8 @@ public class Antipasti {
     private String descrizione;
     private double prezzo;
 
-    public Antipasti (String piatto, double prezzo) {
-        this.descrizione = piatto;
+    public Antipasti (String descrizione, double prezzo) {
+        this.descrizione = descrizione;
         this.prezzo = prezzo;
     }
 
@@ -26,6 +26,6 @@ public class Antipasti {
     }
 
     public void printAntipasti(){
-        System.out.println("- " + descrizione + "       € " + prezzo);
+        System.out.println("- " + this.descrizione + "       € " + this.prezzo);
     }
 }

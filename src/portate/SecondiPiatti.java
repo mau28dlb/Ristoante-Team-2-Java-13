@@ -4,8 +4,8 @@ public class SecondiPiatti {
     private String descrizione;
     private double prezzo;
 
-    public SecondiPiatti(String piatto, double prezzo) {
-        this.descrizione = piatto;
+    public SecondiPiatti(String descrizione, double prezzo) {
+        this.descrizione = descrizione;
         this.prezzo = prezzo;
     }
 
@@ -26,6 +26,6 @@ public class SecondiPiatti {
     }
 
     public void printSecondo(){
-        System.out.println("- " + descrizione + "       € " + prezzo);
+        System.out.println("- " + this.descrizione + "       € " + this.prezzo);
     }
 }
