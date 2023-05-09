@@ -4,8 +4,7 @@ import src.portate.*;
 public class Main {
     public static void main(String[] args) {
 
-        //TODO inserire un metodo che calcola la lunghezza della descrizione e ci mette qualcosa per
-        //far stampare tutto con la stessa distanza
+        Menu menu = new Menu();
 
         Antipasti antipasto1 = new Antipasti("Bruschette                                         ", 1);
         Antipasti antipasto2 = new Antipasti("Prosciutto                                         ", 2);
@@ -38,7 +37,22 @@ public class Main {
         Bevande bevanda3 = new Bevande("Vino Rosso                                         ", 3);
         Bevande bevanda4 = new Bevande("Birra alla spina                                   ", 3);
 
-        System.out.println("Ristorante-Team-2-Java-13");
+       menu.addDessert(dessert1);
+       menu.addDessert(dessert2);
+       menu.addDessert(dessert3);
+       menu.addDessert(dessert4);
+       menu.addDessert(dessert5);
+
+       menu.addAntipasti(antipasto1);
+       menu.addAntipasti(antipasto2);
+       menu.addAntipasti(antipasto3);
+       menu.addAntipasti(antipasto4);
+
+       menu.stampaTutto();
+
+
+
+        /*System.out.println("Ristorante-Team-2-Java-13");
         System.out.println("\n");
         System.out.println("\n");
 
@@ -85,6 +99,6 @@ public class Main {
         bevanda1.printBevande();
         bevanda2.printBevande();
         bevanda3.printBevande();
-        bevanda4.printBevande();
+        bevanda4.printBevande();*/
     }
 }
