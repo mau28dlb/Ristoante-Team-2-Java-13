@@ -35,34 +35,35 @@ public class Menu {
 
     public void stampaTutto() {
         System.out.println("ANTIPASTI");
-        System.out.println("\n");
+        System.out.println("");
         for (Antipasti antipasti : listaAntipasti) {
             System.out.println(antipasti.getDescrizione() + " " + antipasti.getPrezzo());
         }
-        System.out.println("");
-        System.out.println("PRIMI");
         System.out.println("\n");
+        System.out.println("PRIMI");
+        System.out.println("");
         for (PrimiPiatti primi : listaPrimiPiatti) {
             System.out.println(primi.getDescrizione() + " " + primi.getPrezzo());
         }
-        System.out.println("");
-        System.out.println("SECONDI");
         System.out.println("\n");
+        System.out.println("SECONDI");
+        System.out.println("");
         for (SecondiPiatti secondi : listaSecondiPiatti) {
             System.out.println(secondi.getDescrizione() + " " + secondi.getPrezzo());
         }
-        System.out.println("");
-        System.out.println("DESSERT ");
         System.out.println("\n");
+        System.out.println("DESSERT ");
+        System.out.println("");
         for (Dessert dessert : listaDessert) {
             System.out.println(dessert.getDescrizione() + " " + dessert.getPrezzo());
         }
-        System.out.println("");
-        System.out.println("BEVANDE ");
         System.out.println("\n");
+        System.out.println("BEVANDE ");
+        System.out.println("");
         for (Bevande bevande : listaBevande) {
             System.out.println(bevande.getDescrizione() + " " + bevande.getPrezzo());
 
         }
     }
+
 }
