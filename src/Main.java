@@ -38,11 +38,6 @@ public class Main {
         Bevande bevanda4 = new Bevande("Birra alla spina                                   ", 3);
 
 
-        menu.addAntipasti(antipasto1);
-        menu.addAntipasti(antipasto2);
-        menu.addAntipasti(antipasto3);
-        menu.addAntipasti(antipasto4);
-
         menu.addSecondiPiatti(secondo1);
         menu.addSecondiPiatti(secondo2);
         menu.addSecondiPiatti(secondo3);
@@ -58,7 +53,17 @@ public class Main {
         menu.addDessert(dessert4);
         menu.addDessert(dessert5);
 
-        menu.stampaTutto();
+       menu.addAntipasti(antipasto1);
+       menu.addAntipasti(antipasto2);
+       menu.addAntipasti(antipasto3);
+       menu.addAntipasti(antipasto4);
+
+       menu.addBevande(bevanda1);
+       menu.addBevande(bevanda2);
+       menu.addBevande(bevanda3);
+       menu.addBevande(bevanda4);
+
+       menu.stampaTutto();
 
 
 
