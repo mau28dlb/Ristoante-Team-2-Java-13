@@ -4,7 +4,7 @@ import src.portate.*;
 public class Main {
     public static void main(String[] args) {
 
-        Menu menu = new Menu();
+        Menu menu = new Menu("Luca Rossi");
 
         Antipasti antipasto1 = new Antipasti("Bruschette", 1);
         Antipasti antipasto2 = new Antipasti("Prosciutto", 2);
@@ -67,16 +67,6 @@ public class Main {
         menu.addBevande(bevanda2);
         menu.addBevande(bevanda3);
         menu.addBevande(bevanda4);
-
-
-        System.out.println("\n");
-        System.out.println("RISTORANTE TEAM 2 JAVA 13");
-        System.out.println("\n");
-        System.out.println("\n");
-        menu.prezzoMedioMenu();
-        System.out.println("\n");
-        System.out.println("\n");
-
 
         menu.stampaTutto();
 
