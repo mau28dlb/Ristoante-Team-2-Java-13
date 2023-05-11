@@ -11,7 +11,7 @@ public class PrimiPiatti {
         this.prezzo = prezzo;;
     }
 
-    public String getDescrizione(String descrizione){
+    public String getDescrizione(){
         return descrizione;
     }
     public void setDescrizione(String descrizione){
@@ -27,6 +27,6 @@ public class PrimiPiatti {
 
     public void printPrimiPiatti() {
 
-        System.out.println("- " + descrizione + "       € " + prezzo);
+        System.out.println("- " + this.descrizione + "       € " + this.prezzo);
     }
 }
