@@ -46,7 +46,7 @@ public class Menu {
         listaBevande.add(bevande);
     }
 
-    public int trovaMax() {
+    public String aggiungiSpazi (String string) {
         int max = 0;
         for (Antipasti antipasti: listaAntipasti){
             if(antipasti.getDescrizione().length() > max){
@@ -73,11 +73,6 @@ public class Menu {
                 max = bevande.getDescrizione().length();
             }
         }
-        return max;
-    }
-
-    public String aggiungiSpazi (String string){
-        int max = trovaMax();
         while (string.length() < max+1){
             string += " ";
         }
@@ -101,7 +96,7 @@ public class Menu {
             System.out.println(newStringa);
         }
 
-        System.out.println("\n" + ANSI_GREEN+ "*** PRIMI PIATTI***" + ANSI_RESET);
+        System.out.println("\n" + ANSI_GREEN+ "*** PRIMI PIATTI ***" + ANSI_RESET);
         for (PrimiPiatti primiPiatti: listaPrimiPiatti){
             String stringa = primiPiatti.getDescrizione();
             String newStringa = aggiungiSpazi(stringa);
@@ -109,7 +104,7 @@ public class Menu {
             System.out.println(newStringa);
         }
 
-        System.out.println("\n" + ANSI_PURPLE+ "*** SECONDI PIATTI** " + ANSI_RESET);
+        System.out.println("\n" + ANSI_PURPLE+ "*** SECONDI PIATTI *** " + ANSI_RESET);
         for (SecondiPiatti secondiPiatti: listaSecondiPiatti){
             String stringa = secondiPiatti.getDescrizione();
             String newStringa = aggiungiSpazi(stringa);
@@ -125,7 +120,7 @@ public class Menu {
             System.out.println(newStringa);
         }
 
-        System.out.println("\n" + ANSI_CYAN+ "*** ANTIPASTI ***" + ANSI_RESET);
+        System.out.println("\n" + ANSI_CYAN+ "*** BEVANDE ***" + ANSI_RESET);
         for (Bevande bevande: listaBevande){
             String stringa = bevande.getDescrizione();
             String newStringa = aggiungiSpazi(stringa);
