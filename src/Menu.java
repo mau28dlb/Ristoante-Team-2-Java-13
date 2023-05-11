@@ -21,7 +21,8 @@ public class Menu {
     public List<PrimiPiatti> listaPrimiPiatti = new ArrayList<>();
     public List<SecondiPiatti> listaSecondiPiatti = new ArrayList<>();
     public List<Dessert> listaDessert = new ArrayList<>();
-    public List<Portata> portataList = new ArrayList<>();
+    public List<Bevande> listaBevande = new ArrayList<>();
+    //public List<Portata> portataList = new ArrayList<>();
 
     private String chef;
 

@@ -70,51 +70,5 @@ public class Main {
 
         menu.stampaTutto();
 
-
-       /*
-        System.out.println("Antipasti");
-        antipasto1.printAntipasti();
-        antipasto2.printAntipasti();
-        antipasto3.printAntipasti();
-        antipasto4.printAntipasti();
-        System.out.println("\n");
-        System.out.println("\n");
-
-        System.out.println("Primi");
-        primo1.printPrimiPiatti();
-        primo2.printPrimiPiatti();
-        primo3.printPrimiPiatti();
-        primo4.printPrimiPiatti();
-        primo5.printPrimiPiatti();
-        System.out.println("\n");
-        System.out.println("\n");
-
-        System.out.println("Secondi");
-        secondo1.printSecondo();
-        secondo2.printSecondo();
-        secondo3.printSecondo();
-        secondo4.printSecondo();
-        secondo5.printSecondo();
-        secondo6.printSecondo();
-        secondo7.printSecondo();
-        secondo8.printSecondo();
-        System.out.println("\n");
-        System.out.println("\n");
-
-        System.out.println("Dessert");
-        dessert1.printDessert();
-        dessert2.printDessert();
-        dessert3.printDessert();
-        dessert4.printDessert();
-        dessert5.printDessert();
-        System.out.println("\n");
-        System.out.println("\n");
-
-
-        System.out.println("Bevande");
-        bevanda1.printBevande();
-        bevanda2.printBevande();
-        bevanda3.printBevande();
-        bevanda4.printBevande();*/
     }
 }
