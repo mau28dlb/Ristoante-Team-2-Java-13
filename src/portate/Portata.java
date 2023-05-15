@@ -26,5 +26,10 @@ public abstract class Portata {
         this.prezzo = prezzo;
     }
 
-    public abstract void printPortata();
+    public  String printPortataDescrizione(){
+        String descrizione = getDescrizione();
+        return descrizione;
+    }
+
+    public abstract String printPortataAggiunta(String descrizione);
 }

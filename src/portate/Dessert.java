@@ -13,10 +13,37 @@ public class Dessert extends Portata {
         }
     }
 
+    public Dessert(String descrizione, double prezzo) {
+        super(descrizione, prezzo);
+    }
 
     @Override
-    public void printPortata() {
+    public String printPortataAggiunta(String descrizione) {
+        if(isGlutenFree()){
+            String stringaTotale = descrizione +  "€ " + getPrezzo() + " Gluten free" ;
+            return stringaTotale;
 
+        } else {
+            String stringaTotale = descrizione + "€ " + getPrezzo();
+            return stringaTotale;
+        }
     }
+
+
+    public boolean isGlutenFree() {
+        return glutenFree;
     }
+
+    public void setGlutenFree(boolean glutenFree) {
+        this.glutenFree = glutenFree;
+    }
+
+    public String getTemperatura() {
+        return temperatura;
+    }
+
+    public void setTemperatura(String temperatura) {
+        this.temperatura = temperatura;
+    }
+}
 

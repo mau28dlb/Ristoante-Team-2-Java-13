@@ -11,11 +11,12 @@ public class Bevande extends Portata {
     public Bevande(String descrizione, double prezzo) {
         super(descrizione, prezzo);
     }
-
     @Override
-    public void printPortata() {
-
+    public String printPortataAggiunta(String descrizione) {
+            String stringaTotale = descrizione + "€ " + getPrezzo();
+            return stringaTotale;
     }
+
 
     public String getGradazioneAlcolica() {
         return gradazioneAlcolica;

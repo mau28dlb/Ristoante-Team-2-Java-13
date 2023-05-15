@@ -6,14 +6,8 @@ import java.util.*;
 
 public class Menu {
 
-    public List<Antipasti> listaAntipasti = new ArrayList<>();
+    public List<Portata> listaPortate = new ArrayList<>();
 
-    public List<PrimiPiatti> listaPrimiPiatti = new ArrayList<>();
-    public List<SecondiPiatti> listaSecondiPiatti = new ArrayList<>();
-    public List<Dessert> listaDessert = new ArrayList<>();
-    public List<Bevande> listaBevande = new ArrayList<>();
-
-    //public List<Portata> portataList = new ArrayList<>();
 
     private String chef;
 
@@ -21,52 +15,17 @@ public class Menu {
         this.chef = chef;
     }
 
-    public void addDessert(Dessert dessert) {
-        listaDessert.add(dessert);
-    }
-
-    public void addPrimi(PrimiPiatti primi) {
-        listaPrimiPiatti.add(primi);
-    }
-
-    public void addSecondiPiatti(SecondiPiatti secondi) {
-        listaSecondiPiatti.add(secondi);
-    }
-
-    public void addAntipasti(Antipasti antipasti) {
-        listaAntipasti.add(antipasti);
-    }
-
-    public void addBevande(Bevande bevande) {
-        listaBevande.add(bevande);
+    public void addPortata(Portata portata) {
+        listaPortate.add(portata);
     }
 
 
-    public String calcolaSpazioTraPortateMenu(String value) {
+
+    public String aggiungiSpazioTraDescrizioneEPrezzo(String value) {
         int max = 0;
-        for (Antipasti antipasti : listaAntipasti) {
-            if (antipasti.getDescrizione().length() > max) {
-                max = antipasti.getDescrizione().length();
-            }
-        }
-        for (PrimiPiatti primiPiatti : listaPrimiPiatti) {
-            if (primiPiatti.getDescrizione().length() > max) {
-                max = primiPiatti.getDescrizione().length();
-            }
-        }
-        for (SecondiPiatti secondiPiatti : listaSecondiPiatti) {
-            if (secondiPiatti.getDescrizione().length() > max) {
-                max = secondiPiatti.getDescrizione().length();
-            }
-        }
-        for (Dessert dessert : listaDessert) {
-            if (dessert.getDescrizione().length() > max) {
-                max = dessert.getDescrizione().length();
-            }
-        }
-        for (Bevande bevande : listaBevande) {
-            if (bevande.getDescrizione().length() > max) {
-                max = bevande.getDescrizione().length();
+        for (Portata portata : listaPortate) {
+            if (portata.getDescrizione().length() > max) {
+                max = portata.getDescrizione().length();
             }
         }
         while (value.length() < max + 1) {
@@ -75,8 +34,35 @@ public class Menu {
         return value;
     }
 
-
     public void stampaMenuCompleto() {
+        System.out.println("\n");
+        System.out.println(Color.BLUE.get() + "RISTORANTE TEAM 2 JAVA 13" + Color.RESET.get());
+        System.out.println("\n");
+        System.out.println("Prezzo medio (un antipasto, un primo, una bevanda): " + prezzoMedioMenu() + " €");
+        System.out.println("\n");
+        System.out.println(Color.RED.get() + "Chef: " + this.chef + Color.RESET.get());
+        System.out.println("\n");
+
+        for (Portata portata : listaPortate) {
+            String descrizione = portata.printPortataDescrizione();
+            String newDescrizione = aggiungiSpazioTraDescrizioneEPrezzo(descrizione);
+            String stringaTotale = portata.printPortataAggiunta(newDescrizione);
+            System.out.println(Color.PURPLE.get() + stringaTotale + Color.RESET.get());
+        }
+    }
+
+
+    public double prezzoMedioMenu() {
+        double totPortata = 0;
+
+        for (Portata portata : listaPortate) {
+            totPortata = totPortata + portata.getPrezzo();
+        }
+        double prezzoMedioPrimi = totPortata / listaPortate.size();
+        return  prezzoMedioPrimi;
+    }
+
+    /*public void stampaMenuCompleto() {
         System.out.println("\n");
         System.out.println(Color.BLUE.get() + "RISTORANTE TEAM 2 JAVA 13" + Color.RESET.get());
         System.out.println("\n");
@@ -155,4 +141,6 @@ public class Menu {
         double sommaPrezzi = prezzoMedioAntipasti + prezzoMedioBevande + prezzoMedioPrimi;
         return sommaPrezzi;
     }
+
+     */
 }

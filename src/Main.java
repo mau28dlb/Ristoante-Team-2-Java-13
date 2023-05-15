@@ -37,18 +37,20 @@ public class Main {
         Bevande bevanda3 = new Bevande("Vino Rosso", 5, "(alc. 12%)");
         Bevande bevanda4 = new Bevande("Birra alla spina", 3, "(alc. 4,5%)");
 
-        menu.addAntipasti(antipasto1);
-        menu.addAntipasti(antipasto2);
-        menu.addAntipasti(antipasto3);
-        menu.addAntipasti(antipasto4);
+        menu.addPortata(antipasto1);
+        menu.addPortata(antipasto2);
+        menu.addPortata(antipasto3);
+        menu.addPortata(antipasto4);
 
-        menu.addPrimi(primo1);
-        menu.addPrimi(primo2);
-        menu.addPrimi(primo3);
-        menu.addPrimi(primo4);
-        menu.addPrimi(primo5);
+        /*menu.addPortata(primo1);
+        menu.addPortata(primo2);
+        menu.addPortata(primo3);
+        menu.addPortata(primo4);
+        menu.addPortata(primo5);
 
-        menu.addSecondiPiatti(secondo1);
+
+
+        menu.addPortata(secondo1);
         menu.addSecondiPiatti(secondo2);
         menu.addSecondiPiatti(secondo3);
         menu.addSecondiPiatti(secondo4);
@@ -57,16 +59,20 @@ public class Main {
         menu.addSecondiPiatti(secondo7);
         menu.addSecondiPiatti(secondo8);
 
-        menu.addDessert(dessert1);
-        menu.addDessert(dessert2);
-        menu.addDessert(dessert3);
-        menu.addDessert(dessert4);
-        menu.addDessert(dessert5);
+         */
 
-        menu.addBevande(bevanda1);
-        menu.addBevande(bevanda2);
-        menu.addBevande(bevanda3);
-        menu.addBevande(bevanda4);
+        menu.addPortata(dessert1);
+        menu.addPortata(dessert2);
+        menu.addPortata(dessert3);
+        menu.addPortata(dessert4);
+        menu.addPortata(dessert5);
+
+        /*menu.addPortata(bevanda1);
+        menu.addPortata(bevanda2);
+        menu.addPortata(bevanda3);
+        menu.addPortata(bevanda4);
+
+         */
 
         menu.stampaMenuCompleto();
 
