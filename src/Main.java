@@ -6,10 +6,10 @@ public class Main {
 
         Menu menu = new Menu("Luca Rossi");
 
-        Antipasti antipasto1 = new Antipasti("Bruschette", 1);
-        Antipasti antipasto2 = new Antipasti("Prosciutto", 2);
-        Antipasti antipasto3 = new Antipasti("Tortine Salate", 3);
-        Antipasti antipasto4 = new Antipasti("Burrata", 3);
+        Antipasti antipasto1 = new Antipasti("Bruschette", 1, 4, "CRUDO");
+        Antipasti antipasto2 = new Antipasti("Prosciutto", 2, 1, "CRUDO");
+        Antipasti antipasto3 = new Antipasti("Tortine Salate", 3, 4, "COTTO");
+        Antipasti antipasto4 = new Antipasti("Burrata", 3, 1, "COTTO");
 
         PrimiPiatti primo1 = new PrimiPiatti("Lasagne alla bolognese", 12);
         PrimiPiatti primo2 = new PrimiPiatti("Tagliatelle al ragù", 10);
@@ -26,11 +26,11 @@ public class Main {
         SecondiPiatti secondo7 = new SecondiPiatti("Straccetti Di Vitello Con Salsa All'aceto Balsamico", 13);
         SecondiPiatti secondo8 = new SecondiPiatti("Baccalà Pastellato al Mais", 12);
 
-        Dessert dessert1 = new Dessert("Tiramisù", 8);
-        Dessert dessert2 = new Dessert("Tarallo Aviglianese", 7);
-        Dessert dessert3 = new Dessert("Sbriciolata al Castagnaccio", 8);
-        Dessert dessert4 = new Dessert("Creme brulée", 5);
-        Dessert dessert5 = new Dessert("Sorbetto al limone", 3);
+        Dessert dessert1 = new Dessert("Tiramisù", 8, "SEMI-FREDDO", false);
+        Dessert dessert2 = new Dessert("Tarallo Aviglianese", 7, "FREDDO", false);
+        Dessert dessert3 = new Dessert("Sbriciolata al Castagnaccio", 8, "CALDO", true);
+        Dessert dessert4 = new Dessert("Creme brulée", 5, "CALDO", false);
+        Dessert dessert5 = new Dessert("Sorbetto al limone", 3, "FREDDO", true);
 
         Bevande bevanda1 = new Bevande("Acqua minerale naturale", 1);
         Bevande bevanda2 = new Bevande("Coca Cola", 2);

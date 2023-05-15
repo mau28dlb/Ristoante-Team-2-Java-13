@@ -1,31 +1,22 @@
 package src.portate;
 
-public class Dessert {
-    private String descrizione;
-    private double prezzo;
+public class Dessert extends Portata {
 
-    public Dessert(String descrizione, double prezzo) {
-        this.descrizione = descrizione;
-        this.prezzo = prezzo;
+    private boolean glutenFree;
+    private String temperatura;
+
+    public Dessert(String descrizione, double prezzo, String temperatura, boolean glutenFree) {
+        super(descrizione, prezzo);
+        this.glutenFree = glutenFree;
+        if(temperatura.equals("SEMI-FREDDO") || temperatura.equals("FREDDO") || temperatura.equals("CALDO")){
+            this.temperatura = temperatura;
+        }
     }
 
-    public String getDescrizione() {
-        return descrizione;
+
+    @Override
+    public void printPortata() {
+
+    }
     }
 
-    public void setDescrizione(String descrizione) {
-        this.descrizione = descrizione;
-    }
-
-    public double getPrezzo() {
-        return prezzo;
-    }
-
-    public void setPrezzo(double prezzo) {
-        this.prezzo = prezzo;
-    }
-
-    public void printDessert(){
-        System.out.println("- " + this.descrizione + "        € " + this.prezzo);
-    }
-}

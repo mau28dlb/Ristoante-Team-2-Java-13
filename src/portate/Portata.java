@@ -1,6 +1,6 @@
 package src.portate;
 
-abstract class Portata {
+public abstract class Portata {
 
     private String descrizione;
     private double prezzo;
@@ -25,4 +25,6 @@ abstract class Portata {
     public void setPrezzo(double prezzo) {
         this.prezzo = prezzo;
     }
+
+    public abstract void printPortata();
 }

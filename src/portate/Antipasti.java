@@ -1,31 +1,22 @@
 package src.portate;
 
-public class Antipasti {
-    private String descrizione;
-    private double prezzo;
+public class Antipasti extends Portata{
 
-    public Antipasti (String descrizione, double prezzo) {
-        this.descrizione = descrizione;
-        this.prezzo = prezzo;
+    private  int porzione;
+    private String cottura;
+
+    public Antipasti(String descrizione, double prezzo, int porzione, String cottura ) {
+        super(descrizione, prezzo);
+        if(cottura.equals("COTTO") && cottura.equals("CRUDO")){
+            this.cottura = cottura;
+        }
+
     }
 
-    public String getDescrizione() {
-        return descrizione;
-    }
 
-    public void setDescrizione(String descrizione) {
-        this.descrizione = descrizione;
-    }
+    @Override
+    public void printPortata() {
 
-    public double getPrezzo() {
-        return prezzo;
-    }
-
-    public void setPrezzo(double prezzo) {
-        this.prezzo = prezzo;
-    }
-
-    public void printAntipasti(){
-        System.out.println("- " + this.descrizione + "       € " + this.prezzo);
     }
 }
+
