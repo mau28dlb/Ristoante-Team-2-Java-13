@@ -68,7 +68,7 @@ public class Main {
         menu.addBevande(bevanda3);
         menu.addBevande(bevanda4);
 
-        menu.stampaTutto();
+        menu.stampaMenuCompleto();
 
     }
 }

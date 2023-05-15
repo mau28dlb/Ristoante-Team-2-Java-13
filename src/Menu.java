@@ -50,8 +50,8 @@ public class Menu {
         listaBevande.add(bevande);
     }
 
-    //TODO chiamiamilo calcolaSpazioTraPortateMenu
-    public String aggiungiSpazi(String value) {
+
+    public String calcolaSpazioTraPortateMenu(String value) {
         int max = 0;
         for (Antipasti antipasti : listaAntipasti) {
             if (antipasti.getDescrizione().length() > max) {
@@ -84,12 +84,12 @@ public class Menu {
         return value;
     }
 
-    //TODO stampaMenuCompleto
-    public void stampaTutto() {
+
+    public void stampaMenuCompleto() {
         System.out.println("\n");
         System.out.println(ANSI_BLUE + "RISTORANTE TEAM 2 JAVA 13" + ANSI_RESET);
         System.out.println("\n");
-        prezzoMedioMenu();
+        System.out.println("Prezzo medio (un antipasto, un primo, una bevanda): " + prezzoMedioMenu() + " €");
         System.out.println("\n");
         System.out.println(ANSI_RED + "Chef: " + this.chef + ANSI_RESET);
         System.out.println("\n");
@@ -97,7 +97,7 @@ public class Menu {
         System.out.println("\n" + ANSI_YELLOW + "*** ANTIPASTI *** " + ANSI_RESET);
         for (Antipasti antipasti : listaAntipasti) {
             String stringa = antipasti.getDescrizione();
-            String newStringa = aggiungiSpazi(stringa);
+            String newStringa = calcolaSpazioTraPortateMenu(stringa);
             newStringa += " € " + antipasti.getPrezzo();
             System.out.println(newStringa);
         }
@@ -105,7 +105,7 @@ public class Menu {
         System.out.println("\n" + ANSI_GREEN + "*** PRIMI PIATTI ***" + ANSI_RESET);
         for (PrimiPiatti primiPiatti : listaPrimiPiatti) {
             String stringa = primiPiatti.getDescrizione();
-            String newStringa = aggiungiSpazi(stringa);
+            String newStringa = calcolaSpazioTraPortateMenu(stringa);
             newStringa += " € " + primiPiatti.getPrezzo();
             System.out.println(newStringa);
         }
@@ -113,7 +113,7 @@ public class Menu {
         System.out.println("\n" + ANSI_PURPLE + "*** SECONDI PIATTI *** " + ANSI_RESET);
         for (SecondiPiatti secondiPiatti : listaSecondiPiatti) {
             String stringa = secondiPiatti.getDescrizione();
-            String newStringa = aggiungiSpazi(stringa);
+            String newStringa = calcolaSpazioTraPortateMenu(stringa);
             newStringa += " € " + secondiPiatti.getPrezzo();
             System.out.println(newStringa);
         }
@@ -121,7 +121,7 @@ public class Menu {
         System.out.println("\n" + ANSI_WHITE + "*** DESSERTS ***" + ANSI_RESET);
         for (Dessert dessert : listaDessert) {
             String stringa = dessert.getDescrizione();
-            String newStringa = aggiungiSpazi(stringa);
+            String newStringa = calcolaSpazioTraPortateMenu(stringa);
             newStringa += " € " + dessert.getPrezzo();
             System.out.println(newStringa);
         }
@@ -129,15 +129,15 @@ public class Menu {
         System.out.println("\n" + ANSI_CYAN + "*** BEVANDE ***" + ANSI_RESET);
         for (Bevande bevande : listaBevande) {
             String stringa = bevande.getDescrizione();
-            String newStringa = aggiungiSpazi(stringa);
+            String newStringa = calcolaSpazioTraPortateMenu(stringa);
             newStringa += " € " + bevande.getPrezzo();
             System.out.println(newStringa);
         }
 
     }
 
-    //TODO far tornare il prezzo medio
-    public void prezzoMedioMenu() {
+
+    public double prezzoMedioMenu() {
         double totBevande = 0;
         double totPrimi = 0;
         double totAntipasti = 0;
@@ -158,8 +158,7 @@ public class Menu {
         double prezzoMedioPrimi = totPrimi / listaPrimiPiatti.size();
 
         double sommaPrezzi = prezzoMedioAntipasti + prezzoMedioBevande + prezzoMedioPrimi;
-        System.out.println("Prezzo medio (un antipasto, un primo ed una bevanda):");
-        System.out.println("€ " + sommaPrezzi);
+        return sommaPrezzi;
     }
 
 
