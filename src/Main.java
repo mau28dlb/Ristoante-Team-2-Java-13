@@ -4,7 +4,7 @@ import src.portate.*;
 public class Main {
     public static void main(String[] args) {
 
-        Menu menu = new Menu("Luca Rossi");
+        Menu menu = new Menu("Luca Rossi", "Menù di carne");
 
         Antipasti antipasto1 = new Antipasti("Bruschette", 1, 4, "CRUDO");
         Antipasti antipasto2 = new Antipasti("Prosciutto", 2, 1, "CRUDO");
