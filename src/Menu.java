@@ -71,7 +71,7 @@ public class Menu {
         System.out.println(" ");
         System.out.println(Color.YELLOW.get() + "*** Dessert ***" + Color.RESET.get());
         for (Portata portata : listaPortate) {
-            if(portata.getClass() == Bevande.class){
+            if(portata.getClass() == Dessert.class){
                 stampaPortata(portata);
             }
         }
