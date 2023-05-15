@@ -70,8 +70,6 @@ public class Main {
         menu.addPortata(bevanda3);
         menu.addPortata(bevanda4);
 
-
-
         menu.stampaMenuCompleto();
 
 

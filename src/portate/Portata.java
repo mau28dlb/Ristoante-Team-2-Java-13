@@ -10,6 +10,8 @@ public abstract class Portata {
         this.prezzo = prezzo;
     }
 
+    
+
     public String getDescrizione() {
         return descrizione;
     }

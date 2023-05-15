@@ -2,6 +2,7 @@ package src;
 
 import src.portate.*;
 
+import javax.sound.sampled.Port;
 import java.util.*;
 
 public class Menu {
@@ -38,18 +39,61 @@ public class Menu {
         System.out.println("\n");
         System.out.println(Color.BLUE.get() + "RISTORANTE TEAM 2 JAVA 13" + Color.RESET.get());
         System.out.println("\n");
-        System.out.println("Prezzo medio (un antipasto, un primo, una bevanda): " + prezzoMedioMenu() + " €");
+        System.out.println("Prezzo medio: " + prezzoMedioMenu() + " €");
         System.out.println("\n");
         System.out.println(Color.RED.get() + "Chef: " + this.chef + Color.RESET.get());
         System.out.println("\n");
 
+        System.out.println(Color.BLUE.get()+ "*** Antipasti ***" + Color.RESET.get());
         for (Portata portata : listaPortate) {
-            String descrizione = portata.printPortataDescrizione();
-            String newDescrizione = aggiungiSpazioTraDescrizioneEPrezzo(descrizione);
-            String stringaTotale = portata.printPortataAggiunta(newDescrizione);
-            System.out.println(Color.PURPLE.get() + stringaTotale + Color.RESET.get());
+            if(portata.getClass() == Antipasti.class){
+                stampaPortata(portata);
+            }
         }
+       /* System.out.println(" ");
+        System.out.println(Color.CYAN.get() + "*** Primi Piatti ***" + Color.RESET.get());
+        for (Portata portata : listaPortate) {
+            if(portata.getClass() == PrimiPiatti.class){
+                stampaPortata(portata);
+            }
+        }
+
+        */
+
+        System.out.println(" ");
+        System.out.println(Color.BLACK.get() + "*** Secondi Piatti ***" + Color.RESET.get());
+        for (Portata portata : listaPortate) {
+            if(portata.getClass() == SecondiPiatti.class){
+                stampaPortata(portata);
+            }
+        }
+
+        System.out.println(" ");
+        System.out.println(Color.YELLOW.get() + "*** Dessert ***" + Color.RESET.get());
+        for (Portata portata : listaPortate) {
+            if(portata.getClass() == Bevande.class){
+                stampaPortata(portata);
+            }
+        }
+
+        System.out.println(" ");
+        System.out.println(Color.PURPLE.get() + "*** Bevande***" + Color.RESET.get());
+        for (Portata portata : listaPortate) {
+            if(portata.getClass() == Bevande.class){
+                stampaPortata(portata);
+            }
+        }
+
     }
+
+    public void stampaPortata(Portata portata){
+                String descrizione = portata.printPortataDescrizione();
+                String newDescrizione = aggiungiSpazioTraDescrizioneEPrezzo(descrizione);
+                String stringaTotale = portata.printPortataAggiunta(newDescrizione);
+                System.out.println(stringaTotale );
+    }
+
+
 
 
     public double prezzoMedioMenu() {

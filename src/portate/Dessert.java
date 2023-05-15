@@ -1,5 +1,7 @@
 package src.portate;
 
+import src.Color;
+
 public class Dessert extends Portata {
 
     private boolean glutenFree;
@@ -20,7 +22,7 @@ public class Dessert extends Portata {
     @Override
     public String printPortataAggiunta(String descrizione) {
         if(isGlutenFree()){
-            String stringaTotale = descrizione +  "€ " + getPrezzo() + " Gluten free" ;
+            String stringaTotale = descrizione +  "€ " + getPrezzo() + " Gluten free";
             return stringaTotale;
 
         } else {
