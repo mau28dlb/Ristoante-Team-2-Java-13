@@ -17,14 +17,13 @@ public class Main {
         PrimiPiatti primo4 = new PrimiPiatti("Cappelletti in brodo", 14);
         PrimiPiatti primo5 = new PrimiPiatti("Tris di ravioli", 13);
 
-        SecondiPiatti secondo1 = new SecondiPiatti("Hamburger Di Manzo", 9);
-        SecondiPiatti secondo2 = new SecondiPiatti("Hamburger Di Manzo con Salsa al Gorgonzola", 11);
-        SecondiPiatti secondo3 = new SecondiPiatti("Polpette Di Manzo Alla Siciliana", 10);
-        SecondiPiatti secondo4 = new SecondiPiatti("Cotolettine Di Arista Arrosto", 10);
-        SecondiPiatti secondo5 = new SecondiPiatti("Scaloppine Limone e Zenzero", 10);
-        SecondiPiatti secondo6 = new SecondiPiatti("Scaloppina All'arancia Con Granella Di Pistacchio", 11);
-        SecondiPiatti secondo7 = new SecondiPiatti("Straccetti Di Vitello Con Salsa All'aceto Balsamico", 13);
-        SecondiPiatti secondo8 = new SecondiPiatti("Baccalà Pastellato al Mais", 12);
+        SecondiPiatti secondo1 = new SecondiPiatti("Hamburger Di Manzo", 10, true);
+        SecondiPiatti secondo2 = new SecondiPiatti("Hamburger Di Manzo con Salsa al Gorgonzola", 12, true);
+        SecondiPiatti secondo3 = new SecondiPiatti("Polpette Di Manzo Alla Siciliana", 11, true);
+        SecondiPiatti secondo4 = new SecondiPiatti("Cotolettine Di Arista Arrosto", 11, false );
+        SecondiPiatti secondo5 = new SecondiPiatti("Scaloppine Limone e Zenzero", 11, true);
+        SecondiPiatti secondo6 = new SecondiPiatti("Scaloppina All'arancia Con Granella Di Pistacchio", 12, true);
+        SecondiPiatti secondo7 = new SecondiPiatti("Straccetti Di Vitello Con Salsa All'aceto Balsamico", 13, false);
 
         Dessert dessert1 = new Dessert("Tiramisù", 8, "SEMI-FREDDO", false);
         Dessert dessert2 = new Dessert("Tarallo Aviglianese", 7, "FREDDO", false);
@@ -48,18 +47,17 @@ public class Main {
         menu.addPortata(primo4);
         menu.addPortata(primo5);
 
-
+        */
 
         menu.addPortata(secondo1);
-        menu.addSecondiPiatti(secondo2);
-        menu.addSecondiPiatti(secondo3);
-        menu.addSecondiPiatti(secondo4);
-        menu.addSecondiPiatti(secondo5);
-        menu.addSecondiPiatti(secondo6);
-        menu.addSecondiPiatti(secondo7);
-        menu.addSecondiPiatti(secondo8);
+        menu.addPortata(secondo2);
+        menu.addPortata(secondo3);
+        menu.addPortata(secondo4);
+        menu.addPortata(secondo5);
+        menu.addPortata(secondo6);
+        menu.addPortata(secondo7);
 
-         */
+
 
         menu.addPortata(dessert1);
         menu.addPortata(dessert2);
