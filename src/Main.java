@@ -67,14 +67,15 @@ public class Main {
         menu.addPortata(dessert4);
         menu.addPortata(dessert5);
 
-        /*menu.addPortata(bevanda1);
+        menu.addPortata(bevanda1);
         menu.addPortata(bevanda2);
         menu.addPortata(bevanda3);
         menu.addPortata(bevanda4);
 
-         */
+
 
         menu.stampaMenuCompleto();
+
 
     }
 }
