@@ -1,33 +1,29 @@
 package src.portate;
 
-public class Bevande {
+public class Bevande extends Portata {
 
-    private String descrizione;
-    private double prezzo;
+    private String gradazioneAlcolica;
+    public Bevande(String descrizione, double prezzo, String gradazioneAlcolica) {
+        super(descrizione, prezzo);
+        this.gradazioneAlcolica = gradazioneAlcolica;
+    }
 
     public Bevande(String descrizione, double prezzo) {
-        this.descrizione = descrizione;
-        this.prezzo = prezzo;
+        super(descrizione, prezzo);
     }
 
-    public String getDescrizione() {
-        return descrizione;
+    @Override
+    public void printPortata() {
+
     }
 
-    public void setDescrizione(String descrizione) {
-        this.descrizione = descrizione;
+    public String getGradazioneAlcolica() {
+        return gradazioneAlcolica;
     }
 
-    public double getPrezzo() {
-        return prezzo;
-    }
-
-    public void setPrezzo(double prezzo) {
-        this.prezzo = prezzo;
-    }
-
-    public void printBevande() {
-
-        System.out.println("- " + this.descrizione + "       € " + this.prezzo);
+    public void setGradazioneAlcolica(String gradazioneAlcolica) {
+        this.gradazioneAlcolica = gradazioneAlcolica;
     }
 }
+
+

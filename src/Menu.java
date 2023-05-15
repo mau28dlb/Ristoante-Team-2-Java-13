@@ -121,7 +121,11 @@ public class Menu {
         for (Bevande bevande : listaBevande) {
             String stringa = bevande.getDescrizione();
             String newStringa = calcolaSpazioTraPortateMenu(stringa);
-            newStringa += " € " + bevande.getPrezzo();
+            if (bevande.getGradazioneAlcolica() != null) {
+                newStringa += " € " + bevande.getPrezzo() + " " + bevande.getGradazioneAlcolica();
+            } else {
+                newStringa += " € " + bevande.getPrezzo();
+            }
             System.out.println(newStringa);
         }
 
