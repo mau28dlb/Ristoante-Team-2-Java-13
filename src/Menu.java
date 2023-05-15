@@ -6,22 +6,13 @@ import java.util.*;
 
 public class Menu {
 
-    //TODO passare in un enum e inserire anche descrizione così sappiamo a colpo d'occhio cosa fa
-    public static final String ANSI_RESET = "\u001B[0m";
-    public static final String ANSI_BLACK = "\u001B[30m";
-    public static final String ANSI_RED = "\u001B[31m";
-    public static final String ANSI_GREEN = "\u001B[32m";
-    public static final String ANSI_YELLOW = "\u001B[33m";
-    public static final String ANSI_BLUE = "\u001B[34m";
-    public static final String ANSI_PURPLE = "\u001B[35m";
-    public static final String ANSI_CYAN = "\u001B[36m";
-    public static final String ANSI_WHITE = "\u001B[37m";
     public List<Antipasti> listaAntipasti = new ArrayList<>();
 
     public List<PrimiPiatti> listaPrimiPiatti = new ArrayList<>();
     public List<SecondiPiatti> listaSecondiPiatti = new ArrayList<>();
     public List<Dessert> listaDessert = new ArrayList<>();
     public List<Bevande> listaBevande = new ArrayList<>();
+
     //public List<Portata> portataList = new ArrayList<>();
 
     private String chef;
@@ -87,14 +78,14 @@ public class Menu {
 
     public void stampaMenuCompleto() {
         System.out.println("\n");
-        System.out.println(ANSI_BLUE + "RISTORANTE TEAM 2 JAVA 13" + ANSI_RESET);
+        System.out.println(Color.BLUE.get() + "RISTORANTE TEAM 2 JAVA 13" + Color.RESET.get());
         System.out.println("\n");
         System.out.println("Prezzo medio (un antipasto, un primo, una bevanda): " + prezzoMedioMenu() + " €");
         System.out.println("\n");
-        System.out.println(ANSI_RED + "Chef: " + this.chef + ANSI_RESET);
+        System.out.println(Color.RED.get() + "Chef: " + this.chef + Color.RESET.get());
         System.out.println("\n");
 
-        System.out.println("\n" + ANSI_YELLOW + "*** ANTIPASTI *** " + ANSI_RESET);
+        System.out.println("\n" + Color.YELLOW.get() + "*** ANTIPASTI *** " + Color.RESET.get());
         for (Antipasti antipasti : listaAntipasti) {
             String stringa = antipasti.getDescrizione();
             String newStringa = calcolaSpazioTraPortateMenu(stringa);
@@ -102,7 +93,7 @@ public class Menu {
             System.out.println(newStringa);
         }
 
-        System.out.println("\n" + ANSI_GREEN + "*** PRIMI PIATTI ***" + ANSI_RESET);
+        System.out.println("\n" + Color.YELLOW.get() + "*** PRIMI PIATTI ***" + Color.RESET.get());
         for (PrimiPiatti primiPiatti : listaPrimiPiatti) {
             String stringa = primiPiatti.getDescrizione();
             String newStringa = calcolaSpazioTraPortateMenu(stringa);
@@ -110,7 +101,7 @@ public class Menu {
             System.out.println(newStringa);
         }
 
-        System.out.println("\n" + ANSI_PURPLE + "*** SECONDI PIATTI *** " + ANSI_RESET);
+        System.out.println("\n" + Color.PURPLE.get() + "*** SECONDI PIATTI *** " + Color.RESET.get());
         for (SecondiPiatti secondiPiatti : listaSecondiPiatti) {
             String stringa = secondiPiatti.getDescrizione();
             String newStringa = calcolaSpazioTraPortateMenu(stringa);
@@ -118,7 +109,7 @@ public class Menu {
             System.out.println(newStringa);
         }
 
-        System.out.println("\n" + ANSI_WHITE + "*** DESSERTS ***" + ANSI_RESET);
+        System.out.println("\n" + Color.WHITE.get() + "*** DESSERTS ***" + Color.RESET.get());
         for (Dessert dessert : listaDessert) {
             String stringa = dessert.getDescrizione();
             String newStringa = calcolaSpazioTraPortateMenu(stringa);
@@ -126,7 +117,7 @@ public class Menu {
             System.out.println(newStringa);
         }
 
-        System.out.println("\n" + ANSI_CYAN + "*** BEVANDE ***" + ANSI_RESET);
+        System.out.println("\n" + Color.CYAN.get() + "*** BEVANDE ***" + Color.RESET.get());
         for (Bevande bevande : listaBevande) {
             String stringa = bevande.getDescrizione();
             String newStringa = calcolaSpazioTraPortateMenu(stringa);
@@ -160,6 +151,4 @@ public class Menu {
         double sommaPrezzi = prezzoMedioAntipasti + prezzoMedioBevande + prezzoMedioPrimi;
         return sommaPrezzi;
     }
-
-
 }
