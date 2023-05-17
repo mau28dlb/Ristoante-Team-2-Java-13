@@ -8,10 +8,10 @@ public class Main {
 
         Menu menu = new Menu("Luca Rossi", "Menù di carne");
 
-        Antipasti antipasto1 = new Antipasti("Bruschette", 1, 4, "CRUDO");
-        Antipasti antipasto2 = new Antipasti("Prosciutto", 2, 1, "CRUDO");
-        Antipasti antipasto3 = new Antipasti("Tortine Salate", 3, 4, "COTTO");
-        Antipasti antipasto4 = new Antipasti("Burrata", 3, 1, "COTTO");
+        Antipasti antipasto1 = new Antipasti("Bruschette ", 1, 4 );
+        Antipasti antipasto2 = new Antipasti("Prosciutto", 2, 1) ;
+        Antipasti antipasto3 = new Antipasti("Tortine Salate", 3, 4);
+        Antipasti antipasto4 = new Antipasti("Burrata", 3, 1);
 
         PrimiPiatti primo1 = new PrimiPiatti("Lasagne alla bolognese", 12,false, true);
         PrimiPiatti primo2 = new PrimiPiatti("Tagliatelle al ragù", 10, false, true);

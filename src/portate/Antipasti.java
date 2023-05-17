@@ -7,10 +7,13 @@ public class Antipasti extends Portata{
 
     public Antipasti(String descrizione, double prezzo, int porzione, String cottura ) {
         super(descrizione, prezzo);
-        if(cottura.equals("COTTO") || cottura.equals("CRUDO")){
-            this.cottura = cottura;
-        }
+        this.cottura = cottura;
+        this.porzione = porzione;
+    }
 
+    public Antipasti(String descrizione, double prezzo, int porzione ) {
+        super(descrizione, prezzo);
+        this.porzione = porzione;
     }
     @Override
     public String printPortataAggiunta(String descrizione) {
