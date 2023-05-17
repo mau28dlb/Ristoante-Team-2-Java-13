@@ -1,32 +1,31 @@
 package src.portate;
 
-public class PrimiPiatti {
+public class PrimiPiatti extends Portata {
 
+    private boolean minimoPerDuePersone;
+    private boolean pastaFresca;
 
-    private String descrizione;
-    private double prezzo;
-
-    public PrimiPiatti(String descrizione, double prezzo) {
-        this.descrizione = descrizione;
-        this.prezzo = prezzo;;
+    public PrimiPiatti(String descrizione, double prezzo, boolean minimoPerDuePersone, boolean pastaFresca) {
+        super(descrizione, prezzo);
+        this.minimoPerDuePersone = minimoPerDuePersone;
+        this.pastaFresca = pastaFresca;
     }
 
-    public String getDescrizione(){
-        return descrizione;
-    }
-    public void setDescrizione(String descrizione){
-        this.descrizione = descrizione;
-    }
-    public double getPrezzo() {
-        return prezzo;
-    }
+    @Override
+    public String stringaPortataCompleta(String descrizione) {
+        String stringaTotale;
+        if(minimoPerDuePersone){
+            stringaTotale = descrizione +  "€ " + getPrezzo() + " (Minimo due persone)" ;
 
-    public void setPrezzo(double prezzo) {
-        this.prezzo = prezzo;
-    }
+        } else {
+            stringaTotale = descrizione + "€ " + getPrezzo();
+        }
+        if(pastaFresca){
+            stringaTotale += " (Pasta fresca)";
 
-    public void printPrimiPiatti() {
+        }
 
-        System.out.println("- " + this.descrizione + "       € " + this.prezzo);
+        return stringaTotale;
+
     }
 }
