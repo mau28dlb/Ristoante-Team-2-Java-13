@@ -2,19 +2,20 @@ package src;
 
 import src.portate.*;
 
-import javax.sound.sampled.Port;
+
 import java.util.*;
 
+import static java.lang.Math.round;
+
 public class Menu {
-
-    public List<Portata> listaPortate = new ArrayList<>();
-
-    public List<Portata> listaFuoriMenu = new ArrayList<>();
-
 
     private String chef;
 
     private String menuType;
+
+    public List<Portata> listaPortate = new ArrayList<>();
+
+
 
     public Menu(String chef, String menuType) {
         this.chef = chef;
@@ -26,10 +27,7 @@ public class Menu {
         listaPortate.add(portata);
     }
 
-    public void addPiattoFuoriMenu(Portata portata) {
-        listaFuoriMenu.add(portata);
 
-    }
 
 
 
@@ -47,12 +45,32 @@ public class Menu {
         return value;
     }
 
+
+    public void stampaPortata(Portata portata) {
+        String descrizione = portata.stringaPortataDescrizione();
+        String newDescrizione = aggiungiSpazioTraDescrizioneEPrezzo(descrizione);
+        String stringaTotale = portata.stringaPortataCompleta(newDescrizione);
+        System.out.println(stringaTotale);
+    }
+
+
+    public double prezzoMedioMenu() {
+        double totPortata = 0;
+
+        for (Portata portata : listaPortate) {
+            totPortata = totPortata + portata.getPrezzo();
+        }
+        double prezzoMedioPortata = totPortata / listaPortate.size();
+        return round(prezzoMedioPortata * 3);
+    }
+
+
     public void stampaMenuCompleto() {
         System.out.println("\n");
         System.out.println(Color.BLUE.get() + "RISTORANTE TEAM 2 JAVA 13" + Color.RESET.get());
         System.out.println("");
         System.out.println(Color.GREEN.get() + "Chef: " + this.chef + Color.RESET.get());
-        System.out.println(Color.RED.get() + "Menù: " + this.menuType + Color.RESET.get());
+        System.out.println(Color.RED.get() + this.menuType + Color.RESET.get());
         System.out.println("");
         System.out.println("Prezzo medio (calcolato su 3 portate): " + prezzoMedioMenu() + " €");
         System.out.println("\n");
@@ -99,21 +117,4 @@ public class Menu {
 
     }
 
-    public void stampaPortata(Portata portata) {
-        String descrizione = portata.printPortataDescrizione();
-        String newDescrizione = aggiungiSpazioTraDescrizioneEPrezzo(descrizione);
-        String stringaTotale = portata.printPortataAggiunta(newDescrizione);
-        System.out.println(stringaTotale);
-    }
-
-
-    public double prezzoMedioMenu() {
-        double totPortata = 0;
-
-        for (Portata portata : listaPortate) {
-            totPortata = totPortata + portata.getPrezzo();
-        }
-        double prezzoMedioPortata = totPortata / listaPortate.size();
-        return prezzoMedioPortata * 3;
-    }
 }

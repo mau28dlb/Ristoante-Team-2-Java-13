@@ -2,7 +2,7 @@ package src.portate;
 
 public class Antipasti extends Portata{
 
-    private  int porzione;
+    private int porzione;
     private String cottura;
 
     public Antipasti(String descrizione, double prezzo, int porzione, String cottura ) {
@@ -20,7 +20,7 @@ public class Antipasti extends Portata{
         super(descrizione, prezzo);
     }
     @Override
-    public String printPortataAggiunta(String descrizione) {
+    public String stringaPortataCompleta(String descrizione) {
         if (porzione != 0) {
             String stringaTotale = descrizione + "€ " + getPrezzo() + " (Porzione per " + porzione + ")";
             return stringaTotale;

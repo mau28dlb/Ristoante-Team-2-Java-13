@@ -15,9 +15,9 @@ public class SecondiPiatti extends Portata {
         this.isAlwaysAvailable = isAlwaysAvailable;
     }
     @Override
-    public String printPortataAggiunta(String descrizione) {
+    public String stringaPortataCompleta(String descrizione) {
         if(!isAlwaysAvailable){
-            String stringaTotale = descrizione +  "€ " + getPrezzo() + " Solo a pranzo" ;
+            String stringaTotale = descrizione +  "€ " + getPrezzo() + " (Solo a pranzo)" ;
             return stringaTotale;
 
         } else {

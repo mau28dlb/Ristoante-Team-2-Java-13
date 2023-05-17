@@ -12,16 +12,16 @@ public class PrimiPiatti extends Portata {
     }
 
     @Override
-    public String printPortataAggiunta(String descrizione) {
+    public String stringaPortataCompleta(String descrizione) {
         String stringaTotale;
         if(minimoPerDuePersone){
-            stringaTotale = descrizione +  "€ " + getPrezzo() + " Minimo due persone" ;
+            stringaTotale = descrizione +  "€ " + getPrezzo() + " (Minimo due persone)" ;
 
         } else {
             stringaTotale = descrizione + "€ " + getPrezzo();
         }
         if(pastaFresca){
-            stringaTotale += " Pasta fresca";
+            stringaTotale += " (Pasta fresca)";
 
         }
 

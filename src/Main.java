@@ -35,8 +35,8 @@ public class Main {
         Dessert dessert4 = new Dessert("Creme brulée", 5, "CALDO", false);
         Dessert dessert5 = new Dessert("Sorbetto al limone", 3, "FREDDO", true);
 
-        Bevande bevanda1 = new Bevande("Acqua minerale naturale", 1);
-        Bevande bevanda2 = new Bevande("Coca-cola", 2);
+        Bevande bevanda1 = new Bevande("Acqua minerale naturale", 1.5);
+        Bevande bevanda2 = new Bevande("Coca-cola", 2.5);
         Bevande bevanda3 = new Bevande("Vino Rosso", 5, "(alc. 12%)");
         Bevande bevanda4 = new Bevande("Birra alla spina", 3, "(alc. 4,5%)");
 

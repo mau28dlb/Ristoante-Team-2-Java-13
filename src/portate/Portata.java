@@ -5,13 +5,13 @@ public abstract class Portata {
     private String descrizione;
     private double prezzo;
 
+
     public Portata(String descrizione, double prezzo) {
         this.descrizione = descrizione;
         this.prezzo = prezzo;
     }
 
     
-
     public String getDescrizione() {
         return descrizione;
     }
@@ -28,10 +28,11 @@ public abstract class Portata {
         this.prezzo = prezzo;
     }
 
-    public  String printPortataDescrizione(){
+
+    public  String stringaPortataDescrizione(){
         String descrizione = getDescrizione();
         return descrizione;
     }
 
-    public abstract String printPortataAggiunta(String descrizione);
+    public abstract String stringaPortataCompleta(String descrizione);
 }

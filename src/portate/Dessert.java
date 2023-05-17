@@ -36,7 +36,7 @@ public class Dessert extends Portata {
     }
 
     @Override
-    public String printPortataAggiunta(String descrizione) {
+    public String stringaPortataCompleta(String descrizione) {
         if(isGlutenFree()){
             String stringaTotale = descrizione +  "€ " + getPrezzo() + " (Gluten free)";
             return stringaTotale;

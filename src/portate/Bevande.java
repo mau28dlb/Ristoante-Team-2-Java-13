@@ -13,9 +13,18 @@ public class Bevande extends Portata {
         super(descrizione, prezzo);
     }
 
+    public String getGradazioneAlcolica() {
+        return gradazioneAlcolica;
+    }
+
+    public void setGradazioneAlcolica(String gradazioneAlcolica) {
+        this.gradazioneAlcolica = gradazioneAlcolica;
+    }
+
+
 
     @Override
-    public String printPortataAggiunta(String descrizione) {
+    public String stringaPortataCompleta(String descrizione) {
         if (gradazioneAlcolica != null) {
             String stringaTotale = descrizione + "€ " + getPrezzo() + " " + gradazioneAlcolica;
             return stringaTotale;
@@ -27,13 +36,7 @@ public class Bevande extends Portata {
 
 
     }
+}
 
-    public String getGradazioneAlcolica() {
-        return gradazioneAlcolica;
-    }
-
-    public void setGradazioneAlcolica(String gradazioneAlcolica) {
-        this.gradazioneAlcolica = gradazioneAlcolica;
-    }}
 
 
