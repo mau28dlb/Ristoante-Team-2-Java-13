@@ -9,6 +9,8 @@ public class Menu {
 
     public List<Portata> listaPortate = new ArrayList<>();
 
+    public List<Portata> listaFuoriMenu = new ArrayList<>();
+
 
     private String chef;
 
@@ -23,6 +25,13 @@ public class Menu {
     public void addPortata(Portata portata) {
         listaPortate.add(portata);
     }
+
+    public void addPiattoFuoriMenu(Portata portata) {
+        listaFuoriMenu.add(portata);
+
+    }
+
+
 
 
     public String aggiungiSpazioTraDescrizioneEPrezzo(String value) {
@@ -55,7 +64,7 @@ public class Menu {
                 stampaPortata(portata);
             }
         }
-       /* System.out.println(" ");
+       System.out.println(" ");
         System.out.println(Color.CYAN.get() + "*** Primi Piatti ***" + Color.RESET.get());
         for (Portata portata : listaPortate) {
             if(portata.getClass() == PrimiPiatti.class){
@@ -63,7 +72,6 @@ public class Menu {
             }
         }
 
-        */
 
         System.out.println(" ");
         System.out.println(Color.BLACK.get() + "*** Secondi Piatti ***" + Color.RESET.get());

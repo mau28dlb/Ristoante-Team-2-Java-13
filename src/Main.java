@@ -1,6 +1,8 @@
 package src;
 import src.portate.*;
 
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -11,11 +13,13 @@ public class Main {
         Antipasti antipasto3 = new Antipasti("Tortine Salate", 3, 4, "COTTO");
         Antipasti antipasto4 = new Antipasti("Burrata", 3, 1, "COTTO");
 
-        PrimiPiatti primo1 = new PrimiPiatti("Lasagne alla bolognese", 12);
-        PrimiPiatti primo2 = new PrimiPiatti("Tagliatelle al ragù", 10);
-        PrimiPiatti primo3 = new PrimiPiatti("Rigatoni alla carbonara", 11);
-        PrimiPiatti primo4 = new PrimiPiatti("Cappelletti in brodo", 14);
-        PrimiPiatti primo5 = new PrimiPiatti("Tris di ravioli", 13);
+        PrimiPiatti primo1 = new PrimiPiatti("Lasagne alla bolognese", 12,false, true);
+        PrimiPiatti primo2 = new PrimiPiatti("Tagliatelle al ragù", 10, false, true);
+        PrimiPiatti primo3 = new PrimiPiatti("Rigatoni alla carbonara", 11,false, false);
+        PrimiPiatti primo4 = new PrimiPiatti("Cappelletti in brodo", 15,false, true);
+        PrimiPiatti primo5 = new PrimiPiatti("Tris di ravioli", 13,true, true);
+        PrimiPiatti primo6 = new PrimiPiatti("Risotto radicchio e salsiccia", 15,false, false);
+        PrimiPiatti primo7 = new PrimiPiatti("Risotto speck e gorgonzola", 15,true, false);
 
         SecondiPiatti secondo1 = new SecondiPiatti("Hamburger Di Manzo", 10, true);
         SecondiPiatti secondo2 = new SecondiPiatti("Hamburger Di Manzo con Salsa al Gorgonzola", 12, true);
@@ -41,13 +45,13 @@ public class Main {
         menu.addPortata(antipasto3);
         menu.addPortata(antipasto4);
 
-        /*menu.addPortata(primo1);
+        menu.addPortata(primo1);
         menu.addPortata(primo2);
         menu.addPortata(primo3);
         menu.addPortata(primo4);
         menu.addPortata(primo5);
-
-        */
+        menu.addPortata(primo6);
+        menu.addPortata(primo7);
 
         menu.addPortata(secondo1);
         menu.addPortata(secondo2);
@@ -56,8 +60,6 @@ public class Main {
         menu.addPortata(secondo5);
         menu.addPortata(secondo6);
         menu.addPortata(secondo7);
-
-
 
         menu.addPortata(dessert1);
         menu.addPortata(dessert2);
