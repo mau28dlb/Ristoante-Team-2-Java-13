@@ -11,14 +11,23 @@ public class Antipasti extends Portata{
         this.porzione = porzione;
     }
 
-    public Antipasti(String descrizione, double prezzo, int porzione ) {
+    public Antipasti(String descrizione, double prezzo, int porzione) {
         super(descrizione, prezzo);
         this.porzione = porzione;
     }
+
+    public Antipasti(String descrizione, double prezzo) {
+        super(descrizione, prezzo);
+    }
     @Override
     public String printPortataAggiunta(String descrizione) {
+        if (porzione != 0) {
+            String stringaTotale = descrizione + "€ " + getPrezzo() + " (Porzione per " + porzione + ")";
+            return stringaTotale;
+        } else {
             String stringaTotale = descrizione + "€ " + getPrezzo();
             return stringaTotale;
+        }
     }
 
 
