@@ -1,5 +1,7 @@
 package src.portate;
 
+import src.ColorEnum;
+
 public abstract class Portata {
 
     private String descrizione;
@@ -10,8 +12,6 @@ public abstract class Portata {
         this.descrizione = descrizione;
         this.prezzo = prezzo;
     }
-
-    
     public String getDescrizione() {
         return descrizione;
     }
@@ -29,10 +29,17 @@ public abstract class Portata {
     }
 
 
-    public  String stringaPortataDescrizione(){
-        String descrizione = getDescrizione();
-        return descrizione;
+    public void printPortata() {
+        //TODO si calcolaa la lungghezza della descrizione e del prezzo e poi si aggiunge un valore fisso che deve
+        //portare sempre alla stessa lunghezza 60= 10+ 48 + 2
+        //Il 60 va sostituito con il valore della lunghezza massima
+       System.out.println("Stampare le info"+prezzo+ descrizione);
     }
 
-    public abstract String stringaPortataCompleta(String descrizione);
+    //TODO
+    public void printPortata(ColorEnum colorEnum) {
+       System.out.println("Stampare le info"+prezzo+ descrizione);
+    }
+
+
 }

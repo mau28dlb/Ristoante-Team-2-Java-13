@@ -1,7 +1,9 @@
 package src;
 
 // Libreria di colori, usata per colorare la stampa del menù
-public enum Color {
+public enum ColorEnum {
+
+    //TODO inserire una descrizione che indica cosa fa il comando
     RESET("\u001B[0m"),
 
     BLACK("\u001B[30m"),
@@ -19,7 +21,7 @@ public enum Color {
         return ansiCode;
     }
 
-    Color(String ansiCode) {
+    ColorEnum(String ansiCode) {
         this.ansiCode = ansiCode;
     }
 }

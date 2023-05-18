@@ -1,7 +1,5 @@
 package src.portate;
 
-import src.Color;
-
 public class Dessert extends Portata {
 
     private boolean glutenFree;
