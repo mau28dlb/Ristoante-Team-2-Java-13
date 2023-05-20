@@ -2,8 +2,8 @@ package src.portate;
 
 public class Dessert extends Portata {
 
-    private boolean glutenFree;
-    private String temperatura;
+   protected boolean glutenFree;
+   protected String temperatura;
 
     public Dessert(String descrizione, double prezzo) {
         super(descrizione, prezzo);
@@ -34,15 +34,13 @@ public class Dessert extends Portata {
     }
 
     @Override
-    public String stringaPortataCompleta(String descrizione) {
-        if(isGlutenFree()){
-            String stringaTotale = descrizione +  "€ " + getPrezzo() + " (Gluten free)";
-            return stringaTotale;
-
-        } else {
-            String stringaTotale = descrizione + "€ " + getPrezzo();
-            return stringaTotale;
+    public void printPortata() {
+        super.printPortata();
+        if(glutenFree){
+            System.out.println("(Gluten free)");
         }
+        System.out.println("");
     }
+
 }
 

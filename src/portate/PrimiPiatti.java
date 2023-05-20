@@ -2,8 +2,8 @@ package src.portate;
 
 public class PrimiPiatti extends Portata {
 
-    private boolean minimoPerDuePersone;
-    private boolean pastaFresca;
+    protected boolean minimoPerDuePersone;
+    protected boolean pastaFresca;
 
     public PrimiPiatti(String descrizione, double prezzo, boolean minimoPerDuePersone, boolean pastaFresca) {
         super(descrizione, prezzo);
@@ -12,20 +12,15 @@ public class PrimiPiatti extends Portata {
     }
 
     @Override
-    public String stringaPortataCompleta(String descrizione) {
-        String stringaTotale;
-        if(minimoPerDuePersone){
-            stringaTotale = descrizione +  "€ " + getPrezzo() + " (Minimo due persone)" ;
-
-        } else {
-            stringaTotale = descrizione + "€ " + getPrezzo();
+    public void printPortata() {
+        super.printPortata();
+        if (minimoPerDuePersone){
+            System.out.print("(Minimo per due persone)  ");
         }
         if(pastaFresca){
-            stringaTotale += " (Pasta fresca)";
-
+            System.out.println("(Pasta fresca)");
         }
-
-        return stringaTotale;
-
+        System.out.println("");
     }
+
 }
