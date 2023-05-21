@@ -5,11 +5,11 @@ public class Dessert extends Portata {
    protected boolean glutenFree;
    protected String temperatura;
 
-    public Dessert(String descrizione, double prezzo) {
+    public Dessert(String descrizione, Double prezzo) {
         super(descrizione, prezzo);
     }
 
-    public Dessert(String descrizione, double prezzo, String temperatura, boolean glutenFree) {
+    public Dessert(String descrizione, Double prezzo, String temperatura, boolean glutenFree) {
         super(descrizione, prezzo);
         this.glutenFree = glutenFree;
         if(temperatura.equals("SEMI-FREDDO") || temperatura.equals("FREDDO") || temperatura.equals("CALDO")){

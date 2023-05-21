@@ -4,12 +4,12 @@ public class Bevande extends Portata {
 
    protected String gradazioneAlcolica;
 
-    public Bevande(String descrizione, double prezzo, String gradazioneAlcolica) {
+    public Bevande(String descrizione, Double prezzo, String gradazioneAlcolica) {
         super(descrizione, prezzo);
         this.gradazioneAlcolica = gradazioneAlcolica;
     }
 
-    public Bevande(String descrizione, double prezzo) {
+    public Bevande(String descrizione, Double prezzo) {
         super(descrizione, prezzo);
     }
 

@@ -5,12 +5,12 @@ public class SecondiPiatti extends Portata {
    protected boolean isAlwaysAvailable;
 
 
-    public SecondiPiatti(String descrizione, double prezzo) {
+    public SecondiPiatti(String descrizione, Double prezzo) {
         super(descrizione, prezzo);
     }
 
 
-    public SecondiPiatti(String descrizione, double prezzo, boolean isAlwaysAvailable) {
+    public SecondiPiatti(String descrizione, Double prezzo, boolean isAlwaysAvailable) {
         super(descrizione, prezzo);
         this.isAlwaysAvailable = isAlwaysAvailable;
     }

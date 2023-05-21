@@ -2,21 +2,21 @@ package src.portate;
 
 public class Antipasti extends Portata{
 
-   protected int porzione;
+   protected Integer porzione;
    protected String cottura;
 
-    public Antipasti(String descrizione, double prezzo, int porzione, String cottura ) {
+    public Antipasti(String descrizione, Double prezzo, Integer porzione, String cottura ) {
         super(descrizione, prezzo);
         this.cottura = cottura;
         this.porzione = porzione;
     }
 
-    public Antipasti(String descrizione, double prezzo, int porzione) {
+    public Antipasti(String descrizione, Double prezzo, Integer porzione) {
         super(descrizione, prezzo);
         this.porzione = porzione;
     }
 
-    public Antipasti(String descrizione, double prezzo) {
+    public Antipasti(String descrizione, Double prezzo) {
         super(descrizione, prezzo);
     }
 

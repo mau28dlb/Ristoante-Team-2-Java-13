@@ -8,37 +8,37 @@ public class Main {
 
         Menu menu = new Menu("Luca Rossi", "Menù di carne");
 
-        Antipasti antipasto1 = new Antipasti("Bruschette ", 1, 4 );
-        Antipasti antipasto2 = new Antipasti("Prosciutto", 2) ;
-        Antipasti antipasto3 = new Antipasti("Tortine Salate", 3, 4);
-        Antipasti antipasto4 = new Antipasti("Burrata", 3);
+        Antipasti antipasto1 = new Antipasti("Bruschette ", 1.0, 4 );
+        Antipasti antipasto2 = new Antipasti("Prosciutto", 2.0) ;
+        Antipasti antipasto3 = new Antipasti("Tortine Salate", 3.0, 4);
+        Antipasti antipasto4 = new Antipasti("Burrata", 3.0);
 
-        PrimiPiatti primo1 = new PrimiPiatti("Lasagne alla bolognese", 12,false, true);
-        PrimiPiatti primo2 = new PrimiPiatti("Tagliatelle al ragù", 10, false, true);
-        PrimiPiatti primo3 = new PrimiPiatti("Rigatoni alla carbonara", 11,false, false);
-        PrimiPiatti primo4 = new PrimiPiatti("Cappelletti in brodo", 15,false, true);
-        PrimiPiatti primo5 = new PrimiPiatti("Tris di ravioli", 13,true, true);
-        PrimiPiatti primo6 = new PrimiPiatti("Risotto radicchio e salsiccia", 15,false, false);
-        PrimiPiatti primo7 = new PrimiPiatti("Risotto speck e gorgonzola", 15,true, false);
+        PrimiPiatti primo1 = new PrimiPiatti("Lasagne alla bolognese", 12.0,false, true);
+        PrimiPiatti primo2 = new PrimiPiatti("Tagliatelle al ragù", 10.0, false, true);
+        PrimiPiatti primo3 = new PrimiPiatti("Rigatoni alla carbonara", 11.0,false, false);
+        PrimiPiatti primo4 = new PrimiPiatti("Cappelletti in brodo", 15.0,false, true);
+        PrimiPiatti primo5 = new PrimiPiatti("Tris di ravioli", 13.0,true, true);
+        PrimiPiatti primo6 = new PrimiPiatti("Risotto radicchio e salsiccia", 15.0,false, false);
+        PrimiPiatti primo7 = new PrimiPiatti("Risotto speck e gorgonzola", 15.0,true, false);
 
-        SecondiPiatti secondo1 = new SecondiPiatti("Hamburger Di Manzo", 10, true);
-        SecondiPiatti secondo2 = new SecondiPiatti("Hamburger Di Manzo con Salsa al Gorgonzola", 12, true);
-        SecondiPiatti secondo3 = new SecondiPiatti("Polpette Di Manzo Alla Siciliana", 11, true);
-        SecondiPiatti secondo4 = new SecondiPiatti("Cotolettine Di Arista Arrosto", 11, false );
-        SecondiPiatti secondo5 = new SecondiPiatti("Scaloppine Limone e Zenzero", 11, true);
-        SecondiPiatti secondo6 = new SecondiPiatti("Scaloppina All'arancia Con Granella Di Pistacchio", 12, true);
-        SecondiPiatti secondo7 = new SecondiPiatti("Straccetti Di Vitello Con Salsa All'aceto Balsamico", 13, false);
+        SecondiPiatti secondo1 = new SecondiPiatti("Hamburger Di Manzo", 10.0, true);
+        SecondiPiatti secondo2 = new SecondiPiatti("Hamburger Di Manzo con Salsa al Gorgonzola", 12.0, true);
+        SecondiPiatti secondo3 = new SecondiPiatti("Polpette Di Manzo Alla Siciliana", 11.0, true);
+        SecondiPiatti secondo4 = new SecondiPiatti("Cotolettine Di Arista Arrosto", 11.0, false );
+        SecondiPiatti secondo5 = new SecondiPiatti("Scaloppine Limone e Zenzero", 11.0, true);
+        SecondiPiatti secondo6 = new SecondiPiatti("Scaloppina All'arancia Con Granella Di Pistacchio", 12.0, true);
+        SecondiPiatti secondo7 = new SecondiPiatti("Straccetti Di Vitello Con Salsa All'aceto Balsamico", 13.0, false);
 
-        Dessert dessert1 = new Dessert("Tiramisù", 8, "SEMI-FREDDO", false);
-        Dessert dessert2 = new Dessert("Tarallo Aviglianese", 7, "FREDDO", false);
-        Dessert dessert3 = new Dessert("Sbriciolata al Castagnaccio", 8, "CALDO", true);
-        Dessert dessert4 = new Dessert("Creme brulée", 5, "CALDO", false);
-        Dessert dessert5 = new Dessert("Sorbetto al limone", 3, "FREDDO", true);
+        Dessert dessert1 = new Dessert("Tiramisù", 8.0, "SEMI-FREDDO", false);
+        Dessert dessert2 = new Dessert("Tarallo Aviglianese", 7.0, "FREDDO", false);
+        Dessert dessert3 = new Dessert("Sbriciolata al Castagnaccio", 8.0, "CALDO", true);
+        Dessert dessert4 = new Dessert("Creme brulée", 5.0, "CALDO", false);
+        Dessert dessert5 = new Dessert("Sorbetto al limone", 3.0, "FREDDO", true);
 
         Bevande bevanda1 = new Bevande("Acqua minerale naturale", 1.5);
         Bevande bevanda2 = new Bevande("Coca-cola", 2.5);
-        Bevande bevanda3 = new Bevande("Vino Rosso", 5, "(alc. 12%)");
-        Bevande bevanda4 = new Bevande("Birra alla spina", 3, "(alc. 4,5%)");
+        Bevande bevanda3 = new Bevande("Vino Rosso", 5.0, "(alc. 12%)");
+        Bevande bevanda4 = new Bevande("Birra alla spina", 3.0, "(alc. 4,5%)");
 
         menu.addPortata(antipasto1);
         menu.addPortata(antipasto2);

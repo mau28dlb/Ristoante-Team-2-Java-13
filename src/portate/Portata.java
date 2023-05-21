@@ -5,10 +5,10 @@ import src.ColorEnum;
 public abstract class Portata {
 
     protected String descrizione;
-    protected double prezzo;
+    protected Double prezzo;
 
 
-    public Portata(String descrizione, double prezzo) {
+    public Portata(String descrizione, Double prezzo) {
         this.descrizione = descrizione;
         this.prezzo = prezzo;
     }
@@ -20,11 +20,11 @@ public abstract class Portata {
         this.descrizione = descrizione;
     }
 
-    public double getPrezzo() {
+    public Double getPrezzo() {
         return prezzo;
     }
 
-    public void setPrezzo(double prezzo) {
+    public void setPrezzo(Double prezzo) {
         this.prezzo = prezzo;
     }
 
@@ -33,7 +33,7 @@ public abstract class Portata {
         while (descrizione.length() <= 70){
             descrizione += " ";
         }
-        System.out.println(descrizione + " €" + prezzo);
+        System.out.println(descrizione + prezzo + " €");
     }
 
 
