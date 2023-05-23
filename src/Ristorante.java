@@ -37,7 +37,7 @@ public class Ristorante {
             System.out.println("-------------------------------------------------------");
         }
         System.out.println("\n");
-        System.out.println(ColorEnum.WHITE.get() + "Piatti del giorno" + ColorEnum.RESET.get());
+        System.out.println(ColorEnum.WHITE.get() + "*** Piatti del giorno ***" + ColorEnum.RESET.get());
         stampaPortataDelGiorno(n, n2);
     }
 
@@ -51,7 +51,7 @@ public class Ristorante {
             }
         }
         System.out.println("\n");
-        System.out.println(ColorEnum.WHITE.get() + "Piatti del giorno" + ColorEnum.RESET.get());
+        System.out.println(ColorEnum.WHITE.get() + "*** Piatti del giorno ***" + ColorEnum.RESET.get());
         stampaPortataDelGiorno(n, n2);
     }
 }

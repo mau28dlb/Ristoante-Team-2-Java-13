@@ -3,16 +3,13 @@ package src;
 import src.enums.ColorEnum;
 import src.enums.MenuTypeEnum;
 import src.portate.*;
-
-
 import java.util.*;
-
 import static java.lang.Math.round;
+
 
 public class Menu {
     protected MenuTypeEnum menuType;
     protected String chef;
-
     protected List<Portata> listaPortate = new ArrayList<>();
 
 
