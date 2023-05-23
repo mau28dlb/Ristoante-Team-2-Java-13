@@ -10,28 +10,28 @@ import src.enums.MenuTypeEnum;
 import src.portate.Portata;
 
 public class Ristorante {
-    String nomeRistorante = "Ristorante Rossi";
+    String nomeRistorante = "RISTORANTE ROSSI";
     ArrayList <Menu> menuList = new ArrayList<>();
     Map<Integer, Portata> PiattoDelGiorno = new TreeMap<>();
 
     public void addMenu(Menu menu){
         menuList.add(menu);
     }
+
     public void addPiattoDelGiorno(Integer n, Portata portata) {
         PiattoDelGiorno.put(n, portata);
     }
+
     public void stampaPortataDelGiorno(Integer n, Integer n2){
         PiattoDelGiorno.get(n).printPortata();
         PiattoDelGiorno.get(n2).printPortata();
-
     }
-
 
     public void stampaRistorante (Integer n, Integer n2){
         System.out.println("\n");
         System.out.println(ColorEnum.BLUE.get() + nomeRistorante + ColorEnum.RESET.get());
         System.out.println("");
-        System.out.println(ColorEnum.WHITE.get() + "Piatto Del Giorno" + ColorEnum.RESET.get());
+        System.out.println(ColorEnum.WHITE.get() + "Piatti del giorno" + ColorEnum.RESET.get());
         stampaPortataDelGiorno(n, n2);
         for (Menu menu : menuList){
             System.out.println("-------------------------------------------------------");
@@ -44,6 +44,7 @@ public class Ristorante {
         System.out.println("\n");
         System.out.println(ColorEnum.BLUE.get() + nomeRistorante + ColorEnum.RESET.get());
         System.out.println("");
+        System.out.println(ColorEnum.WHITE.get() + "Piatti del giorno" + ColorEnum.RESET.get());
         stampaPortataDelGiorno(n, n2);
         for (Menu menu : menuList){
             if(menu.getMenuType() == menuTypeEnum){
@@ -51,5 +52,4 @@ public class Ristorante {
             }
         }
     }
-
 }
