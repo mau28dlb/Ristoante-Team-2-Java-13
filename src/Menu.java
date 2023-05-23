@@ -21,6 +21,9 @@ public class Menu {
         this.menuType = menuType;
     }
 
+    public MenuTypeEnum getMenuType() {
+        return menuType;
+    }
 
     public void addPortata(Portata portata) {
         listaPortate.add(portata);
@@ -38,9 +41,6 @@ public class Menu {
     }
 
     public void stampaMenuCompleto() {
-    //    System.out.println("\n");
-    //    System.out.println(ColorEnum.BLUE.get() + "RISTORANTE TEAM 2 JAVA 13" + ColorEnum.RESET.get());
-    //    System.out.println("");
         System.out.println(ColorEnum.GREEN.get() + "Chef: " + this.chef + ColorEnum.RESET.get());
         System.out.println(ColorEnum.RED.get() + menuType.getDescrizione() + ColorEnum.RESET.get());
         System.out.println("");

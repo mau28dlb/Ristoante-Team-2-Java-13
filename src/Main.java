@@ -4,8 +4,10 @@ import src.portate.*;
 
 public class Main {
     public static void main(String[] args) {
+        Ristorante ristorante = new Ristorante();
 
         Menu menuCarne = new Menu("Luca Rossi", MenuTypeEnum.CARNE);
+        Menu menuPesce = new Menu("Mario Rossi", MenuTypeEnum.PESCE);
 
         Antipasti antipastoCarne1 = new Antipasti("Bruschette ", 1.0, 4 );
         Antipasti antipastoCarne2 = new Antipasti("Prosciutto", 2.0) ;
@@ -73,9 +75,6 @@ public class Main {
         menuCarne.addPortata(bevanda4);
         menuCarne.addPortata(bevanda5);
 
-        menuCarne.stampaMenuCompleto();
-
-        Menu menuPesce = new Menu("Mario Rossi", MenuTypeEnum.PESCE);
 
         Antipasti antipastoPesce1 = new Antipasti("Bruschette ", 1.0, 4 );
         Antipasti antipastoPesce2 = new Antipasti("Prosciutto", 2.0) ;
@@ -131,6 +130,10 @@ public class Main {
         menuPesce.addPortata(bevanda4);
         menuPesce.addPortata(bevanda5);
 
-        menuPesce.stampaMenuCompleto();
+        ristorante.addMenu(menuCarne);
+        ristorante.addMenu(menuPesce);
+
+        ristorante.stampaMenuSpecifico(MenuTypeEnum.CARNE);
+
     }
 }
