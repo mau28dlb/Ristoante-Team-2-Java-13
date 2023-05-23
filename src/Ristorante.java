@@ -31,25 +31,27 @@ public class Ristorante {
         System.out.println("\n");
         System.out.println(ColorEnum.BLUE.get() + nomeRistorante + ColorEnum.RESET.get());
         System.out.println("");
-        System.out.println(ColorEnum.WHITE.get() + "Piatti del giorno" + ColorEnum.RESET.get());
-        stampaPortataDelGiorno(n, n2);
         for (Menu menu : menuList){
             System.out.println("-------------------------------------------------------");
             menu.stampaMenuCompleto();
             System.out.println("-------------------------------------------------------");
         }
+        System.out.println("\n");
+        System.out.println(ColorEnum.WHITE.get() + "Piatti del giorno" + ColorEnum.RESET.get());
+        stampaPortataDelGiorno(n, n2);
     }
 
     public void stampaMenuSpecifico(MenuTypeEnum menuTypeEnum, Integer n, Integer n2){
         System.out.println("\n");
         System.out.println(ColorEnum.BLUE.get() + nomeRistorante + ColorEnum.RESET.get());
         System.out.println("");
-        System.out.println(ColorEnum.WHITE.get() + "Piatti del giorno" + ColorEnum.RESET.get());
-        stampaPortataDelGiorno(n, n2);
         for (Menu menu : menuList){
             if(menu.getMenuType() == menuTypeEnum){
                 menu.stampaMenuCompleto();
             }
         }
+        System.out.println("\n");
+        System.out.println(ColorEnum.WHITE.get() + "Piatti del giorno" + ColorEnum.RESET.get());
+        stampaPortataDelGiorno(n, n2);
     }
 }
