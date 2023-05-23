@@ -23,7 +23,9 @@ public class Antipasti extends Portata{
     @Override
     public void printPortata() {
         super.printPortata();
-        System.out.println("(Portata per " + porzione + ")");
+        if (porzione != null) {
+            System.out.println("(Portata per " + porzione + ")");
+        }
         System.out.println("");
     }
 }

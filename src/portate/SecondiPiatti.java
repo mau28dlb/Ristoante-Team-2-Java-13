@@ -18,7 +18,7 @@ public class SecondiPiatti extends Portata {
     @Override
     public void printPortata() {
         super.printPortata();
-        if(isAlwaysAvailable){
+        if(!isAlwaysAvailable){
             System.out.println("(Solo a pranzo)");
         }
         System.out.println("");

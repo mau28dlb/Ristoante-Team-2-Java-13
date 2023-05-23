@@ -51,7 +51,7 @@ public class Menu {
 
         System.out.println(ColorEnum.BLUE.get() + "*** Antipasti ***" + ColorEnum.RESET.get());
         for (Portata portata : listaPortate) {
-            if (portata.getClass() == Antipasti.class) {
+            if (portata instanceof Antipasti) {
                 portata.printPortata();
             }
         }
@@ -59,7 +59,7 @@ public class Menu {
        System.out.println("\n");
         System.out.println(ColorEnum.CYAN.get() + "*** Primi Piatti ***" + ColorEnum.RESET.get());
         for (Portata portata : listaPortate) {
-            if(portata.getClass() == PrimiPiatti.class){
+            if(portata instanceof PrimiPiatti){
                 portata.printPortata();
             }
         }
@@ -67,7 +67,7 @@ public class Menu {
         System.out.println("\n");
         System.out.println(ColorEnum.RED.get() + "*** Secondi Piatti ***" + ColorEnum.RESET.get());
         for (Portata portata : listaPortate) {
-            if (portata.getClass() == SecondiPiatti.class) {
+            if (portata instanceof SecondiPiatti) {
                 portata.printPortata();
             }
         }
@@ -75,7 +75,7 @@ public class Menu {
         System.out.println("\n");
         System.out.println(ColorEnum.YELLOW.get() + "*** Dessert ***" + ColorEnum.RESET.get());
         for (Portata portata : listaPortate) {
-            if (portata.getClass() == Dessert.class) {
+            if (portata instanceof Dessert) {
                 portata.printPortata();
             }
         }
@@ -83,11 +83,9 @@ public class Menu {
         System.out.println("\n");
         System.out.println(ColorEnum.PURPLE.get() + "*** Bevande ***" + ColorEnum.RESET.get());
         for (Portata portata : listaPortate) {
-            if (portata.getClass() == Bevande.class) {
+            if (portata instanceof Bevande) {
                 portata.printPortata();
             }
         }
-
     }
-
 }
