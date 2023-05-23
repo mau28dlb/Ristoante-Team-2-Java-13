@@ -1,7 +1,5 @@
 package src.portate;
 
-import src.ColorEnum;
-
 public abstract class Portata {
 
     protected String descrizione;

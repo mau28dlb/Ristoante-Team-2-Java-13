@@ -1,79 +1,136 @@
 package src;
+import src.enums.MenuTypeEnum;
 import src.portate.*;
-
-import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
 
-        Menu menu = new Menu("Luca Rossi", "Menù di carne");
+        Menu menuCarne = new Menu("Luca Rossi", MenuTypeEnum.CARNE);
 
-        Antipasti antipasto1 = new Antipasti("Bruschette ", 1.0, 4 );
-        Antipasti antipasto2 = new Antipasti("Prosciutto", 2.0) ;
-        Antipasti antipasto3 = new Antipasti("Tortine Salate", 3.0, 4);
-        Antipasti antipasto4 = new Antipasti("Burrata", 3.0);
+        Antipasti antipastoCarne1 = new Antipasti("Bruschette ", 1.0, 4 );
+        Antipasti antipastoCarne2 = new Antipasti("Prosciutto", 2.0) ;
+        Antipasti antipastoCarne3 = new Antipasti("Tortine Salate", 3.0, 4);
+        Antipasti antipastoCarne4 = new Antipasti("Burrata", 3.0);
 
-        PrimiPiatti primo1 = new PrimiPiatti("Lasagne alla bolognese", 12.0,false, true);
-        PrimiPiatti primo2 = new PrimiPiatti("Tagliatelle al ragù", 10.0, false, true);
-        PrimiPiatti primo3 = new PrimiPiatti("Rigatoni alla carbonara", 11.0,false, false);
-        PrimiPiatti primo4 = new PrimiPiatti("Cappelletti in brodo", 15.0,false, true);
-        PrimiPiatti primo5 = new PrimiPiatti("Tris di ravioli", 13.0,true, true);
-        PrimiPiatti primo6 = new PrimiPiatti("Risotto radicchio e salsiccia", 15.0,false, false);
-        PrimiPiatti primo7 = new PrimiPiatti("Risotto speck e gorgonzola", 15.0,true, false);
+        PrimiPiatti primoCarne1 = new PrimiPiatti("Lasagne alla bolognese", 12.0,false, true);
+        PrimiPiatti primoCarne2 = new PrimiPiatti("Tagliatelle al ragù", 10.0, false, true);
+        PrimiPiatti primoCarne3 = new PrimiPiatti("Rigatoni alla carbonara", 11.0,false, false);
+        PrimiPiatti primoCarne4 = new PrimiPiatti("Cappelletti in brodo", 15.0,false, true);
+        PrimiPiatti primoCarne5 = new PrimiPiatti("Tris di ravioli", 13.0,true, true);
+        PrimiPiatti primoCarne6 = new PrimiPiatti("Risotto radicchio e salsiccia", 15.0,false, false);
+        PrimiPiatti primoCarne7 = new PrimiPiatti("Risotto speck e gorgonzola", 15.0,true, false);
 
-        SecondiPiatti secondo1 = new SecondiPiatti("Hamburger Di Manzo", 10.0, true);
-        SecondiPiatti secondo2 = new SecondiPiatti("Hamburger Di Manzo con Salsa al Gorgonzola", 12.0, true);
-        SecondiPiatti secondo3 = new SecondiPiatti("Polpette Di Manzo Alla Siciliana", 11.0, true);
-        SecondiPiatti secondo4 = new SecondiPiatti("Cotolettine Di Arista Arrosto", 11.0, false );
-        SecondiPiatti secondo5 = new SecondiPiatti("Scaloppine Limone e Zenzero", 11.0, true);
-        SecondiPiatti secondo6 = new SecondiPiatti("Scaloppina All'arancia Con Granella Di Pistacchio", 12.0, true);
-        SecondiPiatti secondo7 = new SecondiPiatti("Straccetti Di Vitello Con Salsa All'aceto Balsamico", 13.0, false);
+        SecondiPiatti secondoCarne1 = new SecondiPiatti("Hamburger Di Manzo", 10.0, true);
+        SecondiPiatti secondoCarne2 = new SecondiPiatti("Hamburger Di Manzo con Salsa al Gorgonzola", 12.0, true);
+        SecondiPiatti secondoCarne3 = new SecondiPiatti("Polpette Di Manzo Alla Siciliana", 11.0, true);
+        SecondiPiatti secondoCarne4 = new SecondiPiatti("Cotolettine Di Arista Arrosto", 11.0, false );
+        SecondiPiatti secondoCarne5 = new SecondiPiatti("Scaloppine Limone e Zenzero", 11.0, true);
+        SecondiPiatti secondoCarne6 = new SecondiPiatti("Scaloppina All'arancia Con Granella Di Pistacchio", 12.0, true);
+        SecondiPiatti secondoCarne7 = new SecondiPiatti("Straccetti Di Vitello Con Salsa All'aceto Balsamico", 13.0, false);
 
-        Dessert dessert1 = new Dessert("Tiramisù", 8.0, "SEMI-FREDDO", false);
-        Dessert dessert2 = new Dessert("Tarallo Aviglianese", 7.0, "FREDDO", false);
-        Dessert dessert3 = new Dessert("Sbriciolata al Castagnaccio", 8.0, "CALDO", true);
-        Dessert dessert4 = new Dessert("Creme brulée", 5.0, "CALDO", false);
-        Dessert dessert5 = new Dessert("Sorbetto al limone", 3.0, "FREDDO", true);
+        Dessert dessertCarneEPesce1 = new Dessert("Tiramisù", 8.0, "SEMI-FREDDO", false);
+        Dessert dessertCarneEPesce2 = new Dessert("Tarallo Aviglianese", 7.0, "FREDDO", false);
+        Dessert dessertCarneEPesce3 = new Dessert("Sbriciolata al Castagnaccio", 8.0, "CALDO", true);
+        Dessert dessertCarneEPesce4 = new Dessert("Creme brulée", 5.0, "CALDO", false);
+        Dessert dessertCarneEPesce5 = new Dessert("Sorbetto al limone", 3.0, "FREDDO", true);
 
         Bevande bevanda1 = new Bevande("Acqua minerale naturale", 1.5);
         Bevande bevanda2 = new Bevande("Coca-cola", 2.5);
         Bevande bevanda3 = new Bevande("Vino Rosso", 5.0, "(alc. 12%)");
-        Bevande bevanda4 = new Bevande("Birra alla spina", 3.0, "(alc. 4,5%)");
+        Bevande bevanda4 = new Bevande("Vino Bianco", 5.0, "(alc. 10,5%)");
+        Bevande bevanda5 = new Bevande("Birra alla spina", 3.0, "(alc. 4,5%)");
 
-        menu.addPortata(antipasto1);
-        menu.addPortata(antipasto2);
-        menu.addPortata(antipasto3);
-        menu.addPortata(antipasto4);
+        menuCarne.addPortata(antipastoCarne1);
+        menuCarne.addPortata(antipastoCarne2);
+        menuCarne.addPortata(antipastoCarne3);
+        menuCarne.addPortata(antipastoCarne4);
 
-        menu.addPortata(primo1);
-        menu.addPortata(primo2);
-        menu.addPortata(primo3);
-        menu.addPortata(primo4);
-        menu.addPortata(primo5);
-        menu.addPortata(primo6);
-        menu.addPortata(primo7);
+        menuCarne.addPortata(primoCarne1);
+        menuCarne.addPortata(primoCarne2);
+        menuCarne.addPortata(primoCarne3);
+        menuCarne.addPortata(primoCarne4);
+        menuCarne.addPortata(primoCarne5);
+        menuCarne.addPortata(primoCarne6);
+        menuCarne.addPortata(primoCarne7);
 
-        menu.addPortata(secondo1);
-        menu.addPortata(secondo2);
-        menu.addPortata(secondo3);
-        menu.addPortata(secondo4);
-        menu.addPortata(secondo5);
-        menu.addPortata(secondo6);
-        menu.addPortata(secondo7);
+        menuCarne.addPortata(secondoCarne1);
+        menuCarne.addPortata(secondoCarne2);
+        menuCarne.addPortata(secondoCarne3);
+        menuCarne.addPortata(secondoCarne4);
+        menuCarne.addPortata(secondoCarne5);
+        menuCarne.addPortata(secondoCarne6);
+        menuCarne.addPortata(secondoCarne7);
 
-        menu.addPortata(dessert1);
-        menu.addPortata(dessert2);
-        menu.addPortata(dessert3);
-        menu.addPortata(dessert4);
-        menu.addPortata(dessert5);
+        menuCarne.addPortata(dessertCarneEPesce1);
+        menuCarne.addPortata(dessertCarneEPesce2);
+        menuCarne.addPortata(dessertCarneEPesce3);
+        menuCarne.addPortata(dessertCarneEPesce4);
+        menuCarne.addPortata(dessertCarneEPesce5);
 
-        menu.addPortata(bevanda1);
-        menu.addPortata(bevanda2);
-        menu.addPortata(bevanda3);
-        menu.addPortata(bevanda4);
+        menuCarne.addPortata(bevanda1);
+        menuCarne.addPortata(bevanda2);
+        menuCarne.addPortata(bevanda3);
+        menuCarne.addPortata(bevanda4);
+        menuCarne.addPortata(bevanda5);
 
-        menu.stampaMenuCompleto();
+        menuCarne.stampaMenuCompleto();
 
+        Menu menuPesce = new Menu("Mario Rossi", MenuTypeEnum.PESCE);
 
+        Antipasti antipastoPesce1 = new Antipasti("Bruschette ", 1.0, 4 );
+        Antipasti antipastoPesce2 = new Antipasti("Prosciutto", 2.0) ;
+        Antipasti antipastoPesce3 = new Antipasti("Tortine Salate", 3.0, 4);
+        Antipasti antipastoPesce4 = new Antipasti("Burrata", 3.0);
+
+        PrimiPiatti primoPesce1 = new PrimiPiatti("Lasagne alla bolognese", 12.0,false, true);
+        PrimiPiatti primoPesce2 = new PrimiPiatti("Tagliatelle al ragù", 10.0, false, true);
+        PrimiPiatti primoPesce3 = new PrimiPiatti("Rigatoni alla carbonara", 11.0,false, false);
+        PrimiPiatti primoPesce4 = new PrimiPiatti("Cappelletti in brodo", 15.0,false, true);
+        PrimiPiatti primoPesce5 = new PrimiPiatti("Tris di ravioli", 13.0,true, true);
+        PrimiPiatti primoPesce6 = new PrimiPiatti("Risotto radicchio e salsiccia", 15.0,false, false);
+        PrimiPiatti primoPesce7 = new PrimiPiatti("Risotto speck e gorgonzola", 15.0,true, false);
+
+        SecondiPiatti secondoPesce1 = new SecondiPiatti("Hamburger Di Manzo", 10.0, true);
+        SecondiPiatti secondoPesce2 = new SecondiPiatti("Hamburger Di Manzo con Salsa al Gorgonzola", 12.0, true);
+        SecondiPiatti secondoPesce3 = new SecondiPiatti("Polpette Di Manzo Alla Siciliana", 11.0, true);
+        SecondiPiatti secondoPesce4 = new SecondiPiatti("Cotolettine Di Arista Arrosto", 11.0, false );
+        SecondiPiatti secondoPesce5 = new SecondiPiatti("Scaloppine Limone e Zenzero", 11.0, true);
+        SecondiPiatti secondoPesce6 = new SecondiPiatti("Scaloppina All'arancia Con Granella Di Pistacchio", 12.0, true);
+        SecondiPiatti secondoPesce7 = new SecondiPiatti("Straccetti Di Vitello Con Salsa All'aceto Balsamico", 13.0, false);
+
+        menuPesce.addPortata(antipastoPesce1);
+        menuPesce.addPortata(antipastoPesce2);
+        menuPesce.addPortata(antipastoPesce3);
+        menuPesce.addPortata(antipastoPesce4);
+
+        menuPesce.addPortata(primoPesce1);
+        menuPesce.addPortata(primoPesce2);
+        menuPesce.addPortata(primoPesce3);
+        menuPesce.addPortata(primoPesce4);
+        menuPesce.addPortata(primoPesce5);
+        menuPesce.addPortata(primoPesce6);
+        menuPesce.addPortata(primoPesce7);
+
+        menuPesce.addPortata(secondoPesce1);
+        menuPesce.addPortata(secondoPesce2);
+        menuPesce.addPortata(secondoPesce3);
+        menuPesce.addPortata(secondoPesce4);
+        menuPesce.addPortata(secondoPesce5);
+        menuPesce.addPortata(secondoPesce6);
+        menuPesce.addPortata(secondoPesce7);
+
+        menuPesce.addPortata(dessertCarneEPesce1);
+        menuPesce.addPortata(dessertCarneEPesce2);
+        menuPesce.addPortata(dessertCarneEPesce3);
+        menuPesce.addPortata(dessertCarneEPesce4);
+        menuPesce.addPortata(dessertCarneEPesce5);
+
+        menuPesce.addPortata(bevanda1);
+        menuPesce.addPortata(bevanda2);
+        menuPesce.addPortata(bevanda3);
+        menuPesce.addPortata(bevanda4);
+        menuPesce.addPortata(bevanda5);
+
+        menuPesce.stampaMenuCompleto();
     }
 }

@@ -1,5 +1,7 @@
 package src;
 
+import src.enums.ColorEnum;
+import src.enums.MenuTypeEnum;
 import src.portate.*;
 
 
@@ -8,15 +10,13 @@ import java.util.*;
 import static java.lang.Math.round;
 
 public class Menu {
-
+    protected MenuTypeEnum menuType;
     protected String chef;
-
-    protected String menuType;
 
     protected List<Portata> listaPortate = new ArrayList<>();
 
 
-    public Menu(String chef, String menuType) {
+    public Menu(String chef, MenuTypeEnum menuType) {
         this.chef = chef;
         this.menuType = menuType;
     }
@@ -37,13 +37,12 @@ public class Menu {
         return round(prezzoMedioPortata * 3);
     }
 
-
     public void stampaMenuCompleto() {
-        System.out.println("\n");
-        System.out.println(ColorEnum.BLUE.get() + "RISTORANTE TEAM 2 JAVA 13" + ColorEnum.RESET.get());
-        System.out.println("");
+    //    System.out.println("\n");
+    //    System.out.println(ColorEnum.BLUE.get() + "RISTORANTE TEAM 2 JAVA 13" + ColorEnum.RESET.get());
+    //    System.out.println("");
         System.out.println(ColorEnum.GREEN.get() + "Chef: " + this.chef + ColorEnum.RESET.get());
-        System.out.println(ColorEnum.RED.get() + this.menuType + ColorEnum.RESET.get());
+        System.out.println(ColorEnum.RED.get() + menuType.getDescrizione() + ColorEnum.RESET.get());
         System.out.println("");
         System.out.println("Prezzo medio (calcolato su 3 portate): " + prezzoMedioMenu() + " €");
         System.out.println("\n");
