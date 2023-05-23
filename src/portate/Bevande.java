@@ -2,14 +2,14 @@ package src.portate;
 
 public class Bevande extends Portata {
 
-    private String gradazioneAlcolica;
+   protected String gradazioneAlcolica;
 
-    public Bevande(String descrizione, double prezzo, String gradazioneAlcolica) {
+    public Bevande(String descrizione, Double prezzo, String gradazioneAlcolica) {
         super(descrizione, prezzo);
         this.gradazioneAlcolica = gradazioneAlcolica;
     }
 
-    public Bevande(String descrizione, double prezzo) {
+    public Bevande(String descrizione, Double prezzo) {
         super(descrizione, prezzo);
     }
 
@@ -21,21 +21,15 @@ public class Bevande extends Portata {
         this.gradazioneAlcolica = gradazioneAlcolica;
     }
 
-
-
     @Override
-    public String stringaPortataCompleta(String descrizione) {
-        if (gradazioneAlcolica != null) {
-            String stringaTotale = descrizione + "€ " + getPrezzo() + " " + gradazioneAlcolica;
-            return stringaTotale;
-
-        } else {
-            String stringaTotale = descrizione + "€ " + getPrezzo();
-            return stringaTotale;
+    public void printPortata() {
+        super.printPortata();
+        if(gradazioneAlcolica != null){
+            System.out.println(gradazioneAlcolica);
         }
-
-
+        System.out.println("");
     }
+
 }
 
 

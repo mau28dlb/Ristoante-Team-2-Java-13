@@ -2,16 +2,14 @@ package src.portate;
 
 public abstract class Portata {
 
-    private String descrizione;
-    private double prezzo;
+    protected String descrizione;
+    protected Double prezzo;
 
 
-    public Portata(String descrizione, double prezzo) {
+    public Portata(String descrizione, Double prezzo) {
         this.descrizione = descrizione;
         this.prezzo = prezzo;
     }
-
-    
     public String getDescrizione() {
         return descrizione;
     }
@@ -20,19 +18,21 @@ public abstract class Portata {
         this.descrizione = descrizione;
     }
 
-    public double getPrezzo() {
+    public Double getPrezzo() {
         return prezzo;
     }
 
-    public void setPrezzo(double prezzo) {
+    public void setPrezzo(Double prezzo) {
         this.prezzo = prezzo;
     }
 
 
-    public  String stringaPortataDescrizione(){
-        String descrizione = getDescrizione();
-        return descrizione;
+   public void printPortata() {
+        while (descrizione.length() <= 70){
+            descrizione += " ";
+        }
+        System.out.println(descrizione + prezzo + " €");
     }
 
-    public abstract String stringaPortataCompleta(String descrizione);
+
 }

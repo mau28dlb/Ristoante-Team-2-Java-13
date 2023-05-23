@@ -2,27 +2,26 @@ package src.portate;
 
 public class SecondiPiatti extends Portata {
 
-    private boolean isAlwaysAvailable;
+   protected boolean isAlwaysAvailable;
 
 
-    public SecondiPiatti(String descrizione, double prezzo) {
+    public SecondiPiatti(String descrizione, Double prezzo) {
         super(descrizione, prezzo);
     }
 
 
-    public SecondiPiatti(String descrizione, double prezzo, boolean isAlwaysAvailable) {
+    public SecondiPiatti(String descrizione, Double prezzo, boolean isAlwaysAvailable) {
         super(descrizione, prezzo);
         this.isAlwaysAvailable = isAlwaysAvailable;
     }
-    @Override
-    public String stringaPortataCompleta(String descrizione) {
-        if(!isAlwaysAvailable){
-            String stringaTotale = descrizione +  "€ " + getPrezzo() + " (Solo a pranzo)" ;
-            return stringaTotale;
 
-        } else {
-            String stringaTotale = descrizione + "€ " + getPrezzo();
-            return stringaTotale;
+    @Override
+    public void printPortata() {
+        super.printPortata();
+        if(!isAlwaysAvailable){
+            System.out.println("(Solo a pranzo)");
         }
+        System.out.println("");
     }
+
 }
