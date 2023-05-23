@@ -30,6 +30,7 @@ public class Menu {
     }
 
 
+
     public double prezzoMedioMenu() {
         double totPortata = 0;
 
@@ -50,7 +51,7 @@ public class Menu {
 
         System.out.println(ColorEnum.BLUE.get() + "*** Antipasti ***" + ColorEnum.RESET.get());
         for (Portata portata : listaPortate) {
-            if (portata instanceof Antipasti) {
+            if (portata.getClass() == Antipasti.class) {
                 portata.printPortata();
             }
         }
@@ -58,7 +59,7 @@ public class Menu {
        System.out.println("\n");
         System.out.println(ColorEnum.CYAN.get() + "*** Primi Piatti ***" + ColorEnum.RESET.get());
         for (Portata portata : listaPortate) {
-            if(portata instanceof PrimiPiatti){
+            if(portata.getClass() == PrimiPiatti.class){
                 portata.printPortata();
             }
         }
@@ -66,7 +67,7 @@ public class Menu {
         System.out.println("\n");
         System.out.println(ColorEnum.RED.get() + "*** Secondi Piatti ***" + ColorEnum.RESET.get());
         for (Portata portata : listaPortate) {
-            if (portata instanceof SecondiPiatti) {
+            if (portata.getClass() == SecondiPiatti.class) {
                 portata.printPortata();
             }
         }
@@ -74,7 +75,7 @@ public class Menu {
         System.out.println("\n");
         System.out.println(ColorEnum.YELLOW.get() + "*** Dessert ***" + ColorEnum.RESET.get());
         for (Portata portata : listaPortate) {
-            if (portata instanceof Dessert) {
+            if (portata.getClass() == Dessert.class) {
                 portata.printPortata();
             }
         }
@@ -82,9 +83,11 @@ public class Menu {
         System.out.println("\n");
         System.out.println(ColorEnum.PURPLE.get() + "*** Bevande ***" + ColorEnum.RESET.get());
         for (Portata portata : listaPortate) {
-            if (portata instanceof Bevande) {
+            if (portata.getClass() == Bevande.class) {
                 portata.printPortata();
             }
         }
+
     }
+
 }

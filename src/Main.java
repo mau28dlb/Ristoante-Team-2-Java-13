@@ -97,6 +97,7 @@ public class Main {
         SecondiPiatti secondoPesce6 = new SecondiPiatti("Scaloppina All'arancia Con Granella Di Pistacchio", 12.0, true);
         SecondiPiatti secondoPesce7 = new SecondiPiatti("Straccetti Di Vitello Con Salsa All'aceto Balsamico", 13.0, false);
 
+
         menuPesce.addPortata(antipastoPesce1);
         menuPesce.addPortata(antipastoPesce2);
         menuPesce.addPortata(antipastoPesce3);
@@ -133,7 +134,31 @@ public class Main {
         ristorante.addMenu(menuCarne);
         ristorante.addMenu(menuPesce);
 
-        ristorante.stampaMenuSpecifico(MenuTypeEnum.CARNE);
 
+        PrimiPiatti primoPiattoDelGiorno1 = new PrimiPiatti("Pasta al forno besciamella e macinato di carne", 14.0, false,false);
+        PrimiPiatti primoPiattoDelGiorno2 = new PrimiPiatti("Ravioli al montasio con ripieno di zucca e guanciale",15.0,false,true);
+        PrimiPiatti primoPiattoDelGiorno3 = new PrimiPiatti("Pennette con salsiccia e caprino",13.0,false,false);
+        PrimiPiatti primoPiattoDelGiorno4 = new PrimiPiatti("Spaghetti con polpette al sugo",13.0,false,false);
+        PrimiPiatti primoPiattoDelGiorno5 = new PrimiPiatti("Pasta alla Zozzona",14.0,true,false);
+
+
+        SecondiPiatti secondoPiattoDelGiorno1 = new SecondiPiatti("Maialino arrosto con patate al forno", 16.0,true);
+        SecondiPiatti secondoPiattoDelGiorno2 = new SecondiPiatti("Involtini di carne al pistacchio",18.0,true);
+        SecondiPiatti secondoPiattoDelGiorno3 = new SecondiPiatti("Filetto in crosta",22.0,true);
+        SecondiPiatti secondoPiattoDelGiorno4 = new SecondiPiatti("Arrosto all'arancia",18.0,true);
+        SecondiPiatti secondoPiattoDelGiorno5 = new SecondiPiatti("Polpettone con fontina",16.0,true);
+
+        ristorante.addPiattoDelGiorno(1, primoPiattoDelGiorno1);
+        ristorante.addPiattoDelGiorno(2, primoPiattoDelGiorno2);
+        ristorante.addPiattoDelGiorno(3, primoPiattoDelGiorno3);
+        ristorante.addPiattoDelGiorno(4, primoPiattoDelGiorno4);
+        ristorante.addPiattoDelGiorno(5, primoPiattoDelGiorno5);
+        ristorante.addPiattoDelGiorno(6, secondoPiattoDelGiorno1);
+        ristorante.addPiattoDelGiorno(7, secondoPiattoDelGiorno2);
+        ristorante.addPiattoDelGiorno(8, secondoPiattoDelGiorno3);
+        ristorante.addPiattoDelGiorno(9, secondoPiattoDelGiorno4);
+        ristorante.addPiattoDelGiorno(10, secondoPiattoDelGiorno5);
+
+        ristorante.stampaRistorante(1,6);
     }
 }
