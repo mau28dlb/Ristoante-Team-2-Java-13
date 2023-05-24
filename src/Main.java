@@ -167,7 +167,7 @@ public class Main {
         SecondiPiatti secondoPiattoDelGiorno4 = new SecondiPiatti("Arrosto all'arancia",18.0,true);
         SecondiPiatti secondoPiattoDelGiorno5 = new SecondiPiatti("Polpettone con fontina",16.0,true);
 
-        ristorante.addPiattoDelGiorno(1, primoPiattoDelGiorno1);
+        ristorante.addPiattoDelGiorno( primoPiattoDelGiorno1);
         ristorante.addPiattoDelGiorno(2, primoPiattoDelGiorno2);
         ristorante.addPiattoDelGiorno(3, primoPiattoDelGiorno3);
         ristorante.addPiattoDelGiorno(4, primoPiattoDelGiorno4);
@@ -178,6 +178,6 @@ public class Main {
         ristorante.addPiattoDelGiorno(9, secondoPiattoDelGiorno4);
         ristorante.addPiattoDelGiorno(10, secondoPiattoDelGiorno5);
 
-        ristorante.stampaMenuSpecifico(MenuTypeEnum.VEGANO,1,6);
+        ristorante.stampaMenuSpecifico(MenuTypeEnum.VEGANO,primoPiattoDelGiorno1,secondoPiattoDelGiorno1);
     }
 }

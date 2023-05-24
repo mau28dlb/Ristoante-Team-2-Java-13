@@ -1,0 +1,48 @@
+Ristorante Team 2 Java 13
+
+Menu di carne
+
+portate.Antipasti
+
+- Bruschette                                              € 1
+- Prosciutto                                              € 2
+- Tortine salate                                          € 3
+- Burrata                                                 € 3
+
+
+Primi piatti
+
+- Lasagne alla bolognese                                  € 12
+- Tagliatelle al ragù                                     € 10
+- Rigatoni alla carbonara                                 € 11
+- Cappelletti in brodo                                    € 14
+- Tris di ravioli                                         € 13
+
+
+Secondi Piatti
+
+-	Hamburger Di Manzo                                      € 9
+-	Hamburger Di Manzo con Salsa al Gorgonzola              € 11
+-	Polpette Di Manzo Alla Siciliana                        € 10
+-	Cotolettine Di Arista Arrosto                           € 10
+-	Scaloppine Limone e Zenzero                             € 10
+- Scaloppina All'arancia Con Granella Di Pistacchio       € 11
+- Straccetti Di Vitello Con Salsa All'aceto Balsamico     € 13
+- Baccalà Pastellato al Mais                              € 12
+
+
+Desserts
+
+-	Tiramisù classico                                       € 7
+-	Tarallo Aviglianese                                     € 8
+-	Sbriciolata al Castagnaccio                             € 6
+-	Creme brulée                                            € 5
+-	Sorbetto al limone                                      € 3
+
+
+portate.Bevande
+
+- Acqua minerale naturale                                 € 1
+- Coca Cola                                               € 2
+- Vino Rosso                                              € 3
+- Birra alla spina                                        € 3

@@ -26,11 +26,14 @@ public abstract class Portata {
         this.prezzo = prezzo;
     }
 
+    //TODO come facciamo a stampare colori diversi ? metodo che prende un enumerato
 
    public void printPortata() {
         while (descrizione.length() <= 70){
             descrizione += " ";
         }
+        //TODO 70 - descr.lenght 10 = 60
+       //Lorenzo sistare
         System.out.println(descrizione + prezzo + " €");
     }
 

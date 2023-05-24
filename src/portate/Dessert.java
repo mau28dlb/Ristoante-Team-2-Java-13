@@ -12,6 +12,7 @@ public class Dessert extends Portata {
     public Dessert(String descrizione, Double prezzo, String temperatura, boolean glutenFree) {
         super(descrizione, prezzo);
         this.glutenFree = glutenFree;
+        //TODO fare un enumerato e spostare in stampa questo controllo
         if(temperatura.equals("SEMI-FREDDO") || temperatura.equals("FREDDO") || temperatura.equals("CALDO")){
             this.temperatura = temperatura;
         }
