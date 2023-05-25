@@ -5,21 +5,26 @@ import src.enums.MenuTypeEnum;
 import src.portate.*;
 import java.util.*;
 import static java.lang.Math.round;
+import src.Ristorante;
 
 
 public class Menu {
     protected MenuTypeEnum menuType;
-    protected String chef;
+    //protected String chef;
     protected List<Portata> listaPortate = new ArrayList<>();
 
 
-    public Menu(String chef, MenuTypeEnum menuType) {
-        this.chef = chef;
+    public Menu(MenuTypeEnum menuType) {
+
         this.menuType = menuType;
     }
 
     public MenuTypeEnum getMenuType() {
         return menuType;
+    }
+
+    public List<Portata> getListaPortate() {
+        return listaPortate;
     }
 
     public void addPortata(Portata portata) {
@@ -38,7 +43,6 @@ public class Menu {
     }
 
     public void stampaMenuCompleto() {
-        System.out.println(ColorEnum.GREEN.get() + "Chef: " + this.chef + ColorEnum.RESET.get());
         System.out.println(ColorEnum.RED.get() + menuType.getDescrizione() + ColorEnum.RESET.get());
         System.out.println("");
         System.out.println("Prezzo medio (calcolato su 3 portate): " + prezzoMedioMenu() + " €");

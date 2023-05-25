@@ -4,11 +4,11 @@ import src.portate.*;
 
 public class Main {
     public static void main(String[] args) {
-        Ristorante ristorante = new Ristorante();
+        Ristorante ristorante = new Ristorante("RISTORANTE ROSSI", "via Roma 132, Palermo", "Luca Rossi");
 
-        Menu menuCarne = new Menu("Luca Rossi", MenuTypeEnum.CARNE);
-        Menu menuPesce = new Menu("Mario Rossi", MenuTypeEnum.PESCE);
-        Menu menuVegan = new Menu("Simona Rossi", MenuTypeEnum.VEGANO);
+        Menu menuCarne = new Menu( MenuTypeEnum.CARNE);
+        Menu menuPesce = new Menu( MenuTypeEnum.PESCE);
+        Menu menuVegan = new Menu( MenuTypeEnum.VEGANO);
 
         Antipasti antipastoCarne1 = new Antipasti("Bruschette ", 1.0, 4 );
         Antipasti antipastoCarne2 = new Antipasti("Prosciutto", 2.0) ;
@@ -88,7 +88,7 @@ public class Main {
 
         SecondiPiatti secondoPesce1 = new SecondiPiatti("Sformato di polpo al forno con patate al limone", 12.0, true);
         SecondiPiatti secondoPesce2 = new SecondiPiatti("Trancio di cernia al vapore", 14.0, false);
-        SecondiPiatti secondoPesce3 = new SecondiPiatti("Involtini di pesce spada Alla Siciliana", 11.5, true);
+        SecondiPiatti secondoPesce3 = new SecondiPiatti("Involtini di pesce spada alla Siciliana", 11.5, true);
         SecondiPiatti secondoPesce4 = new SecondiPiatti("Gamberoni arrosto", 13.0, false );
 
         menuPesce.addPortata(antipastoPesce1);
@@ -167,17 +167,18 @@ public class Main {
         SecondiPiatti secondoPiattoDelGiorno4 = new SecondiPiatti("Arrosto all'arancia",18.0,true);
         SecondiPiatti secondoPiattoDelGiorno5 = new SecondiPiatti("Polpettone con fontina",16.0,true);
 
-        ristorante.addPiattoDelGiorno( primoPiattoDelGiorno1);
-        ristorante.addPiattoDelGiorno(2, primoPiattoDelGiorno2);
-        ristorante.addPiattoDelGiorno(3, primoPiattoDelGiorno3);
-        ristorante.addPiattoDelGiorno(4, primoPiattoDelGiorno4);
-        ristorante.addPiattoDelGiorno(5, primoPiattoDelGiorno5);
-        ristorante.addPiattoDelGiorno(6, secondoPiattoDelGiorno1);
-        ristorante.addPiattoDelGiorno(7, secondoPiattoDelGiorno2);
-        ristorante.addPiattoDelGiorno(8, secondoPiattoDelGiorno3);
-        ristorante.addPiattoDelGiorno(9, secondoPiattoDelGiorno4);
-        ristorante.addPiattoDelGiorno(10, secondoPiattoDelGiorno5);
-
-        ristorante.stampaMenuSpecifico(MenuTypeEnum.VEGANO,primoPiattoDelGiorno1,secondoPiattoDelGiorno1);
+//        ristorante.addPiattoDelGiorno( primoPiattoDelGiorno1);
+//        ristorante.addPiattoDelGiorno(2, primoPiattoDelGiorno2);
+//        ristorante.addPiattoDelGiorno(3, primoPiattoDelGiorno3);
+//        ristorante.addPiattoDelGiorno(4, primoPiattoDelGiorno4);
+//        ristorante.addPiattoDelGiorno(5, primoPiattoDelGiorno5);
+//        ristorante.addPiattoDelGiorno(6, secondoPiattoDelGiorno1);
+//        ristorante.addPiattoDelGiorno(7, secondoPiattoDelGiorno2);
+//        ristorante.addPiattoDelGiorno(8, secondoPiattoDelGiorno3);
+//        ristorante.addPiattoDelGiorno(9, secondoPiattoDelGiorno4);
+//        ristorante.addPiattoDelGiorno(10, secondoPiattoDelGiorno5);
+//
+//        ristorante.stampaMenuSpecifico(MenuTypeEnum.VEGANO,primoPiattoDelGiorno1,secondoPiattoDelGiorno1);
+        ristorante.stampaMenuSpecifico(MenuTypeEnum.VEGANO);
     }
 }
