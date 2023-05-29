@@ -1,5 +1,6 @@
 package src;
 import src.enums.MenuTypeEnum;
+import src.enums.TemperatureDesertEnum;
 import src.portate.*;
 
 public class Main {
@@ -31,11 +32,11 @@ public class Main {
         SecondiPiatti secondoCarne6 = new SecondiPiatti("Scaloppina All'arancia Con Granella Di Pistacchio", 12.0, true);
         SecondiPiatti secondoCarne7 = new SecondiPiatti("Straccetti Di Vitello Con Salsa All'aceto Balsamico", 13.0, false);
 
-        Dessert dessertCarneEPesce1 = new Dessert("Tiramisù", 8.0, "SEMI-FREDDO", false);
-        Dessert dessertCarneEPesce2 = new Dessert("Tarallo Aviglianese", 7.0, "FREDDO", false);
-        Dessert dessertCarneEPesce3 = new Dessert("Sbriciolata al Castagnaccio", 8.0, "CALDO", true);
-        Dessert dessertCarneEPesce4 = new Dessert("Creme brulée", 5.0, "CALDO", false);
-        Dessert dessertCarneEPesce5 = new Dessert("Sorbetto al limone", 3.0, "FREDDO", true);
+        Dessert dessertCarneEPesce1 = new Dessert("Tiramisù", 8.0, TemperatureDesertEnum.SEMI_FREDDO, false);
+        Dessert dessertCarneEPesce2 = new Dessert("Tarallo Aviglianese", 7.0, TemperatureDesertEnum.FREDDO, false);
+        Dessert dessertCarneEPesce3 = new Dessert("Sbriciolata al Castagnaccio", 8.0, TemperatureDesertEnum.CALDO, true);
+        Dessert dessertCarneEPesce4 = new Dessert("Creme brulée", 5.0, TemperatureDesertEnum.CALDO, false);
+        Dessert dessertCarneEPesce5 = new Dessert("Sorbetto al limone", 3.0, TemperatureDesertEnum.FREDDO, true);
 
         Bevande bevanda1 = new Bevande("Acqua minerale naturale", 1.5);
         Bevande bevanda2 = new Bevande("Coca-cola", 2.5);
@@ -130,8 +131,8 @@ public class Main {
         SecondiPiatti secondoVegan2 = new SecondiPiatti("Bastoncini di tempeh su crema di zucchine", 14.5, true);
         SecondiPiatti secondoVegan3 = new SecondiPiatti("Spiedini di polpette di soia e zucchine al forno con patate rustiche", 12.0, true);
 
-        Dessert dessertVegano1 = new Dessert("Tiramisù vegano senza uova", 7.5, "FREDDO", true );
-        Dessert dessertVegano2 = new Dessert("Panna cotta vegana ai due cioccolati", 6.5, "FREDDO", true );
+        Dessert dessertVegano1 = new Dessert("Tiramisù vegano senza uova", 7.5, TemperatureDesertEnum.FREDDO, true );
+        Dessert dessertVegano2 = new Dessert("Panna cotta vegana ai due cioccolati", 6.5, TemperatureDesertEnum.FREDDO, true );
 
         menuVegan.addPortata(antipastoVegan1);
         menuVegan.addPortata(antipastoVegan2);
