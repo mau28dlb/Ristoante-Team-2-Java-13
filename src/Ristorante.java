@@ -1,6 +1,6 @@
 package src;
 
-import java.util.ArrayList;
+import java.util.*;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -22,7 +22,8 @@ public class Ristorante {
     protected String chef;
     protected ArrayList<Menu> menuList = new ArrayList<>();
     protected Map<Integer, Portata> piattoDelGiorno = new TreeMap<>();
-    protected Map<Cliente, TavoloEnum> listaPrenotazione = new TreeMap<>();
+    protected List<Tavolo> listaTavoli = new ArrayList<>();
+    protected Map<Cliente, Tavolo> listaPrenotazione = new TreeMap<>();
     protected int totaleNumeroTavoli = 10;
 
     public Ristorante(String nomeRistorante, String indirizzoRistorante, String chef) {
@@ -75,13 +76,14 @@ public class Ristorante {
 //        stampaPortataDelGiorno(n, n2);
     }
 
+
+    public void addTavolo(Tavolo tavolo){
+        listaTavoli.add(tavolo);
+    }
     public void aggiungiPrenotazione(Cliente cliente) {
-
-        TavoloEnum tavoloScelto = null;
-
-        for (TavoloEnum tavolo : listaPrenotazione.values()) {
-
-            if (listaPrenotazione.values().size() < totaleNumeroTavoli && tavolo.getNumeroPosti() >= cliente.getNumeroPersone()) {
+        Tavolo  tavoloScelto = null;
+        for (Tavolo tavolo : listaTavoli) {
+            if ((listaPrenotazione.size() <= totaleNumeroTavoli) && (tavolo.getTavolo().getNumeroPosti() >= cliente.getNumeroPersone())) {
                 tavoloScelto = tavolo;
             }
         }
@@ -90,10 +92,9 @@ public class Ristorante {
     }
 
     public void printListaPrenotazioni(){
-        for (Map.Entry<Cliente, TavoloEnum> e : listaPrenotazione.entrySet()
-             ) {
-            System.out.println(e.getKey());
-            System.out.println(e.getValue());
+        for (Map.Entry<Cliente, Tavolo> e : listaPrenotazione.entrySet()) {
+            System.out.println("Cliente : " + e.getKey().getCognome() +"Ore: " +  e.getKey().getOrarioPrenotazione() +
+                    "Persone n. " + e.getKey().getNumeroPersone() + "Tavolo" + e.getValue());
         }
     }
 }

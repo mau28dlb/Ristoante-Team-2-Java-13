@@ -1,16 +1,17 @@
 package src;
 
 import java.time.LocalTime;
+import java.time.chrono.ChronoLocalDateTime;
 
 public class Cliente {
 
     private String cognome;
     private Integer numeroPersone;
-    private LocalTime orarioPrenotazione;
+    private String orarioPrenotazione;
 
-    public Cliente(String cognome, LocalTime orarioPrenotazione, Integer numeroPersone ) {
+    public Cliente(String cognome, String orarioPrenotazione, Integer numeroPersone ) {
         this.cognome = cognome;
-        this.orarioPrenotazione = orarioPrenotazione;
+        this.orarioPrenotazione = orarioPrenotazione ;
         this.numeroPersone = numeroPersone;
     }
 
@@ -22,11 +23,11 @@ public class Cliente {
         this.cognome = cognome;
     }
 
-    public LocalTime getOrarioPrenotazione() {
+    public String getOrarioPrenotazione() {
         return orarioPrenotazione;
     }
 
-    public void setOrarioPrenotazione(LocalTime orarioPrenotazione) {
+    public void setOrarioPrenotazione(String orarioPrenotazione) {
         this.orarioPrenotazione = orarioPrenotazione;
     }
 
