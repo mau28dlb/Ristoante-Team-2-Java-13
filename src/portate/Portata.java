@@ -40,7 +40,6 @@ public abstract class Portata {
            }
                descrizione += spaziatura;
        }
-       //TODO 70 - descr.lenght 10 = 60
        //Lorenzo sistare
         System.out.println(descrizione + prezzo + " €");
     }

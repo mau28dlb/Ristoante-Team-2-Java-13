@@ -6,6 +6,7 @@ import java.util.TreeMap;
 
 import src.enums.ColorEnum;
 import src.enums.MenuTypeEnum;
+import src.enums.TavoloEnum;
 import src.portate.Portata;
 
 public class Ristorante {
@@ -16,12 +17,13 @@ public class Ristorante {
     //stampare la lista di prenotazione
 
 
-    //TODO mancano i modificatori di accesso, non c'è il costruttore , perchè?
     protected String nomeRistorante;
     protected String indirizzoRistorante;
     protected String chef;
-    protected ArrayList <Menu> menuList = new ArrayList<>();
+    protected ArrayList<Menu> menuList = new ArrayList<>();
     protected Map<Integer, Portata> piattoDelGiorno = new TreeMap<>();
+    protected Map<Cliente, TavoloEnum> listaPrenotazione = new TreeMap<>();
+    protected int totaleNumeroTavoli = 10;
 
     public Ristorante(String nomeRistorante, String indirizzoRistorante, String chef) {
         this.nomeRistorante = nomeRistorante;
@@ -29,7 +31,7 @@ public class Ristorante {
         this.chef = chef;
     }
 
-    public void addMenu(Menu menu){
+    public void addMenu(Menu menu) {
         menuList.add(menu);
     }
 
@@ -37,16 +39,16 @@ public class Ristorante {
 //        piattoDelGiorno.put(portata.getId(), portata);
 //    }
 
-    public void stampaPortataDelGiorno(Integer n, Integer n2){
+    public void stampaPortataDelGiorno(Integer n, Integer n2) {
         piattoDelGiorno.get(n).printPortata();
         piattoDelGiorno.get(n2).printPortata();
     }
 
-    public void stampaRistorante (Integer n, Integer n2){
+    public void stampaRistorante(Integer n, Integer n2) {
         System.out.println("\n");
         System.out.println(ColorEnum.BLUE.get() + nomeRistorante + ColorEnum.RESET.get());
         System.out.println("");
-        for (Menu menu : menuList){
+        for (Menu menu : menuList) {
             System.out.println("-------------------------------------------------------");
             menu.stampaMenuCompleto();
             System.out.println("-------------------------------------------------------");
@@ -56,20 +58,42 @@ public class Ristorante {
         stampaPortataDelGiorno(n, n2);
     }
 
-    public void stampaMenuSpecifico(MenuTypeEnum menuTypeEnum){
+    public void stampaMenuSpecifico(MenuTypeEnum menuTypeEnum) {
         System.out.println("\n");
         System.out.println(ColorEnum.GREEN.get() + nomeRistorante + ColorEnum.RESET.get());
         System.out.println(ColorEnum.GREEN.get() + indirizzoRistorante + ColorEnum.RESET.get());
         System.out.println("");
         System.out.println(ColorEnum.YELLOW.get() + "Chef: " + chef + ColorEnum.RESET.get());
         System.out.println("");
-        for (Menu menu : menuList){
-            if(menu.getMenuType() == menuTypeEnum){
+        for (Menu menu : menuList) {
+            if (menu.getMenuType() == menuTypeEnum) {
                 menu.stampaMenuCompleto();
             }
         }
         System.out.println("\n");
 //        System.out.println(ColorEnum.WHITE.get() + "*** Piatti del giorno ***" + ColorEnum.RESET.get());
 //        stampaPortataDelGiorno(n, n2);
+    }
+
+    public void aggiungiPrenotazione(Cliente cliente) {
+
+        TavoloEnum tavoloScelto = null;
+
+        for (TavoloEnum tavolo : listaPrenotazione.values()) {
+
+            if (listaPrenotazione.values().size() < totaleNumeroTavoli && tavolo.getNumeroPosti() >= cliente.getNumeroPersone()) {
+                tavoloScelto = tavolo;
+            }
+        }
+        if (tavoloScelto != null){
+        listaPrenotazione.put(cliente, tavoloScelto);}
+    }
+
+    public void printListaPrenotazioni(){
+        for (Map.Entry<Cliente, TavoloEnum> e : listaPrenotazione.entrySet()
+             ) {
+            System.out.println(e.getKey());
+            System.out.println(e.getValue());
+        }
     }
 }
