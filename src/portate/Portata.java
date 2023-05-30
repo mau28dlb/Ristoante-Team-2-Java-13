@@ -29,10 +29,18 @@ public abstract class Portata {
     //TODO come facciamo a stampare colori diversi ? metodo che prende un enumerato
 
    public void printPortata() {
-        while (descrizione.length() <= 70){
-            descrizione += " ";
-        }
-        //TODO 70 - descr.lenght 10 = 60
+       int maxDescriptionValue = 80;
+       int stringlenghtleft;
+       String spaziatura = " ";
+
+       if (descrizione.length() <= maxDescriptionValue) {
+           stringlenghtleft = maxDescriptionValue - descrizione.length();
+           for (int i = 0; i < stringlenghtleft; i++) {
+               spaziatura += " ";
+           }
+               descrizione += spaziatura;
+       }
+       //TODO 70 - descr.lenght 10 = 60
        //Lorenzo sistare
         System.out.println(descrizione + prezzo + " €");
     }
