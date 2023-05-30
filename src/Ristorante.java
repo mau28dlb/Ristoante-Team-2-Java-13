@@ -23,7 +23,7 @@ public class Ristorante {
     protected ArrayList<Menu> menuList = new ArrayList<>();
     protected Map<Integer, Portata> piattoDelGiorno = new TreeMap<>();
     protected List<Tavolo> listaTavoli = new ArrayList<>();
-    protected Map<Cliente, Tavolo> listaPrenotazione = new TreeMap<>();
+    protected Map<Cliente, Tavolo> listaPrenotazione = new HashMap<>();
     protected int totaleNumeroTavoli = 10;
 
     public Ristorante(String nomeRistorante, String indirizzoRistorante, String chef) {
@@ -93,8 +93,8 @@ public class Ristorante {
 
     public void printListaPrenotazioni(){
         for (Map.Entry<Cliente, Tavolo> e : listaPrenotazione.entrySet()) {
-            System.out.println("Cliente : " + e.getKey().getCognome() +"Ore: " +  e.getKey().getOrarioPrenotazione() +
-                    "Persone n. " + e.getKey().getNumeroPersone() + "Tavolo" + e.getValue());
+            System.out.println("Cliente: " + e.getKey().getCognome() +", Ore: " +  e.getKey().getOrarioPrenotazione() +
+                    ", Persone n. " + e.getKey().getNumeroPersone() + ", Tavolo: " + e.getValue().getTavolo());
         }
     }
 }

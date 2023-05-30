@@ -1,18 +1,18 @@
 package src.portate;
 
 import src.enums.MenuTypeEnum;
-import src.enums.TemperatureDesertEnum;
+import src.enums.TemperatureDessertEnum;
 
 public class Dessert extends Portata {
 
    protected boolean glutenFree;
-   protected TemperatureDesertEnum temperatura;
+   protected TemperatureDessertEnum temperatura;
 
     public Dessert(String descrizione, Double prezzo) {
         super(descrizione, prezzo);
     }
 
-    public Dessert(String descrizione, Double prezzo, TemperatureDesertEnum temperatura, boolean glutenFree) {
+    public Dessert(String descrizione, Double prezzo, TemperatureDessertEnum temperatura, boolean glutenFree) {
         super(descrizione, prezzo);
         this.glutenFree = glutenFree;
         this.temperatura = temperatura;
@@ -27,11 +27,11 @@ public class Dessert extends Portata {
         this.glutenFree = glutenFree;
     }
 
-    public TemperatureDesertEnum getTemperatura() {
+    public TemperatureDessertEnum getTemperatura() {
         return temperatura;
     }
 
-    public void TemperatureDesertEnum(TemperatureDesertEnum temperatura) {
+    public void TemperatureDesertEnum(TemperatureDessertEnum temperatura) {
         this.temperatura = temperatura;
     }
 

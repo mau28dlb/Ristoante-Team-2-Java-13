@@ -1,6 +1,6 @@
 package src.enums;
 
-public enum TemperatureDesertEnum {
+public enum TemperatureDessertEnum {
     SEMI_FREDDO (" Dessert semi-freddo"),
     CALDO (" Dessert servito caldo"),
     FREDDO (" Dessert servito freddo");
@@ -15,7 +15,7 @@ public enum TemperatureDesertEnum {
         this.descrizione = descrizione;
     }
 
-  TemperatureDesertEnum(String descrizione) {
+  TemperatureDessertEnum(String descrizione) {
         this.descrizione = descrizione;
     }
 }

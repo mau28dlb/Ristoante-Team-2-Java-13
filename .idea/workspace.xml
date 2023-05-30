@@ -7,7 +7,8 @@
     <list default="true" id="71b3f450-450c-466b-ad04-634991ef8034" name="Changes" comment="add constructor in Ristorante class, add getListaPortate in Portata">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Ristorante.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ristorante.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/portate/Portata.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/portate/Portata.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enums/TemperatureDesertEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/enums/TemperatureDessertEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/portate/Dessert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/portate/Dessert.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
