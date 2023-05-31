@@ -10,13 +10,6 @@ import src.enums.TavoloEnum;
 import src.portate.Portata;
 
 public class Ristorante {
-
-    //TODO prenotazione: serve un numero capienza massima, poi serve fare una struttura che leghi due oggetti: tavolo e cliente
-    //quindi creare le classi tavolo e cliente con i loro attributi(aiuto: i tavoli devono avere un enum o un valore per il numero
-    //di posti, il controlla da fare è di evitare l'overbooking)
-    //stampare la lista di prenotazione
-
-
     protected String nomeRistorante;
     protected String indirizzoRistorante;
     protected String chef;
@@ -83,7 +76,7 @@ public class Ristorante {
 
     public void aggiungiPrenotazione(Cliente cliente) {
         Tavolo  tavoloScelto = null;
-        int differenza = 0;
+        int differenza = Integer.MAX_VALUE;
         for (Tavolo tavolo : listaTavoli) {
             int differenzaMinima = tavolo.getTavolo().getNumeroPosti() - cliente.getNumeroPersone();
             if ((listaPrenotazione.size() < totaleNumeroTavoli) && (tavolo.getTavolo().getNumeroPosti() >= cliente.getNumeroPersone()) && (differenza >= differenzaMinima)){

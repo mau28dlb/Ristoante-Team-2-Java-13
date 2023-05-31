@@ -28,8 +28,6 @@ public abstract class Portata {
         this.prezzo = prezzo;
     }
 
-    //TODO come facciamo a stampare colori diversi ? metodo che prende un enumerato
-
    public void printPortata() {
        int maxDescriptionValue = 80;
        int stringlenghtleft;
@@ -45,6 +43,4 @@ public abstract class Portata {
        //Lorenzo sistare
         System.out.println(descrizione + prezzo + " €");
     }
-
-
 }
