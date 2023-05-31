@@ -11,7 +11,7 @@ public class Cliente {
 
     public Cliente(String cognome, String orarioPrenotazione, Integer numeroPersone ) {
         this.cognome = cognome;
-        this.orarioPrenotazione = orarioPrenotazione ;
+        this.orarioPrenotazione = orarioPrenotazione;
         this.numeroPersone = numeroPersone;
     }
 

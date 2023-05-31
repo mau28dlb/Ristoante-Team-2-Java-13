@@ -80,21 +80,32 @@ public class Ristorante {
     public void addTavolo(Tavolo tavolo){
         listaTavoli.add(tavolo);
     }
+
     public void aggiungiPrenotazione(Cliente cliente) {
         Tavolo  tavoloScelto = null;
+        int differenza = 0;
         for (Tavolo tavolo : listaTavoli) {
-            if ((listaPrenotazione.size() <= totaleNumeroTavoli) && (tavolo.getTavolo().getNumeroPosti() >= cliente.getNumeroPersone())) {
-                tavoloScelto = tavolo;
+            int differenzaMinima = tavolo.getTavolo().getNumeroPosti() - cliente.getNumeroPersone();
+            if ((listaPrenotazione.size() < totaleNumeroTavoli) && (tavolo.getTavolo().getNumeroPosti() >= cliente.getNumeroPersone()) && (differenza >= differenzaMinima)){
+                    tavoloScelto = tavolo;
+                    differenza = differenzaMinima;
             }
         }
         if (tavoloScelto != null){
-        listaPrenotazione.put(cliente, tavoloScelto);}
+        listaPrenotazione.put(cliente, tavoloScelto);
+        } else {
+            System.out.println("Non è stato possibile prenotare per il cliente " + cliente.getCognome() + "  perchè non ci sono più tavoli");
+        }
+        listaTavoli.remove(tavoloScelto);
     }
 
     public void printListaPrenotazioni(){
+        System.out.println("\n");
+        System.out.println(ColorEnum.BLUE.get() + "****************** Lista prenotazioni ***************+" + ColorEnum.RESET.get() );
         for (Map.Entry<Cliente, Tavolo> e : listaPrenotazione.entrySet()) {
-            System.out.println("Cliente: " + e.getKey().getCognome() +", Ore: " +  e.getKey().getOrarioPrenotazione() +
-                    ", Persone n. " + e.getKey().getNumeroPersone() + ", Tavolo: " + e.getValue().getTavolo());
+            System.out.println(ColorEnum.PURPLE.get()  + "Cliente: " + e.getKey().getCognome() +", Ore: " +  e.getKey().getOrarioPrenotazione() +
+                    ", Persone n. " + e.getKey().getNumeroPersone() + ", Tavolo: " + e.getValue().getNomeTavolo() + ColorEnum.RESET.get() );
         }
+        System.out.println( ColorEnum.BLUE.get()  + "****************************************************" + ColorEnum.RESET.get() );
     }
 }

@@ -21,6 +21,12 @@ public class Tavolo {
             this.tavolo = tavolo;
         }
 
+    public String getNomeTavolo() {
+        return nomeTavolo;
+    }
 
+    public void setNomeTavolo(String nomeTavolo) {
+        this.nomeTavolo = nomeTavolo;
+    }
 }
 
