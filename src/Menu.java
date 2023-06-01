@@ -55,11 +55,11 @@ public class Menu {
 
         System.out.println("\n");
         System.out.println(ColorEnum.CYAN.getAnsiCode() + "*** Primi Piatti ***" + ColorEnum.RESET.getAnsiCode());
-        listaPortate.stream().filter(primo -> (primo instanceof PrimiPiatti && ((PrimiPiatti) primo).isPiattoDelGiorno() == false)).forEach(primo -> primo.printPortata());
+        listaPortate.stream().filter(primo -> (primo instanceof PrimiPiatti && ((PrimiPiatti) primo).getIsPiattoDelGiorno() == false)).forEach(primo -> primo.printPortata());
 
         System.out.println("\n");
         System.out.println(ColorEnum.RED.getAnsiCode() + "*** Secondi Piatti ***" + ColorEnum.RESET.getAnsiCode());
-        listaPortate.stream().filter(secondo -> secondo instanceof SecondiPiatti).forEach(secondo -> secondo.printPortata());
+        listaPortate.stream().filter(secondo -> (secondo instanceof SecondiPiatti && ((SecondiPiatti) secondo).getIsPiattoDelGiorno() == false)).forEach(secondo -> secondo.printPortata());
 
         System.out.println("\n");
         System.out.println(ColorEnum.YELLOW.getAnsiCode() + "*** Dessert ***" + ColorEnum.RESET.getAnsiCode());
@@ -71,7 +71,7 @@ public class Menu {
 
         System.out.println("\n");
         System.out.println(ColorEnum.WHITE.getAnsiCode() + "*** Piatti del giorno ***" + ColorEnum.RESET.getAnsiCode());
-        listaPortate.stream().filter(primo -> (primo instanceof PrimiPiatti && ((PrimiPiatti) primo).isPiattoDelGiorno() == true)).forEach(primo -> primo.printPortata());
+
 
 
     }

@@ -3,6 +3,7 @@ package src.portate;
 public class SecondiPiatti extends Portata {
 
    protected boolean isAlwaysAvailable;
+   protected boolean isPiattoDelGiorno;
 
 
     public SecondiPiatti(String descrizione, Double prezzo) {
@@ -10,9 +11,18 @@ public class SecondiPiatti extends Portata {
     }
 
 
-    public SecondiPiatti(String descrizione, Double prezzo, boolean isAlwaysAvailable) {
+    public SecondiPiatti(String descrizione, Double prezzo, boolean isAlwaysAvailable, boolean isPiattoDelGiorno) {
         super(descrizione, prezzo);
         this.isAlwaysAvailable = isAlwaysAvailable;
+        this.isPiattoDelGiorno = isPiattoDelGiorno;
+    }
+
+    public boolean getIsPiattoDelGiorno() {
+        return this.isPiattoDelGiorno;
+    }
+
+    public void setIsPiattoDelGiorno(boolean piattoDelGiorno) {
+        this.isPiattoDelGiorno = piattoDelGiorno;
     }
 
     @Override

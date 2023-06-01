@@ -7,13 +7,14 @@ import java.util.TreeMap;
 import src.enums.ColorEnum;
 import src.enums.MenuTypeEnum;
 import src.portate.Portata;
+import src.portate.PrimiPiatti;
+import src.portate.SecondiPiatti;
 
 public class Ristorante {
     protected String nomeRistorante;
     protected String indirizzoRistorante;
     protected String chef;
     protected ArrayList<Menu> menuList = new ArrayList<>();
-    protected Map<Integer, Portata> piattoDelGiorno = new TreeMap<>();
     protected List<Tavolo> listaTavoli = new ArrayList<>();
     protected Map<Cliente, Tavolo> listaPrenotazione = new HashMap<>();
     protected int totaleNumeroTavoli = 10;
@@ -28,15 +29,6 @@ public class Ristorante {
         menuList.add(menu);
     }
 
-//    public void addPiattoDelGiorno(Portata portata) {
-//        piattoDelGiorno.put(portata.getId(), portata);
-//    }
-
-    public void stampaPortataDelGiorno(Integer n, Integer n2) {
-        piattoDelGiorno.get(n).printPortata();
-        piattoDelGiorno.get(n2).printPortata();
-    }
-
     public void stampaRistorante(Integer n, Integer n2) {
         System.out.println("\n");
         System.out.println(ColorEnum.BLUE.getAnsiCode() + nomeRistorante + ColorEnum.RESET.getAnsiCode());
@@ -48,10 +40,9 @@ public class Ristorante {
         }
         System.out.println("\n");
         System.out.println(ColorEnum.WHITE.getAnsiCode() + "*** Piatti del giorno ***" + ColorEnum.RESET.getAnsiCode());
-        stampaPortataDelGiorno(n, n2);
     }
 
-    public void stampaMenuSpecifico(MenuTypeEnum menuTypeEnum) {
+    public void stampaMenuSpecifico(MenuTypeEnum menuTypeEnum, PrimiPiatti primoPiattoDelGiorno, SecondiPiatti secondoPiattoDelGiorno) {
         System.out.println("\n");
         System.out.println(ColorEnum.GREEN.getAnsiCode() + nomeRistorante + ColorEnum.RESET.getAnsiCode());
         System.out.println(ColorEnum.GREEN.getAnsiCode() + indirizzoRistorante + ColorEnum.RESET.getAnsiCode());
@@ -63,9 +54,9 @@ public class Ristorante {
                 menu.stampaMenuCompleto();
             }
         }
-        System.out.println("\n");
-//        System.out.println(ColorEnum.WHITE.get() + "*** Piatti del giorno ***" + ColorEnum.RESET.get());
-//        stampaPortataDelGiorno(n, n2);
+
+        primoPiattoDelGiorno.printPortata();
+        secondoPiattoDelGiorno.printPortata();
     }
 
 
