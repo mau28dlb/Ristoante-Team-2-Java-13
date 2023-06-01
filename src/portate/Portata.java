@@ -1,5 +1,7 @@
 package src.portate;
 
+import src.enums.ColorEnum;
+
 public abstract class Portata {
 
     protected String descrizione;
@@ -26,13 +28,19 @@ public abstract class Portata {
         this.prezzo = prezzo;
     }
 
-
    public void printPortata() {
-        while (descrizione.length() <= 70){
-            descrizione += " ";
-        }
+       int maxDescriptionValue = 80;
+       int stringlenghtleft;
+       String spaziatura = " ";
+
+       if (descrizione.length() <= maxDescriptionValue) {
+           stringlenghtleft = maxDescriptionValue - descrizione.length();
+           for (int i = 0; i < stringlenghtleft; i++) {
+               spaziatura += " ";
+           }
+               descrizione += spaziatura;
+       }
+       //Lorenzo sistare
         System.out.println(descrizione + prezzo + " €");
     }
-
-
 }

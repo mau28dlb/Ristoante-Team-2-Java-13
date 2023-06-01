@@ -1,14 +1,47 @@
 package src;
 import src.enums.MenuTypeEnum;
+import src.enums.TavoloEnum;
+import src.enums.TemperatureDessertEnum;
 import src.portate.*;
 
 public class Main {
     public static void main(String[] args) {
-        Ristorante ristorante = new Ristorante();
+        Ristorante ristorante = new Ristorante("RISTORANTE ROSSI", "via Roma 132, Palermo", "Luca Rossi");
+        Tavolo tavolo1 = new Tavolo(TavoloEnum.TAVOLO_PER_DUE, "Tavolo 1");
+        Tavolo tavolo2 = new Tavolo(TavoloEnum.TAVOLO_PER_DUE, "Tavolo 2");
+        Tavolo tavolo3 = new Tavolo(TavoloEnum.TAVOLO_PER_DUE, "Tavolo 3");
+        Tavolo tavolo4 = new Tavolo(TavoloEnum.TAVOLO_PER_OTTO, "Tavolo 4");
+        Tavolo tavolo5 = new Tavolo(TavoloEnum.TAVOLO_PER_OTTO, "Tavolo 5");
+        Tavolo tavolo6 = new Tavolo(TavoloEnum.TAVOLO_PER_OTTO, "Tavolo 6");
+        Tavolo tavolo7 = new Tavolo(TavoloEnum.TAVOLO_PER_OTTO, "Tavolo 7");
+        Tavolo tavolo8 = new Tavolo(TavoloEnum.TAVOLO_PER_SEI, "Tavolo 8");
+        Tavolo tavolo9 = new Tavolo(TavoloEnum.TAVOLO_PER_SEI, "Tavolo 9");
+        Tavolo tavolo10 = new Tavolo(TavoloEnum.TAVOLO_PER_SEI, "Tavolo 10");
+        ristorante.addTavolo(tavolo1);
+        ristorante.addTavolo(tavolo2);
+        ristorante.addTavolo(tavolo3);
+        ristorante.addTavolo(tavolo4);
+        ristorante.addTavolo(tavolo5);
+        ristorante.addTavolo(tavolo6);
+        ristorante.addTavolo(tavolo7);
+        ristorante.addTavolo(tavolo8);
+        ristorante.addTavolo(tavolo9);
+        ristorante.addTavolo(tavolo10);
 
-        Menu menuCarne = new Menu("Luca Rossi", MenuTypeEnum.CARNE);
-        Menu menuPesce = new Menu("Mario Rossi", MenuTypeEnum.PESCE);
-        Menu menuVegan = new Menu("Simona Rossi", MenuTypeEnum.VEGANO);
+        Cliente cliente1 = new Cliente("Barone", "20:00", 2);
+        Cliente cliente2 = new Cliente("Carnevale", "21:00", 4);
+        Cliente cliente3 = new Cliente("Diliberto", "22:00", 8);
+        Cliente cliente4 = new Cliente("Santonocito", "20:00", 5);
+        ristorante.aggiungiPrenotazione(cliente1);
+        ristorante.aggiungiPrenotazione(cliente2);
+        ristorante.aggiungiPrenotazione(cliente3);
+        ristorante.aggiungiPrenotazione(cliente4);
+
+        ristorante.printListaPrenotazioni();
+
+        Menu menuCarne = new Menu( MenuTypeEnum.CARNE);
+        Menu menuPesce = new Menu( MenuTypeEnum.PESCE);
+        Menu menuVegan = new Menu( MenuTypeEnum.VEGANO);
 
         Antipasti antipastoCarne1 = new Antipasti("Bruschette ", 1.0, 4 );
         Antipasti antipastoCarne2 = new Antipasti("Prosciutto", 2.0) ;
@@ -31,11 +64,11 @@ public class Main {
         SecondiPiatti secondoCarne6 = new SecondiPiatti("Scaloppina All'arancia Con Granella Di Pistacchio", 12.0, true);
         SecondiPiatti secondoCarne7 = new SecondiPiatti("Straccetti Di Vitello Con Salsa All'aceto Balsamico", 13.0, false);
 
-        Dessert dessertCarneEPesce1 = new Dessert("Tiramisù", 8.0, "SEMI-FREDDO", false);
-        Dessert dessertCarneEPesce2 = new Dessert("Tarallo Aviglianese", 7.0, "FREDDO", false);
-        Dessert dessertCarneEPesce3 = new Dessert("Sbriciolata al Castagnaccio", 8.0, "CALDO", true);
-        Dessert dessertCarneEPesce4 = new Dessert("Creme brulée", 5.0, "CALDO", false);
-        Dessert dessertCarneEPesce5 = new Dessert("Sorbetto al limone", 3.0, "FREDDO", true);
+        Dessert dessertCarneEPesce1 = new Dessert("Tiramisù", 8.0, TemperatureDessertEnum.SEMI_FREDDO, false);
+        Dessert dessertCarneEPesce2 = new Dessert("Tarallo Aviglianese", 7.0, TemperatureDessertEnum.FREDDO, false);
+        Dessert dessertCarneEPesce3 = new Dessert("Sbriciolata al Castagnaccio", 8.0, TemperatureDessertEnum.CALDO, true);
+        Dessert dessertCarneEPesce4 = new Dessert("Creme brulée", 5.0, TemperatureDessertEnum.CALDO, false);
+        Dessert dessertCarneEPesce5 = new Dessert("Sorbetto al limone", 3.0, TemperatureDessertEnum.FREDDO, true);
 
         Bevande bevanda1 = new Bevande("Acqua minerale naturale", 1.5);
         Bevande bevanda2 = new Bevande("Coca-cola", 2.5);
@@ -88,7 +121,7 @@ public class Main {
 
         SecondiPiatti secondoPesce1 = new SecondiPiatti("Sformato di polpo al forno con patate al limone", 12.0, true);
         SecondiPiatti secondoPesce2 = new SecondiPiatti("Trancio di cernia al vapore", 14.0, false);
-        SecondiPiatti secondoPesce3 = new SecondiPiatti("Involtini di pesce spada Alla Siciliana", 11.5, true);
+        SecondiPiatti secondoPesce3 = new SecondiPiatti("Involtini di pesce spada alla Siciliana", 11.5, true);
         SecondiPiatti secondoPesce4 = new SecondiPiatti("Gamberoni arrosto", 13.0, false );
 
         menuPesce.addPortata(antipastoPesce1);
@@ -130,8 +163,8 @@ public class Main {
         SecondiPiatti secondoVegan2 = new SecondiPiatti("Bastoncini di tempeh su crema di zucchine", 14.5, true);
         SecondiPiatti secondoVegan3 = new SecondiPiatti("Spiedini di polpette di soia e zucchine al forno con patate rustiche", 12.0, true);
 
-        Dessert dessertVegano1 = new Dessert("Tiramisù vegano senza uova", 7.5, "FREDDO", true );
-        Dessert dessertVegano2 = new Dessert("Panna cotta vegana ai due cioccolati", 6.5, "FREDDO", true );
+        Dessert dessertVegano1 = new Dessert("Tiramisù vegano senza uova", 7.5, TemperatureDessertEnum.FREDDO, true );
+        Dessert dessertVegano2 = new Dessert("Panna cotta vegana ai due cioccolati", 6.5, TemperatureDessertEnum.FREDDO, true );
 
         menuVegan.addPortata(antipastoVegan1);
         menuVegan.addPortata(antipastoVegan2);
@@ -155,29 +188,30 @@ public class Main {
         ristorante.addMenu(menuVegan);
 
 
-        PrimiPiatti primoPiattoDelGiorno1 = new PrimiPiatti("Pasta al forno besciamella e macinato di carne", 14.0, false,false);
-        PrimiPiatti primoPiattoDelGiorno2 = new PrimiPiatti("Ravioli al montasio con ripieno di zucca e guanciale",15.0,false,true);
-        PrimiPiatti primoPiattoDelGiorno3 = new PrimiPiatti("Pennette con salsiccia e caprino",13.0,false,false);
-        PrimiPiatti primoPiattoDelGiorno4 = new PrimiPiatti("Spaghetti con polpette al sugo",13.0,false,false);
-        PrimiPiatti primoPiattoDelGiorno5 = new PrimiPiatti("Pasta alla Zozzona",14.0,true,false);
+//        PrimiPiatti primoPiattoDelGiorno1 = new PrimiPiatti("Pasta al forno besciamella e macinato di carne", 14.0, false,false);
+//        PrimiPiatti primoPiattoDelGiorno2 = new PrimiPiatti("Ravioli al montasio con ripieno di zucca e guanciale",15.0,false,true);
+//        PrimiPiatti primoPiattoDelGiorno3 = new PrimiPiatti("Pennette con salsiccia e caprino",13.0,false,false);
+//        PrimiPiatti primoPiattoDelGiorno4 = new PrimiPiatti("Spaghetti con polpette al sugo",13.0,false,false);
+//        PrimiPiatti primoPiattoDelGiorno5 = new PrimiPiatti("Pasta alla Zozzona",14.0,true,false);
+//
+//        SecondiPiatti secondoPiattoDelGiorno1 = new SecondiPiatti("Maialino arrosto con patate al forno", 16.0,true);
+//        SecondiPiatti secondoPiattoDelGiorno2 = new SecondiPiatti("Involtini di carne al pistacchio",18.0,true);
+//        SecondiPiatti secondoPiattoDelGiorno3 = new SecondiPiatti("Filetto in crosta",22.0,true);
+//        SecondiPiatti secondoPiattoDelGiorno4 = new SecondiPiatti("Arrosto all'arancia",18.0,true);
+//        SecondiPiatti secondoPiattoDelGiorno5 = new SecondiPiatti("Polpettone con fontina",16.0,true);
 
-        SecondiPiatti secondoPiattoDelGiorno1 = new SecondiPiatti("Maialino arrosto con patate al forno", 16.0,true);
-        SecondiPiatti secondoPiattoDelGiorno2 = new SecondiPiatti("Involtini di carne al pistacchio",18.0,true);
-        SecondiPiatti secondoPiattoDelGiorno3 = new SecondiPiatti("Filetto in crosta",22.0,true);
-        SecondiPiatti secondoPiattoDelGiorno4 = new SecondiPiatti("Arrosto all'arancia",18.0,true);
-        SecondiPiatti secondoPiattoDelGiorno5 = new SecondiPiatti("Polpettone con fontina",16.0,true);
-
-        ristorante.addPiattoDelGiorno(1, primoPiattoDelGiorno1);
-        ristorante.addPiattoDelGiorno(2, primoPiattoDelGiorno2);
-        ristorante.addPiattoDelGiorno(3, primoPiattoDelGiorno3);
-        ristorante.addPiattoDelGiorno(4, primoPiattoDelGiorno4);
-        ristorante.addPiattoDelGiorno(5, primoPiattoDelGiorno5);
-        ristorante.addPiattoDelGiorno(6, secondoPiattoDelGiorno1);
-        ristorante.addPiattoDelGiorno(7, secondoPiattoDelGiorno2);
-        ristorante.addPiattoDelGiorno(8, secondoPiattoDelGiorno3);
-        ristorante.addPiattoDelGiorno(9, secondoPiattoDelGiorno4);
-        ristorante.addPiattoDelGiorno(10, secondoPiattoDelGiorno5);
-
-        ristorante.stampaMenuSpecifico(MenuTypeEnum.VEGANO,1,6);
+//        ristorante.addPiattoDelGiorno( primoPiattoDelGiorno1);
+//        ristorante.addPiattoDelGiorno(2, primoPiattoDelGiorno2);
+//        ristorante.addPiattoDelGiorno(3, primoPiattoDelGiorno3);
+//        ristorante.addPiattoDelGiorno(4, primoPiattoDelGiorno4);
+//        ristorante.addPiattoDelGiorno(5, primoPiattoDelGiorno5);
+//        ristorante.addPiattoDelGiorno(6, secondoPiattoDelGiorno1);
+//        ristorante.addPiattoDelGiorno(7, secondoPiattoDelGiorno2);
+//        ristorante.addPiattoDelGiorno(8, secondoPiattoDelGiorno3);
+//        ristorante.addPiattoDelGiorno(9, secondoPiattoDelGiorno4);
+//        ristorante.addPiattoDelGiorno(10, secondoPiattoDelGiorno5);
+//
+//        ristorante.stampaMenuSpecifico(MenuTypeEnum.VEGANO,primoPiattoDelGiorno1,secondoPiattoDelGiorno1);
+        ristorante.stampaMenuSpecifico(MenuTypeEnum.VEGANO);
     }
 }

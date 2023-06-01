@@ -1,20 +1,22 @@
 package src.portate;
 
+import src.enums.MenuTypeEnum;
+import src.enums.TemperatureDessertEnum;
+
 public class Dessert extends Portata {
 
    protected boolean glutenFree;
-   protected String temperatura;
+   protected TemperatureDessertEnum temperatura;
 
     public Dessert(String descrizione, Double prezzo) {
         super(descrizione, prezzo);
     }
 
-    public Dessert(String descrizione, Double prezzo, String temperatura, boolean glutenFree) {
+    public Dessert(String descrizione, Double prezzo, TemperatureDessertEnum temperatura, boolean glutenFree) {
         super(descrizione, prezzo);
         this.glutenFree = glutenFree;
-        if(temperatura.equals("SEMI-FREDDO") || temperatura.equals("FREDDO") || temperatura.equals("CALDO")){
-            this.temperatura = temperatura;
-        }
+        this.temperatura = temperatura;
+
     }
 
     public boolean isGlutenFree() {
@@ -25,11 +27,11 @@ public class Dessert extends Portata {
         this.glutenFree = glutenFree;
     }
 
-    public String getTemperatura() {
+    public TemperatureDessertEnum getTemperatura() {
         return temperatura;
     }
 
-    public void setTemperatura(String temperatura) {
+    public void TemperatureDesertEnum(TemperatureDessertEnum temperatura) {
         this.temperatura = temperatura;
     }
 
@@ -37,7 +39,7 @@ public class Dessert extends Portata {
     public void printPortata() {
         super.printPortata();
         if(glutenFree){
-            System.out.println("(Gluten free)");
+            System.out.println("(Gluten free)" + (" (" + temperatura + ") "));
         }
         System.out.println("");
     }
