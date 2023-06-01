@@ -15,7 +15,7 @@ public enum ColorEnum {
     private String ansiCode;
     private String descrizione;
 
-    public String get() {
+    public String getAnsiCode() {
         return ansiCode;
     }
     public String getDescrizione() { return descrizione; }

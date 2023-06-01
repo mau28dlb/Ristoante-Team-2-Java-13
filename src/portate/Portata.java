@@ -40,7 +40,6 @@ public abstract class Portata {
            }
                descrizione += spaziatura;
        }
-       //Lorenzo sistare
         System.out.println(descrizione + prezzo + " €");
     }
 }

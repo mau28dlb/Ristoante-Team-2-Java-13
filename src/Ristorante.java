@@ -6,7 +6,6 @@ import java.util.TreeMap;
 
 import src.enums.ColorEnum;
 import src.enums.MenuTypeEnum;
-import src.enums.TavoloEnum;
 import src.portate.Portata;
 
 public class Ristorante {
@@ -40,7 +39,7 @@ public class Ristorante {
 
     public void stampaRistorante(Integer n, Integer n2) {
         System.out.println("\n");
-        System.out.println(ColorEnum.BLUE.get() + nomeRistorante + ColorEnum.RESET.get());
+        System.out.println(ColorEnum.BLUE.getAnsiCode() + nomeRistorante + ColorEnum.RESET.getAnsiCode());
         System.out.println("");
         for (Menu menu : menuList) {
             System.out.println("-------------------------------------------------------");
@@ -48,16 +47,16 @@ public class Ristorante {
             System.out.println("-------------------------------------------------------");
         }
         System.out.println("\n");
-        System.out.println(ColorEnum.WHITE.get() + "*** Piatti del giorno ***" + ColorEnum.RESET.get());
+        System.out.println(ColorEnum.WHITE.getAnsiCode() + "*** Piatti del giorno ***" + ColorEnum.RESET.getAnsiCode());
         stampaPortataDelGiorno(n, n2);
     }
 
     public void stampaMenuSpecifico(MenuTypeEnum menuTypeEnum) {
         System.out.println("\n");
-        System.out.println(ColorEnum.GREEN.get() + nomeRistorante + ColorEnum.RESET.get());
-        System.out.println(ColorEnum.GREEN.get() + indirizzoRistorante + ColorEnum.RESET.get());
+        System.out.println(ColorEnum.GREEN.getAnsiCode() + nomeRistorante + ColorEnum.RESET.getAnsiCode());
+        System.out.println(ColorEnum.GREEN.getAnsiCode() + indirizzoRistorante + ColorEnum.RESET.getAnsiCode());
         System.out.println("");
-        System.out.println(ColorEnum.YELLOW.get() + "Chef: " + chef + ColorEnum.RESET.get());
+        System.out.println(ColorEnum.YELLOW.getAnsiCode() + "Chef: " + chef + ColorEnum.RESET.getAnsiCode());
         System.out.println("");
         for (Menu menu : menuList) {
             if (menu.getMenuType() == menuTypeEnum) {
@@ -94,11 +93,11 @@ public class Ristorante {
 
     public void printListaPrenotazioni(){
         System.out.println("\n");
-        System.out.println(ColorEnum.BLUE.get() + "****************** Lista prenotazioni ***************+" + ColorEnum.RESET.get() );
+        System.out.println(ColorEnum.BLUE.getAnsiCode() + "****************** Lista prenotazioni ***************+" + ColorEnum.RESET.getAnsiCode() );
         for (Map.Entry<Cliente, Tavolo> e : listaPrenotazione.entrySet()) {
-            System.out.println(ColorEnum.PURPLE.get()  + "Cliente: " + e.getKey().getCognome() +", Ore: " +  e.getKey().getOrarioPrenotazione() +
-                    ", Persone n. " + e.getKey().getNumeroPersone() + ", Tavolo: " + e.getValue().getNomeTavolo() + ColorEnum.RESET.get() );
+            System.out.println(ColorEnum.PURPLE.getAnsiCode()  + "Cliente: " + e.getKey().getCognome() +", Ore: " +  e.getKey().getOrarioPrenotazione() +
+                    ", Persone n. " + e.getKey().getNumeroPersone() + ", Tavolo: " + e.getValue().getNomeTavolo() + ColorEnum.RESET.getAnsiCode() );
         }
-        System.out.println( ColorEnum.BLUE.get()  + "****************************************************" + ColorEnum.RESET.get() );
+        System.out.println( ColorEnum.BLUE.getAnsiCode()  + "****************************************************" + ColorEnum.RESET.getAnsiCode() );
     }
 }
