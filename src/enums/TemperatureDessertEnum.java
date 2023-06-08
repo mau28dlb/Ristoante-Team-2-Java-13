@@ -5,7 +5,9 @@ public enum TemperatureDessertEnum {
     CALDO (" Dessert servito caldo"),
     FREDDO (" Dessert servito freddo");
 
+
     private String descrizione;
+
 
     public String getDescrizione() {
         return descrizione;
@@ -15,7 +17,7 @@ public enum TemperatureDessertEnum {
         this.descrizione = descrizione;
     }
 
-  TemperatureDessertEnum(String descrizione) {
+    TemperatureDessertEnum(String descrizione) {
         this.descrizione = descrizione;
     }
 }

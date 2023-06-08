@@ -1,18 +1,29 @@
 package src.portate;
 
+import src.enums.ColorEnum;
+
 public class SecondiPiatti extends Portata {
 
    protected boolean isAlwaysAvailable;
+   protected boolean isPiattoDelGiorno;
 
 
     public SecondiPiatti(String descrizione, Double prezzo) {
         super(descrizione, prezzo);
     }
 
-
-    public SecondiPiatti(String descrizione, Double prezzo, boolean isAlwaysAvailable) {
+    public SecondiPiatti(String descrizione, Double prezzo, boolean isAlwaysAvailable, boolean isPiattoDelGiorno) {
         super(descrizione, prezzo);
         this.isAlwaysAvailable = isAlwaysAvailable;
+        this.isPiattoDelGiorno = isPiattoDelGiorno;
+    }
+
+    public boolean getIsPiattoDelGiorno() {
+        return this.isPiattoDelGiorno;
+    }
+
+    public void setIsPiattoDelGiorno(boolean piattoDelGiorno) {
+        this.isPiattoDelGiorno = piattoDelGiorno;
     }
 
     @Override
@@ -24,4 +35,12 @@ public class SecondiPiatti extends Portata {
         System.out.println("");
     }
 
+    @Override
+    public void printPortataColorata(ColorEnum color) {
+        super.printPortataColorata(color);
+        if(!isAlwaysAvailable){
+            System.out.println("(Solo a pranzo)");
+        }
+        System.out.println("");
+    }
 }

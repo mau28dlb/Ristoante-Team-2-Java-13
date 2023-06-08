@@ -7,8 +7,8 @@ public enum TavoloEnum {
     TAVOLO_PER_SEI (6, "tavolo per 6 persone"),
     TAVOLO_PER_OTTO (8, "tavolo per 8 persone");
 
-    private int numeroPosti;
 
+    private int numeroPosti;
     private String descrizione;
 
 

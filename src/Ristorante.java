@@ -6,18 +6,19 @@ import java.util.TreeMap;
 
 import src.enums.ColorEnum;
 import src.enums.MenuTypeEnum;
-import src.enums.TavoloEnum;
 import src.portate.Portata;
+import src.portate.PrimiPiatti;
+import src.portate.SecondiPiatti;
 
 public class Ristorante {
     protected String nomeRistorante;
     protected String indirizzoRistorante;
     protected String chef;
     protected ArrayList<Menu> menuList = new ArrayList<>();
-    protected Map<Integer, Portata> piattoDelGiorno = new TreeMap<>();
     protected List<Tavolo> listaTavoli = new ArrayList<>();
     protected Map<Cliente, Tavolo> listaPrenotazione = new HashMap<>();
     protected int totaleNumeroTavoli = 10;
+
 
     public Ristorante(String nomeRistorante, String indirizzoRistorante, String chef) {
         this.nomeRistorante = nomeRistorante;
@@ -29,18 +30,9 @@ public class Ristorante {
         menuList.add(menu);
     }
 
-//    public void addPiattoDelGiorno(Portata portata) {
-//        piattoDelGiorno.put(portata.getId(), portata);
-//    }
-
-    public void stampaPortataDelGiorno(Integer n, Integer n2) {
-        piattoDelGiorno.get(n).printPortata();
-        piattoDelGiorno.get(n2).printPortata();
-    }
-
     public void stampaRistorante(Integer n, Integer n2) {
         System.out.println("\n");
-        System.out.println(ColorEnum.BLUE.get() + nomeRistorante + ColorEnum.RESET.get());
+        System.out.println(ColorEnum.BLUE.getAnsiCode() + nomeRistorante + ColorEnum.RESET.getAnsiCode());
         System.out.println("");
         for (Menu menu : menuList) {
             System.out.println("-------------------------------------------------------");
@@ -48,27 +40,25 @@ public class Ristorante {
             System.out.println("-------------------------------------------------------");
         }
         System.out.println("\n");
-        System.out.println(ColorEnum.WHITE.get() + "*** Piatti del giorno ***" + ColorEnum.RESET.get());
-        stampaPortataDelGiorno(n, n2);
+        System.out.println(ColorEnum.WHITE.getAnsiCode() + "*** Piatti del giorno ***" + ColorEnum.RESET.getAnsiCode());
     }
 
-    public void stampaMenuSpecifico(MenuTypeEnum menuTypeEnum) {
+    public void stampaMenuSpecifico(MenuTypeEnum menuTypeEnum, PrimiPiatti primoPiattoDelGiorno, SecondiPiatti secondoPiattoDelGiorno) {
         System.out.println("\n");
-        System.out.println(ColorEnum.GREEN.get() + nomeRistorante + ColorEnum.RESET.get());
-        System.out.println(ColorEnum.GREEN.get() + indirizzoRistorante + ColorEnum.RESET.get());
+        System.out.println(ColorEnum.GREEN.getAnsiCode() + nomeRistorante + ColorEnum.RESET.getAnsiCode());
+        System.out.println(ColorEnum.GREEN.getAnsiCode() + indirizzoRistorante + ColorEnum.RESET.getAnsiCode());
         System.out.println("");
-        System.out.println(ColorEnum.YELLOW.get() + "Chef: " + chef + ColorEnum.RESET.get());
+        System.out.println(ColorEnum.YELLOW.getAnsiCode() + "Chef: " + chef + ColorEnum.RESET.getAnsiCode());
         System.out.println("");
         for (Menu menu : menuList) {
             if (menu.getMenuType() == menuTypeEnum) {
                 menu.stampaMenuCompleto();
             }
         }
-        System.out.println("\n");
-//        System.out.println(ColorEnum.WHITE.get() + "*** Piatti del giorno ***" + ColorEnum.RESET.get());
-//        stampaPortataDelGiorno(n, n2);
-    }
 
+        primoPiattoDelGiorno.printPortataColorata(ColorEnum.WHITE);
+        secondoPiattoDelGiorno.printPortataColorata(ColorEnum.WHITE);
+    }
 
     public void addTavolo(Tavolo tavolo){
         listaTavoli.add(tavolo);
@@ -94,11 +84,11 @@ public class Ristorante {
 
     public void printListaPrenotazioni(){
         System.out.println("\n");
-        System.out.println(ColorEnum.BLUE.get() + "****************** Lista prenotazioni ***************+" + ColorEnum.RESET.get() );
+        System.out.println(ColorEnum.BLUE.getAnsiCode() + "****************** Lista prenotazioni ***************+" + ColorEnum.RESET.getAnsiCode() );
         for (Map.Entry<Cliente, Tavolo> e : listaPrenotazione.entrySet()) {
-            System.out.println(ColorEnum.PURPLE.get()  + "Cliente: " + e.getKey().getCognome() +", Ore: " +  e.getKey().getOrarioPrenotazione() +
-                    ", Persone n. " + e.getKey().getNumeroPersone() + ", Tavolo: " + e.getValue().getNomeTavolo() + ColorEnum.RESET.get() );
+            System.out.println(ColorEnum.PURPLE.getAnsiCode()  + "Cliente: " + e.getKey().getCognome() +", Ore: " +  e.getKey().getOrarioPrenotazione() +
+                    ", Persone n. " + e.getKey().getNumeroPersone() + ", Tavolo: " + e.getValue().getNomeTavolo() + ColorEnum.RESET.getAnsiCode() );
         }
-        System.out.println( ColorEnum.BLUE.get()  + "****************************************************" + ColorEnum.RESET.get() );
+        System.out.println( ColorEnum.BLUE.getAnsiCode()  + "****************************************************" + ColorEnum.RESET.getAnsiCode() );
     }
 }

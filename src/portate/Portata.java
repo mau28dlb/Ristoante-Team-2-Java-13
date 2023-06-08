@@ -12,6 +12,7 @@ public abstract class Portata {
         this.descrizione = descrizione;
         this.prezzo = prezzo;
     }
+
     public String getDescrizione() {
         return descrizione;
     }
@@ -28,7 +29,7 @@ public abstract class Portata {
         this.prezzo = prezzo;
     }
 
-   public void printPortata() {
+    public void printPortata() {
        int maxDescriptionValue = 80;
        int stringlenghtleft;
        String spaziatura = " ";
@@ -40,7 +41,21 @@ public abstract class Portata {
            }
                descrizione += spaziatura;
        }
-       //Lorenzo sistare
         System.out.println(descrizione + prezzo + " €");
+    }
+
+    public void printPortataColorata(ColorEnum color) {
+        int maxDescriptionValue = 80;
+        int stringlenghtleft;
+        String spaziatura = " ";
+
+        if (descrizione.length() <= maxDescriptionValue) {
+            stringlenghtleft = maxDescriptionValue - descrizione.length();
+            for (int i = 0; i < stringlenghtleft; i++) {
+                spaziatura += " ";
+            }
+            descrizione += spaziatura;
+        }
+        System.out.println(color.getAnsiCode() + descrizione + prezzo + " €" + ColorEnum.RESET.getAnsiCode());
     }
 }

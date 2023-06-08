@@ -9,6 +9,7 @@ public class Cliente {
     private Integer numeroPersone;
     private String orarioPrenotazione;
 
+
     public Cliente(String cognome, String orarioPrenotazione, Integer numeroPersone ) {
         this.cognome = cognome;
         this.orarioPrenotazione = orarioPrenotazione;
