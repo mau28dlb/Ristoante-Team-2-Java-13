@@ -1,12 +1,14 @@
 package src.portate;
 
+import src.enums.ColorEnum;
 import src.enums.MenuTypeEnum;
 import src.enums.TemperatureDessertEnum;
 
 public class Dessert extends Portata {
 
-   protected boolean glutenFree;
-   protected TemperatureDessertEnum temperatura;
+    protected boolean glutenFree;
+    protected TemperatureDessertEnum temperatura;
+
 
     public Dessert(String descrizione, Double prezzo) {
         super(descrizione, prezzo);
@@ -44,5 +46,13 @@ public class Dessert extends Portata {
         System.out.println("");
     }
 
+    @Override
+    public void printPortataColorata(ColorEnum color) {
+        super.printPortataColorata(color);
+        if(glutenFree){
+            System.out.println("(Gluten free)" + (" (" + temperatura + ") "));
+        }
+        System.out.println("");
+    }
 }
 

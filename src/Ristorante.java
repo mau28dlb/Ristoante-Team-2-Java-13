@@ -19,6 +19,7 @@ public class Ristorante {
     protected Map<Cliente, Tavolo> listaPrenotazione = new HashMap<>();
     protected int totaleNumeroTavoli = 10;
 
+
     public Ristorante(String nomeRistorante, String indirizzoRistorante, String chef) {
         this.nomeRistorante = nomeRistorante;
         this.indirizzoRistorante = indirizzoRistorante;
@@ -55,10 +56,9 @@ public class Ristorante {
             }
         }
 
-        primoPiattoDelGiorno.printPortata();
-        secondoPiattoDelGiorno.printPortata();
+        primoPiattoDelGiorno.printPortataColorata(ColorEnum.WHITE);
+        secondoPiattoDelGiorno.printPortataColorata(ColorEnum.WHITE);
     }
-
 
     public void addTavolo(Tavolo tavolo){
         listaTavoli.add(tavolo);

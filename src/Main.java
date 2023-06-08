@@ -7,6 +7,7 @@ import src.portate.*;
 public class Main {
     public static void main(String[] args) {
         Ristorante ristorante = new Ristorante("RISTORANTE ROSSI", "via Roma 132, Palermo", "Luca Rossi");
+
         Tavolo tavolo1 = new Tavolo(TavoloEnum.TAVOLO_PER_DUE, "Tavolo 1");
         Tavolo tavolo2 = new Tavolo(TavoloEnum.TAVOLO_PER_DUE, "Tavolo 2");
         Tavolo tavolo3 = new Tavolo(TavoloEnum.TAVOLO_PER_DUE, "Tavolo 3");
@@ -17,6 +18,7 @@ public class Main {
         Tavolo tavolo8 = new Tavolo(TavoloEnum.TAVOLO_PER_SEI, "Tavolo 8");
         Tavolo tavolo9 = new Tavolo(TavoloEnum.TAVOLO_PER_SEI, "Tavolo 9");
         Tavolo tavolo10 = new Tavolo(TavoloEnum.TAVOLO_PER_SEI, "Tavolo 10");
+
         ristorante.addTavolo(tavolo1);
         ristorante.addTavolo(tavolo2);
         ristorante.addTavolo(tavolo3);
@@ -28,10 +30,12 @@ public class Main {
         ristorante.addTavolo(tavolo9);
         ristorante.addTavolo(tavolo10);
 
+
         Cliente cliente1 = new Cliente("Barone", "20:00", 2);
         Cliente cliente2 = new Cliente("Carnevale", "21:00", 4);
         Cliente cliente3 = new Cliente("Diliberto", "22:00", 8);
         Cliente cliente4 = new Cliente("Santonocito", "20:00", 5);
+
         ristorante.aggiungiPrenotazione(cliente1);
         ristorante.aggiungiPrenotazione(cliente2);
         ristorante.aggiungiPrenotazione(cliente3);
@@ -39,9 +43,11 @@ public class Main {
 
         ristorante.printListaPrenotazioni();
 
+
         Menu menuCarne = new Menu( MenuTypeEnum.CARNE);
         Menu menuPesce = new Menu( MenuTypeEnum.PESCE);
         Menu menuVegan = new Menu( MenuTypeEnum.VEGANO);
+
 
         Antipasti antipastoCarne1 = new Antipasti("Bruschette ", 1.0, 4 );
         Antipasti antipastoCarne2 = new Antipasti("Prosciutto", 2.0) ;
@@ -217,7 +223,6 @@ public class Main {
         menuCarne.addPortata(secondoPiattoDelGiornoCarne2);
         menuCarne.addPortata(secondoPiattoDelGiornoCarne3);
 
-
         menuPesce.addPortata(primoPiattoDelGiornoPesce1);
         menuPesce.addPortata(primoPiattoDelGiornoPesce2);
         menuPesce.addPortata(primoPiattoDelGiornoPesce3);
@@ -234,6 +239,5 @@ public class Main {
         //ristorante.stampaMenuSpecifico(MenuTypeEnum.CARNE, primoPiattoDelGiornoCarne1, secondoPiattoDelGiornoCarne1);
         //ristorante.stampaMenuSpecifico(MenuTypeEnum.PESCE, primoPiattoDelGiornoPesce1, secondoPiattoDelGiornoPesce1);
         ristorante.stampaMenuSpecifico(MenuTypeEnum.VEGANO, primoPiattoDelGiornoVegano1, secondoPiattoDelGiornoVegano1);
-
     }
 }

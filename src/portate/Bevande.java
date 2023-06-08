@@ -1,8 +1,11 @@
 package src.portate;
 
+import src.enums.ColorEnum;
+
 public class Bevande extends Portata {
 
-   protected String gradazioneAlcolica;
+    protected String gradazioneAlcolica;
+
 
     public Bevande(String descrizione, Double prezzo, String gradazioneAlcolica) {
         super(descrizione, prezzo);
@@ -30,6 +33,14 @@ public class Bevande extends Portata {
         System.out.println("");
     }
 
+    @Override
+    public void printPortataColorata(ColorEnum color) {
+        super.printPortataColorata(color);
+        if(gradazioneAlcolica != null){
+            System.out.println(gradazioneAlcolica);
+        }
+        System.out.println("");
+    }
 }
 
 

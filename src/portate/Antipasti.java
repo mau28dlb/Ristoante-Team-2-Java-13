@@ -1,9 +1,12 @@
 package src.portate;
 
+import src.enums.ColorEnum;
+
 public class Antipasti extends Portata{
 
    protected Integer porzione;
    protected String cottura;
+
 
     public Antipasti(String descrizione, Double prezzo, Integer porzione, String cottura ) {
         super(descrizione, prezzo);
@@ -23,6 +26,15 @@ public class Antipasti extends Portata{
     @Override
     public void printPortata() {
         super.printPortata();
+        if (porzione != null) {
+            System.out.println("(Portata per " + porzione + ")");
+        }
+        System.out.println("");
+    }
+
+    @Override
+    public void printPortataColorata(ColorEnum color) {
+        super.printPortataColorata(color);
         if (porzione != null) {
             System.out.println("(Portata per " + porzione + ")");
         }

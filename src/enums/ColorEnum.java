@@ -12,12 +12,15 @@ public enum ColorEnum {
     CYAN("\u001B[36m", "Associa il colore CIANO a un valore"),
     WHITE("\u001B[37m", "Associa il colore BIANCO a un valore");
 
+
     private String ansiCode;
     private String descrizione;
+
 
     public String getAnsiCode() {
         return ansiCode;
     }
+
     public String getDescrizione() { return descrizione; }
 
     ColorEnum(String ansiCode, String descrizione) {

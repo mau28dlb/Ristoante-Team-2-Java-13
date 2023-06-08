@@ -1,5 +1,7 @@
 package src.portate;
 
+import src.enums.ColorEnum;
+
 public class PrimiPiatti extends Portata {
 
     protected boolean isMinimoPerDuePersone;
@@ -17,6 +19,18 @@ public class PrimiPiatti extends Portata {
     @Override
     public void printPortata() {
         super.printPortata();
+        if (isMinimoPerDuePersone){
+            System.out.print("(Minimo per due persone)");
+        }
+        if(isPastaFresca){
+            System.out.println("(Pasta fresca)");
+        }
+        System.out.println("");
+    }
+
+    @Override
+    public void printPortataColorata(ColorEnum color) {
+        super.printPortataColorata(color);
         if (isMinimoPerDuePersone){
             System.out.print("(Minimo per due persone)");
         }

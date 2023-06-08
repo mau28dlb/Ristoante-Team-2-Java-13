@@ -6,7 +6,10 @@ public enum MenuTypeEnum {
     PESCE("Menù di pesce"),
     VEGANO("Menù vegano");
 
+
     private String descrizione;
+
+
     public String getDescrizione() { return descrizione; }
 
     MenuTypeEnum(String descrizione) {
