@@ -1,11 +1,15 @@
 package src;
+import src.DAO.Bevande_DAO;
 import src.enums.MenuTypeEnum;
 import src.enums.TavoloEnum;
 import src.enums.TemperatureDessertEnum;
 import src.portate.*;
+import src.DAO.*;
+
+import java.sql.SQLException;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException, ClassNotFoundException {
         Ristorante ristorante = new Ristorante("RISTORANTE ROSSI", "via Roma 132, Palermo", "Luca Rossi");
 
         Tavolo tavolo1 = new Tavolo(TavoloEnum.TAVOLO_PER_DUE, "Tavolo 1");
@@ -41,7 +45,7 @@ public class Main {
         ristorante.aggiungiPrenotazione(cliente3);
         ristorante.aggiungiPrenotazione(cliente4);
 
-        ristorante.printListaPrenotazioni();
+        //ristorante.printListaPrenotazioni();
 
 
         Menu menuCarne = new Menu( MenuTypeEnum.CARNE);
@@ -238,6 +242,14 @@ public class Main {
 
         //ristorante.stampaMenuSpecifico(MenuTypeEnum.CARNE, primoPiattoDelGiornoCarne1, secondoPiattoDelGiornoCarne1);
         //ristorante.stampaMenuSpecifico(MenuTypeEnum.PESCE, primoPiattoDelGiornoPesce1, secondoPiattoDelGiornoPesce1);
-        ristorante.stampaMenuSpecifico(MenuTypeEnum.VEGANO, primoPiattoDelGiornoVegano1, secondoPiattoDelGiornoVegano1);
+        //ristorante.stampaMenuSpecifico(MenuTypeEnum.VEGANO, primoPiattoDelGiornoVegano1, secondoPiattoDelGiornoVegano1);
+
+        Bevande_DAO bevandeDao = new Bevande_DAO();
+
+        bevandeDao.printAllBevande();
+
+
+
+
     }
 }

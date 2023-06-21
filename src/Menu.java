@@ -9,12 +9,13 @@ import static java.lang.Math.round;
 
 public class Menu {
     protected MenuTypeEnum menuType;
-    protected List<Portata> listaPortate = new ArrayList<>();
+    private List<Portata> listaPortate;
 
 
     public Menu(MenuTypeEnum menuType) {
 
         this.menuType = menuType;
+        this.listaPortate = new ArrayList<>();
     }
 
     public MenuTypeEnum getMenuType() {
