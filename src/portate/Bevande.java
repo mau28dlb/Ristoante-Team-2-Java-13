@@ -4,6 +4,7 @@ import src.enums.ColorEnum;
 
 public class Bevande extends Portata {
 
+    protected Integer ID;
     protected String gradazioneAlcolica;
 
 

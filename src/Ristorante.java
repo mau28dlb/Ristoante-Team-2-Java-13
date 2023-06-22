@@ -11,12 +11,13 @@ import src.portate.PrimiPiatti;
 import src.portate.SecondiPiatti;
 
 public class Ristorante {
+    protected Integer ID;
     protected String nomeRistorante;
     protected String indirizzoRistorante;
     protected String chef;
     protected ArrayList<Menu> menuList = new ArrayList<>();
     protected List<Tavolo> listaTavoli = new ArrayList<>();
-    protected Map<Cliente, Tavolo> listaPrenotazione = new HashMap<>();
+    protected Map <Prenotazione, Tavolo> listaPrenotazione = new HashMap<>();
     protected int totaleNumeroTavoli = 10;
 
 
@@ -64,20 +65,22 @@ public class Ristorante {
         listaTavoli.add(tavolo);
     }
 
-    public void aggiungiPrenotazione(Cliente cliente) {
+    //public void addPrenotazione (Prenotazione prenotazione) {listaPrenotazione.put(prenotazione, );}
+
+    public void aggiungiPrenotazione(Prenotazione prenotazione) {
         Tavolo  tavoloScelto = null;
         int differenza = Integer.MAX_VALUE;
         for (Tavolo tavolo : listaTavoli) {
-            int differenzaMinima = tavolo.getTavolo().getNumeroPosti() - cliente.getNumeroPersone();
-            if ((listaPrenotazione.size() < totaleNumeroTavoli) && (tavolo.getTavolo().getNumeroPosti() >= cliente.getNumeroPersone()) && (differenza >= differenzaMinima)){
+            int differenzaMinima = tavolo.getTavolo().getNumeroPosti() - prenotazione.getCliente().getNumeroPersone();
+            if ((listaPrenotazione.size() < totaleNumeroTavoli) && (tavolo.getTavolo().getNumeroPosti() >= prenotazione.getCliente().getNumeroPersone()) && (differenza >= differenzaMinima)){
                     tavoloScelto = tavolo;
                     differenza = differenzaMinima;
             }
         }
         if (tavoloScelto != null){
-        listaPrenotazione.put(cliente, tavoloScelto);
+        listaPrenotazione.put(prenotazione, tavoloScelto);
         } else {
-            System.out.println("Non è stato possibile prenotare per il cliente " + cliente.getCognome() + "  perchè non ci sono più tavoli");
+            System.out.println("Non è stato possibile prenotare per il cliente " + prenotazione.getCliente().getCognome() + "  perchè non ci sono più tavoli");
         }
         listaTavoli.remove(tavoloScelto);
     }
@@ -85,9 +88,9 @@ public class Ristorante {
     public void printListaPrenotazioni(){
         System.out.println("\n");
         System.out.println(ColorEnum.BLUE.getAnsiCode() + "****************** Lista prenotazioni ***************+" + ColorEnum.RESET.getAnsiCode() );
-        for (Map.Entry<Cliente, Tavolo> e : listaPrenotazione.entrySet()) {
-            System.out.println(ColorEnum.PURPLE.getAnsiCode()  + "Cliente: " + e.getKey().getCognome() +", Ore: " +  e.getKey().getOrarioPrenotazione() +
-                    ", Persone n. " + e.getKey().getNumeroPersone() + ", Tavolo: " + e.getValue().getNomeTavolo() + ColorEnum.RESET.getAnsiCode() );
+        for (Map.Entry<Prenotazione, Tavolo> prenotazione : listaPrenotazione.entrySet()) {
+            System.out.println(ColorEnum.PURPLE.getAnsiCode()  + "Cliente: " + prenotazione.getKey().getCliente().getCognome() +", Data: " +  prenotazione.getKey().getData() +
+                    ", Persone n. " + prenotazione.getKey().getCliente().getNumeroPersone() + ", Tavolo: " + prenotazione.getValue().getNomeTavolo() + ColorEnum.RESET.getAnsiCode() );
         }
         System.out.println( ColorEnum.BLUE.getAnsiCode()  + "****************************************************" + ColorEnum.RESET.getAnsiCode() );
     }

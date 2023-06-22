@@ -5,14 +5,13 @@ import java.time.chrono.ChronoLocalDateTime;
 
 public class Cliente {
 
+    protected Integer ID;
     private String cognome;
     private Integer numeroPersone;
-    private String orarioPrenotazione;
 
 
-    public Cliente(String cognome, String orarioPrenotazione, Integer numeroPersone ) {
+    public Cliente(String cognome, Integer numeroPersone ) {
         this.cognome = cognome;
-        this.orarioPrenotazione = orarioPrenotazione;
         this.numeroPersone = numeroPersone;
     }
 
@@ -22,14 +21,6 @@ public class Cliente {
 
     public void setCognome(String cognome) {
         this.cognome = cognome;
-    }
-
-    public String getOrarioPrenotazione() {
-        return orarioPrenotazione;
-    }
-
-    public void setOrarioPrenotazione(String orarioPrenotazione) {
-        this.orarioPrenotazione = orarioPrenotazione;
     }
 
     public Integer getNumeroPersone() {

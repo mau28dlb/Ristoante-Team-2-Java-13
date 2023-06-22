@@ -35,17 +35,22 @@ public class Main {
         ristorante.addTavolo(tavolo10);
 
 
-        Cliente cliente1 = new Cliente("Barone", "20:00", 2);
-        Cliente cliente2 = new Cliente("Carnevale", "21:00", 4);
-        Cliente cliente3 = new Cliente("Diliberto", "22:00", 8);
-        Cliente cliente4 = new Cliente("Santonocito", "20:00", 5);
+        Cliente cliente1 = new Cliente("Barone",2);
+        Cliente cliente2 = new Cliente("Carnevale",  4);
+        Cliente cliente3 = new Cliente("Diliberto",  8);
+        Cliente cliente4 = new Cliente("Santonocito", 5);
 
-        ristorante.aggiungiPrenotazione(cliente1);
-        ristorante.aggiungiPrenotazione(cliente2);
-        ristorante.aggiungiPrenotazione(cliente3);
-        ristorante.aggiungiPrenotazione(cliente4);
+        Prenotazione prenotazione1 = new Prenotazione("22-06-2023", cliente1);
+        Prenotazione prenotazione2 = new Prenotazione("23-06-2023", cliente2);
+        Prenotazione prenotazione3 = new Prenotazione("24-06-2023", cliente3);
+        Prenotazione prenotazione4 = new Prenotazione("26-06-2023", cliente4);
 
-        //ristorante.printListaPrenotazioni();
+        ristorante.aggiungiPrenotazione(prenotazione1);
+        ristorante.aggiungiPrenotazione(prenotazione2);
+        ristorante.aggiungiPrenotazione(prenotazione3);
+        ristorante.aggiungiPrenotazione(prenotazione4);
+
+        ristorante.printListaPrenotazioni();
 
 
         Menu menuCarne = new Menu( MenuTypeEnum.CARNE);

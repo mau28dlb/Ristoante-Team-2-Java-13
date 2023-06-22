@@ -3,7 +3,7 @@ package src.portate;
 import src.enums.ColorEnum;
 
 public class Antipasti extends Portata{
-
+    protected Integer ID;
    protected Integer porzione;
    protected String cottura;
 
