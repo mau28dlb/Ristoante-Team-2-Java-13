@@ -49,7 +49,7 @@ public class Bevande_DAO {
 
         conn.close();
 
-        System.out.println("Tabella popolata");
+        System.out.println("Tabella bevande popolata");
 
     }
 //

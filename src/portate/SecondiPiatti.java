@@ -27,6 +27,14 @@ public class SecondiPiatti extends Portata {
         this.isPiattoDelGiorno = piattoDelGiorno;
     }
 
+    public boolean isAlwaysAvailable() {
+        return isAlwaysAvailable;
+    }
+
+    public void setAlwaysAvailable(boolean alwaysAvailable) {
+        isAlwaysAvailable = alwaysAvailable;
+    }
+
     @Override
     public void printPortata() {
         super.printPortata();
