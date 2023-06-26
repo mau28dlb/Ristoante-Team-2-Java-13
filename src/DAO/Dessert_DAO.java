@@ -10,21 +10,21 @@ public class Dessert_DAO {
 
     public void createTable() throws SQLException {
 
-            Connection conn = DriverManager.getConnection(SQLConnectorEnum.SQL_ACCESS_STRING.getValue());
+            Connection conn = DriverManager.getConnection(SQLConnectorEnum.DB_URL.getValue(), SQLConnectorEnum.DB_USER.getValue(), SQLConnectorEnum.DB_PASS.getValue());
 
             Statement statement = conn.createStatement();
 
 
             String createQuery = """
                     CREATE TABLE IF NOT EXISTS Dessert
-                    (antipasti_id TINYINT NOT NULL AUTO_INCREMENT,
+                    (dessert_id TINYINT NOT NULL AUTO_INCREMENT,
                       descrizione VARCHAR(30),
                       prezzo DOUBLE,
                       glutenFree BOOLEAN,
                       temperatura VARCHAR(30),
                       menu_id INTEGER,
                       CONSTRAINT Dessert_pk PRIMARY KEY (dessert_id), UNIQUE(descrizione), 
-                      FOREIGN KEY (menu_id) REFERENCES Menu (menu_id)
+                      FOREIGN KEY (menu_id) REFERENCES Menu (id)
                     );
                     """;
             statement.executeUpdate(createQuery);
@@ -36,7 +36,7 @@ public class Dessert_DAO {
     }
 
     public void insertDessert(Dessert dessert) throws SQLException {
-        Connection conn = DriverManager.getConnection(SQLConnectorEnum.SQL_ACCESS_STRING.getValue());
+        Connection conn = DriverManager.getConnection(SQLConnectorEnum.DB_URL.getValue(), SQLConnectorEnum.DB_USER.getValue(), SQLConnectorEnum.DB_PASS.getValue());
         Statement statement = conn.createStatement();
 
         String insertQuery = "INSERT INTO Antipasti (descrizione, prezzo, glutenFree, temperatura) VALUES ('"  + dessert.getDescrizione() + "', '" +
@@ -51,7 +51,7 @@ public class Dessert_DAO {
     }
     //
     public void printAllDessert() throws SQLException {
-        Connection conn = DriverManager.getConnection(SQLConnectorEnum.SQL_ACCESS_STRING.getValue());
+        Connection conn = DriverManager.getConnection(SQLConnectorEnum.DB_URL.getValue(), SQLConnectorEnum.DB_USER.getValue(), SQLConnectorEnum.DB_PASS.getValue());
         Statement statement = conn.createStatement();
 
         String printQuery = """
@@ -72,6 +72,22 @@ public class Dessert_DAO {
         }
 
         conn.close();
+
+    }
+
+    public void deleteRecord(String whereCondition) throws SQLException {
+
+        Connection conn = DriverManager.getConnection(SQLConnectorEnum.DB_URL.getValue(), SQLConnectorEnum.DB_USER.getValue(), SQLConnectorEnum.DB_PASS.getValue());
+
+        Statement statement = conn.createStatement();
+
+        String deleteQuery = "DELETE FROM Dessert WHERE" + whereCondition + ");";
+
+        statement.executeUpdate(deleteQuery);
+
+        conn.close();
+
+        System.out.println("Record cancellato");
 
     }
 

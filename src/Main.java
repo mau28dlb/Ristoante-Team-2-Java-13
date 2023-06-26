@@ -40,10 +40,10 @@ public class Main {
         Cliente cliente3 = new Cliente("Diliberto",  8);
         Cliente cliente4 = new Cliente("Santonocito", 5);
 
-        Prenotazione prenotazione1 = new Prenotazione("22-06-2023", cliente1);
-        Prenotazione prenotazione2 = new Prenotazione("23-06-2023", cliente2);
-        Prenotazione prenotazione3 = new Prenotazione("24-06-2023", cliente3);
-        Prenotazione prenotazione4 = new Prenotazione("26-06-2023", cliente4);
+        Prenotazione prenotazione1 = new Prenotazione("22-06-2023", "20:00", cliente1);
+        Prenotazione prenotazione2 = new Prenotazione("23-06-2023", "19:30", cliente2);
+        Prenotazione prenotazione3 = new Prenotazione("24-06-2023", "20:30", cliente3);
+        Prenotazione prenotazione4 = new Prenotazione("26-06-2023", "19:00", cliente4);
 
         ristorante.aggiungiPrenotazione(prenotazione1);
         ristorante.aggiungiPrenotazione(prenotazione2);
@@ -245,13 +245,19 @@ public class Main {
         menuVegan.addPortata(secondoPiattoDelGiornoVegano2);
 
 
-        //ristorante.stampaMenuSpecifico(MenuTypeEnum.CARNE, primoPiattoDelGiornoCarne1, secondoPiattoDelGiornoCarne1);
+     ristorante.stampaMenuSpecifico(MenuTypeEnum.VEGANO, primoPiattoDelGiornoCarne1, secondoPiattoDelGiornoCarne1);
         //ristorante.stampaMenuSpecifico(MenuTypeEnum.PESCE, primoPiattoDelGiornoPesce1, secondoPiattoDelGiornoPesce1);
         //ristorante.stampaMenuSpecifico(MenuTypeEnum.VEGANO, primoPiattoDelGiornoVegano1, secondoPiattoDelGiornoVegano1);
 
         Bevande_DAO bevandeDao = new Bevande_DAO();
+        Antipasti_DAO antipastiDao = new Antipasti_DAO();
+        PrimiPiatti_DAO primiPiattiDao = new PrimiPiatti_DAO();
+        SecondiPiatti_DAO secondiPiattiDao = new SecondiPiatti_DAO();
+        Dessert_DAO dessertDao = new Dessert_DAO();
 
-        bevandeDao.printAllBevande();
+//        dessertDao.createTable();
+
+//        bevandeDao.printAllBevande();
 
 
 

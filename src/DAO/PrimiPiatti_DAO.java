@@ -10,22 +10,22 @@ public class PrimiPiatti_DAO {
 
     public void createTable() throws SQLException {
 
-            Connection conn = DriverManager.getConnection(SQLConnectorEnum.SQL_ACCESS_STRING.getValue());
+            Connection conn = DriverManager.getConnection(SQLConnectorEnum.DB_URL.getValue(), SQLConnectorEnum.DB_USER.getValue(), SQLConnectorEnum.DB_PASS.getValue());
 
             Statement statement = conn.createStatement();
 
 
             String createQuery = """
                     CREATE TABLE IF NOT EXISTS PrimiPiatti
-                    (antipasti_id TINYINT NOT NULL AUTO_INCREMENT,
+                    (primipiatti_id TINYINT NOT NULL AUTO_INCREMENT,
                       descrizione VARCHAR(30),
                       prezzo DOUBLE,
                       isMinimoPerDuePersone BOOLEAN,
                       isPastaFresca BOOLEAN,
                       isPiattoDelGiorno BOOLEAN,
-                      menu_id TINYINT,
+                      menu_id INT,
                       CONSTRAINT PrimiPiatti_pk PRIMARY KEY (primipiatti_id), UNIQUE(descrizione), 
-                      FOREIGN KEY (menu_id) REFERENCES Menu (menu_id)
+                      FOREIGN KEY (menu_id) REFERENCES Menu (id)
                     );
                     """;
             statement.executeUpdate(createQuery);
@@ -37,7 +37,7 @@ public class PrimiPiatti_DAO {
     }
 
     public void insertPrimiPiatti(PrimiPiatti primiPiatti) throws SQLException {
-        Connection conn = DriverManager.getConnection(SQLConnectorEnum.SQL_ACCESS_STRING.getValue());
+        Connection conn = DriverManager.getConnection(SQLConnectorEnum.DB_URL.getValue(), SQLConnectorEnum.DB_USER.getValue(), SQLConnectorEnum.DB_PASS.getValue());
         Statement statement = conn.createStatement();
 
         String insertQuery = "INSERT INTO PrimiPiatti (descrizione, prezzo, isMinimoPerDuePersone, isPastaFresca, isPiattoDelGiorno) VALUES ('"  + primiPiatti.getDescrizione() + "', '" +
@@ -52,7 +52,7 @@ public class PrimiPiatti_DAO {
     }
     //
     public void printAllPrimiPiatti() throws SQLException {
-        Connection conn = DriverManager.getConnection(SQLConnectorEnum.SQL_ACCESS_STRING.getValue());
+        Connection conn = DriverManager.getConnection(SQLConnectorEnum.DB_URL.getValue(), SQLConnectorEnum.DB_USER.getValue(), SQLConnectorEnum.DB_PASS.getValue());
         Statement statement = conn.createStatement();
 
         String printQuery = """
@@ -74,6 +74,22 @@ public class PrimiPiatti_DAO {
         }
 
         conn.close();
+
+    }
+
+    public void deleteRecord(String whereCondition) throws SQLException {
+
+        Connection conn = DriverManager.getConnection(SQLConnectorEnum.DB_URL.getValue(), SQLConnectorEnum.DB_USER.getValue(), SQLConnectorEnum.DB_PASS.getValue());
+
+        Statement statement = conn.createStatement();
+
+        String deleteQuery = "DELETE FROM PrimiPiatti WHERE" + whereCondition + ");";
+
+        statement.executeUpdate(deleteQuery);
+
+        conn.close();
+
+        System.out.println("Record cancellato");
 
     }
 }

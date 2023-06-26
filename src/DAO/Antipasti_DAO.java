@@ -10,7 +10,7 @@ public class Antipasti_DAO {
 
     public void createTable() throws SQLException {
 
-        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/team2ristorante", "root", "Lellipiselli2000");
+        Connection conn = DriverManager.getConnection(SQLConnectorEnum.DB_URL.getValue(), SQLConnectorEnum.DB_USER.getValue(), SQLConnectorEnum.DB_PASS.getValue());
 
         Statement statement = conn.createStatement();
 
@@ -24,7 +24,7 @@ public class Antipasti_DAO {
                   cottura VARCHAR(30),
                   menu_id INTEGER,
                   CONSTRAINT Antipasti_pk PRIMARY KEY (antipasti_id), UNIQUE(descrizione), 
-                  FOREIGN KEY (menu_id) REFERENCES Menu (menu_id)
+                  FOREIGN KEY (menu_id) REFERENCES Menu (id)
                 );
                 """;
         statement.executeUpdate(createQuery);
@@ -36,7 +36,7 @@ public class Antipasti_DAO {
     }
 
     public void insertAntipasti(Antipasti antipasti) throws SQLException {
-        Connection conn = DriverManager.getConnection(SQLConnectorEnum.SQL_ACCESS_STRING.getValue());
+        Connection conn = DriverManager.getConnection(SQLConnectorEnum.DB_URL.getValue(), SQLConnectorEnum.DB_USER.getValue(), SQLConnectorEnum.DB_PASS.getValue());
         Statement statement = conn.createStatement();
 
         String insertQuery = "INSERT INTO Antipasti (descrizione, prezzo, porzione, cottura) VALUES ('"  + antipasti.getDescrizione() + "', '" +
@@ -51,7 +51,7 @@ public class Antipasti_DAO {
     }
     //
     public void printAllAntipasti() throws SQLException {
-        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/team2ristorante", "root", "Lellipiselli2000");
+        Connection conn = DriverManager.getConnection(SQLConnectorEnum.DB_URL.getValue(), SQLConnectorEnum.DB_USER.getValue(), SQLConnectorEnum.DB_PASS.getValue());
         Statement statement = conn.createStatement();
 
         String printQuery = """
@@ -72,6 +72,22 @@ public class Antipasti_DAO {
         }
 
         conn.close();
+
+    }
+
+    public void deleteRecord(String whereCondition) throws SQLException {
+
+        Connection conn = DriverManager.getConnection(SQLConnectorEnum.DB_URL.getValue(), SQLConnectorEnum.DB_USER.getValue(), SQLConnectorEnum.DB_PASS.getValue());
+
+        Statement statement = conn.createStatement();
+
+        String deleteQuery = "DELETE FROM Antipasti WHERE" + whereCondition + ");";
+
+        statement.executeUpdate(deleteQuery);
+
+        conn.close();
+
+        System.out.println("Record cancellato");
 
     }
 }

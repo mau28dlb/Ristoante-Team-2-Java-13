@@ -11,21 +11,21 @@ public class SecondiPiatti_DAO {
         public void createTable() throws SQLException {
 
 
-                Connection conn = DriverManager.getConnection(SQLConnectorEnum.SQL_ACCESS_STRING.getValue());
+                Connection conn = DriverManager.getConnection(SQLConnectorEnum.DB_URL.getValue(), SQLConnectorEnum.DB_USER.getValue(), SQLConnectorEnum.DB_PASS.getValue());
 
                 Statement statement = conn.createStatement();
 
 
                 String createQuery = """
                         CREATE TABLE IF NOT EXISTS SecondiPiatti
-                        (antipasti_id TINYINT NOT NULL AUTO_INCREMENT,
+                        (secondipiatti_id TINYINT NOT NULL AUTO_INCREMENT,
                           descrizione VARCHAR(30),
                           prezzo DOUBLE,
                           isAlwaysAvailable BOOLEAN,
                           isPiattoDelGiorno BOOLEAN,
-                          menu_id TINYINT,
+                          menu_id INT,
                           CONSTRAINT SecondiPiatti_pk PRIMARY KEY (secondipiatti_id), UNIQUE(descrizione), 
-                          FOREIGN KEY (menu_id) REFERENCES Menu (menu_id)
+                          FOREIGN KEY (menu_id) REFERENCES Menu (id)
                         );
                         """;
                 statement.executeUpdate(createQuery);
@@ -37,7 +37,7 @@ public class SecondiPiatti_DAO {
         }
 
         public void insertSecondiPiatti(SecondiPiatti secondiPiatti) throws SQLException {
-            Connection conn = DriverManager.getConnection(SQLConnectorEnum.SQL_ACCESS_STRING.getValue());
+            Connection conn = DriverManager.getConnection(SQLConnectorEnum.DB_URL.getValue(), SQLConnectorEnum.DB_USER.getValue(), SQLConnectorEnum.DB_PASS.getValue());
             Statement statement = conn.createStatement();
 
             String insertQuery = "INSERT INTO SecondiPiatti (descrizione, prezzo, isAlwaysAvailable, isPiattoDelGiorno) VALUES ('" + secondiPiatti.getDescrizione() + "', '" +
@@ -53,7 +53,7 @@ public class SecondiPiatti_DAO {
 
         //
         public void printAllSecondiPiatti() throws SQLException {
-            Connection conn = DriverManager.getConnection(SQLConnectorEnum.SQL_ACCESS_STRING.getValue());
+            Connection conn = DriverManager.getConnection(SQLConnectorEnum.DB_URL.getValue(), SQLConnectorEnum.DB_USER.getValue(), SQLConnectorEnum.DB_PASS.getValue());
             Statement statement = conn.createStatement();
 
             String printQuery = """
@@ -76,5 +76,21 @@ public class SecondiPiatti_DAO {
             conn.close();
 
         }
+
+    public void deleteRecord(String whereCondition) throws SQLException {
+
+        Connection conn = DriverManager.getConnection(SQLConnectorEnum.DB_URL.getValue(), SQLConnectorEnum.DB_USER.getValue(), SQLConnectorEnum.DB_PASS.getValue());
+
+        Statement statement = conn.createStatement();
+
+        String deleteQuery = "DELETE FROM SecondiPiatti WHERE" + whereCondition + ");";
+
+        statement.executeUpdate(deleteQuery);
+
+        conn.close();
+
+        System.out.println("Record cancellato");
+
+    }
     }
 

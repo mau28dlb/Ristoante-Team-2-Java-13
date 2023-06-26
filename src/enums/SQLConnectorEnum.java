@@ -1,7 +1,11 @@
 package src.enums;
 
 public enum SQLConnectorEnum {
-    SQL_ACCESS_STRING("jdbc:mysql://localhost:3306/team2ristorante?user=root&password=Lellipiselli2000");
+    DB_URL("jdbc:mysql://localhost:3306/team2ristorante"),
+    DB_USER("root"),
+    DB_PASS("Lellipiselli2000");
+
+
     private String value;
 
     SQLConnectorEnum(String value) {

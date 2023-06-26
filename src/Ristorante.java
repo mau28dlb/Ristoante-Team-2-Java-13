@@ -57,8 +57,8 @@ public class Ristorante {
             }
         }
 
-        primoPiattoDelGiorno.printPortataColorata(ColorEnum.WHITE);
-        secondoPiattoDelGiorno.printPortataColorata(ColorEnum.WHITE);
+        primoPiattoDelGiorno.printPortataColorata(ColorEnum.RESET);
+        secondoPiattoDelGiorno.printPortataColorata(ColorEnum.RESET);
     }
 
     public void addTavolo(Tavolo tavolo){
@@ -89,7 +89,7 @@ public class Ristorante {
         System.out.println("\n");
         System.out.println(ColorEnum.BLUE.getAnsiCode() + "****************** Lista prenotazioni ***************+" + ColorEnum.RESET.getAnsiCode() );
         for (Map.Entry<Prenotazione, Tavolo> prenotazione : listaPrenotazione.entrySet()) {
-            System.out.println(ColorEnum.PURPLE.getAnsiCode()  + "Cliente: " + prenotazione.getKey().getCliente().getCognome() +", Data: " +  prenotazione.getKey().getData() +
+            System.out.println(ColorEnum.PURPLE.getAnsiCode()  + "Cliente: " + prenotazione.getKey().getCliente().getCognome() +", Data: " +  prenotazione.getKey().getData() +", Ora: "+ prenotazione.getKey().getOra()+
                     ", Persone n. " + prenotazione.getKey().getCliente().getNumeroPersone() + ", Tavolo: " + prenotazione.getValue().getNomeTavolo() + ColorEnum.RESET.getAnsiCode() );
         }
         System.out.println( ColorEnum.BLUE.getAnsiCode()  + "****************************************************" + ColorEnum.RESET.getAnsiCode() );

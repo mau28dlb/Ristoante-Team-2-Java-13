@@ -13,10 +13,12 @@ public class Prenotazione {
     private Integer id;
     private String data;
     private Cliente cliente;
+    private String ora;
 
 
-    public Prenotazione(String data, Cliente cliente) {
+    public Prenotazione(String data, String ora, Cliente cliente) {
         this.data = data;
+        this.ora = ora;
         this.cliente = cliente;
     }
 
@@ -44,6 +46,11 @@ public class Prenotazione {
         this.cliente = cliente;
     }
 
+    public String getOra() {
+        return ora;
+    }
 
-
+    public void setOra(String ora) {
+        this.ora = ora;
+    }
 }

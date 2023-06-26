@@ -11,21 +11,21 @@ public class Bevande_DAO {
 
 
     public void createTable() throws SQLException {
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
 
-            Connection conn = DriverManager.getConnection(SQLConnectorEnum.SQL_ACCESS_STRING.getValue());
+            Connection conn = DriverManager.getConnection(SQLConnectorEnum.DB_URL.getValue(), SQLConnectorEnum.DB_USER.getValue(), SQLConnectorEnum.DB_PASS.getValue());
 
             Statement statement = conn.createStatement();
 
 
             String createQuery = """
                     CREATE TABLE IF NOT EXISTS Bevande
-                    (bevande_id TINYINT NOT NULL AUTO_INCREMENT,
+                    (bevande_id INT NOT NULL AUTO_INCREMENT,
                       descrizione VARCHAR(30),
                       prezzo DOUBLE,
                       gradazioneAlcolica VARCHAR(25),
-                      CONSTRAINT Bevande_pk PRIMARY KEY (bevande_id), UNIQUE(descrizione)
+                      menu_id INT,
+                      CONSTRAINT Bevande_pk PRIMARY KEY (bevande_id), UNIQUE(descrizione),
+                      FOREIGN KEY (menu_id) REFERENCES Menu (id)
                     );
                     """;
             statement.executeUpdate(createQuery);
@@ -34,13 +34,11 @@ public class Bevande_DAO {
 
             System.out.println("Tabella bevande creata");
 
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        }
     }
 
         public void insertBevande(Bevande bevande) throws SQLException {
-        Connection conn = DriverManager.getConnection(SQLConnectorEnum.SQL_ACCESS_STRING.getValue());
+
+        Connection conn = DriverManager.getConnection(SQLConnectorEnum.DB_URL.getValue(), SQLConnectorEnum.DB_USER.getValue(), SQLConnectorEnum.DB_PASS.getValue());
         Statement statement = conn.createStatement();
 
         String insertQuery = "INSERT INTO Bevande (descrizione, prezzo, gradazioneAlcolica) VALUES ('"  + bevande.getDescrizione() + "', '" +
@@ -55,7 +53,7 @@ public class Bevande_DAO {
     }
 //
     public void printAllBevande() throws SQLException {
-        Connection conn = DriverManager.getConnection(SQLConnectorEnum.SQL_ACCESS_STRING.getValue());
+        Connection conn = DriverManager.getConnection(SQLConnectorEnum.DB_URL.getValue(), SQLConnectorEnum.DB_USER.getValue(), SQLConnectorEnum.DB_PASS.getValue());
         Statement statement = conn.createStatement();
 
         String printQuery = """
@@ -75,6 +73,22 @@ public class Bevande_DAO {
         }
 
         conn.close();
+
+    }
+
+    public void deleteRecord(String whereCondition) throws SQLException {
+
+        Connection conn = DriverManager.getConnection(SQLConnectorEnum.DB_URL.getValue(), SQLConnectorEnum.DB_USER.getValue(), SQLConnectorEnum.DB_PASS.getValue());
+
+        Statement statement = conn.createStatement();
+
+        String deleteQuery = "DELETE FROM Bevande WHERE" + whereCondition + ");";
+
+        statement.executeUpdate(deleteQuery);
+
+        conn.close();
+
+        System.out.println("Record cancellato");
 
     }
 //
