@@ -1,5 +1,6 @@
 package src.DAO;
 
+import src.enums.SQLConnectorEnum;
 import src.portate.PrimiPiatti;
 import src.portate.SecondiPiatti;
 
@@ -8,10 +9,9 @@ import java.sql.*;
 public class SecondiPiatti_DAO {
 
         public void createTable() throws SQLException {
-            try {
-                Class.forName("com.mysql.cj.jdbc.Driver");
 
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/team2ristorante", "root", "Lellipiselli2000");
+
+                Connection conn = DriverManager.getConnection(SQLConnectorEnum.SQL_ACCESS_STRING.getValue());
 
                 Statement statement = conn.createStatement();
 
@@ -34,13 +34,10 @@ public class SecondiPiatti_DAO {
 
                 System.out.println("Tabella secondi piatti creata");
 
-            } catch (ClassNotFoundException e) {
-                throw new RuntimeException(e);
-            }
         }
 
-        public void insertAntipasti(SecondiPiatti secondiPiatti) throws SQLException {
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/team2ristorante", "root", "Lellipiselli2000");
+        public void insertSecondiPiatti(SecondiPiatti secondiPiatti) throws SQLException {
+            Connection conn = DriverManager.getConnection(SQLConnectorEnum.SQL_ACCESS_STRING.getValue());
             Statement statement = conn.createStatement();
 
             String insertQuery = "INSERT INTO SecondiPiatti (descrizione, prezzo, isAlwaysAvailable, isPiattoDelGiorno) VALUES ('" + secondiPiatti.getDescrizione() + "', '" +
@@ -55,8 +52,8 @@ public class SecondiPiatti_DAO {
         }
 
         //
-        public void printAllBevande() throws SQLException {
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/team2ristorante", "root", "Lellipiselli2000");
+        public void printAllSecondiPiatti() throws SQLException {
+            Connection conn = DriverManager.getConnection(SQLConnectorEnum.SQL_ACCESS_STRING.getValue());
             Statement statement = conn.createStatement();
 
             String printQuery = """

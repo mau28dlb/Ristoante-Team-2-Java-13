@@ -4,7 +4,7 @@ import src.enums.ColorEnum;
 
 public class SecondiPiatti extends Portata {
 
-    protected Integer ID;
+    protected Integer id;
    protected boolean isAlwaysAvailable;
    protected boolean isPiattoDelGiorno;
 

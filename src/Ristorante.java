@@ -11,7 +11,7 @@ import src.portate.PrimiPiatti;
 import src.portate.SecondiPiatti;
 
 public class Ristorante {
-    protected Integer ID;
+    protected Integer id;
     protected String nomeRistorante;
     protected String indirizzoRistorante;
     protected String chef;

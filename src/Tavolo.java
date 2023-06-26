@@ -5,7 +5,7 @@ import src.enums.TavoloEnum;
 import src.enums.TavoloEnum;
 
 public class Tavolo {
-    private Integer ID;
+    private Integer id;
     private TavoloEnum tavolo;
     private String nomeTavolo;
 

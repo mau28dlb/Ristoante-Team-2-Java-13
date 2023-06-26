@@ -1,6 +1,7 @@
 package src.DAO;
 
 
+import src.enums.SQLConnectorEnum;
 import src.portate.Bevande;
 import src.portate.Portata;
 
@@ -13,7 +14,7 @@ public class Bevande_DAO {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
 
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/team2ristorante", "root", "Lellipiselli2000");
+            Connection conn = DriverManager.getConnection(SQLConnectorEnum.SQL_ACCESS_STRING.getValue());
 
             Statement statement = conn.createStatement();
 
@@ -39,7 +40,7 @@ public class Bevande_DAO {
     }
 
         public void insertBevande(Bevande bevande) throws SQLException {
-        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/team2ristorante", "root", "Lellipiselli2000");
+        Connection conn = DriverManager.getConnection(SQLConnectorEnum.SQL_ACCESS_STRING.getValue());
         Statement statement = conn.createStatement();
 
         String insertQuery = "INSERT INTO Bevande (descrizione, prezzo, gradazioneAlcolica) VALUES ('"  + bevande.getDescrizione() + "', '" +
@@ -54,7 +55,7 @@ public class Bevande_DAO {
     }
 //
     public void printAllBevande() throws SQLException {
-        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/team2ristorante", "root", "Lellipiselli2000");
+        Connection conn = DriverManager.getConnection(SQLConnectorEnum.SQL_ACCESS_STRING.getValue());
         Statement statement = conn.createStatement();
 
         String printQuery = """

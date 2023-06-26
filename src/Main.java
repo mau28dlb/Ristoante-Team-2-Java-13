@@ -87,9 +87,9 @@ public class Main {
 
         Bevande bevanda1 = new Bevande("Acqua minerale naturale", 1.5);
         Bevande bevanda2 = new Bevande("Coca-cola", 2.5);
-        Bevande bevanda3 = new Bevande("Vino Rosso", 5.0, "(alc. 12%)");
-        Bevande bevanda4 = new Bevande("Vino Bianco", 5.0, "(alc. 10,5%)");
-        Bevande bevanda5 = new Bevande("Birra alla spina", 3.0, "(alc. 4,5%)");
+        Bevande bevanda3 = new Bevande("Vino Rosso", 5.0, 12.0);
+        Bevande bevanda4 = new Bevande("Vino Bianco", 5.0, 10.5);
+        Bevande bevanda5 = new Bevande("Birra alla spina", 3.0, 4.5);
 
         menuCarne.addPortata(antipastoCarne1);
         menuCarne.addPortata(antipastoCarne2);

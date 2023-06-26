@@ -1,5 +1,6 @@
 package src.DAO;
 
+import src.enums.SQLConnectorEnum;
 import src.portate.Antipasti;
 import src.portate.Dessert;
 
@@ -8,10 +9,8 @@ import java.sql.*;
 public class Dessert_DAO {
 
     public void createTable() throws SQLException {
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
 
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/team2ristorante", "root", "Lellipiselli2000");
+            Connection conn = DriverManager.getConnection(SQLConnectorEnum.SQL_ACCESS_STRING.getValue());
 
             Statement statement = conn.createStatement();
 
@@ -22,7 +21,7 @@ public class Dessert_DAO {
                       descrizione VARCHAR(30),
                       prezzo DOUBLE,
                       glutenFree BOOLEAN,
-                      temperatura TemperatureDessertEnum,
+                      temperatura VARCHAR(30),
                       menu_id INTEGER,
                       CONSTRAINT Dessert_pk PRIMARY KEY (dessert_id), UNIQUE(descrizione), 
                       FOREIGN KEY (menu_id) REFERENCES Menu (menu_id)
@@ -34,13 +33,10 @@ public class Dessert_DAO {
 
             System.out.println("Tabella dessert creata");
 
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        }
     }
 
-    public void insertAntipasti(Dessert dessert) throws SQLException {
-        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/team2ristorante", "root", "Lellipiselli2000");
+    public void insertDessert(Dessert dessert) throws SQLException {
+        Connection conn = DriverManager.getConnection(SQLConnectorEnum.SQL_ACCESS_STRING.getValue());
         Statement statement = conn.createStatement();
 
         String insertQuery = "INSERT INTO Antipasti (descrizione, prezzo, glutenFree, temperatura) VALUES ('"  + dessert.getDescrizione() + "', '" +
@@ -54,8 +50,8 @@ public class Dessert_DAO {
 
     }
     //
-    public void printAllBevande() throws SQLException {
-        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/team2ristorante", "root", "Lellipiselli2000");
+    public void printAllDessert() throws SQLException {
+        Connection conn = DriverManager.getConnection(SQLConnectorEnum.SQL_ACCESS_STRING.getValue());
         Statement statement = conn.createStatement();
 
         String printQuery = """

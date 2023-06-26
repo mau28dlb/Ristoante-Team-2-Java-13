@@ -10,7 +10,7 @@ import java.util.Map;
 
 public class Prenotazione {
 
-    private Integer ID;
+    private Integer id;
     private String data;
     private Cliente cliente;
 
@@ -21,11 +21,11 @@ public class Prenotazione {
     }
 
     public Integer getID() {
-        return ID;
+        return id;
     }
 
     public void setID(Integer ID) {
-        this.ID = ID;
+        this.id = ID;
     }
 
     public String getData() {

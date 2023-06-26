@@ -9,7 +9,7 @@ import static java.lang.Math.round;
 
 public class Menu {
 
-    protected Integer ID;
+    protected Integer id;
     protected MenuTypeEnum menuType;
     private List<Portata> listaPortate;
 

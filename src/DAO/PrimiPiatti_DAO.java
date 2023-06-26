@@ -1,5 +1,6 @@
 package src.DAO;
 
+import src.enums.SQLConnectorEnum;
 import src.portate.Antipasti;
 import src.portate.PrimiPiatti;
 
@@ -8,10 +9,8 @@ import java.sql.*;
 public class PrimiPiatti_DAO {
 
     public void createTable() throws SQLException {
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
 
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/team2ristorante", "root", "Lellipiselli2000");
+            Connection conn = DriverManager.getConnection(SQLConnectorEnum.SQL_ACCESS_STRING.getValue());
 
             Statement statement = conn.createStatement();
 
@@ -35,13 +34,10 @@ public class PrimiPiatti_DAO {
 
             System.out.println("Tabella primi piatti creata");
 
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        }
     }
 
-    public void insertAntipasti(PrimiPiatti primiPiatti) throws SQLException {
-        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/team2ristorante", "root", "Lellipiselli2000");
+    public void insertPrimiPiatti(PrimiPiatti primiPiatti) throws SQLException {
+        Connection conn = DriverManager.getConnection(SQLConnectorEnum.SQL_ACCESS_STRING.getValue());
         Statement statement = conn.createStatement();
 
         String insertQuery = "INSERT INTO PrimiPiatti (descrizione, prezzo, isMinimoPerDuePersone, isPastaFresca, isPiattoDelGiorno) VALUES ('"  + primiPiatti.getDescrizione() + "', '" +
@@ -55,8 +51,8 @@ public class PrimiPiatti_DAO {
 
     }
     //
-    public void printAllBevande() throws SQLException {
-        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/team2ristorante", "root", "Lellipiselli2000");
+    public void printAllPrimiPiatti() throws SQLException {
+        Connection conn = DriverManager.getConnection(SQLConnectorEnum.SQL_ACCESS_STRING.getValue());
         Statement statement = conn.createStatement();
 
         String printQuery = """

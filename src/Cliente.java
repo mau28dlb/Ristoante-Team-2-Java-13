@@ -5,7 +5,7 @@ import java.time.chrono.ChronoLocalDateTime;
 
 public class Cliente {
 
-    protected Integer ID;
+    protected Integer id;
     private String cognome;
     private Integer numeroPersone;
 
