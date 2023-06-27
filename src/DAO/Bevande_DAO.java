@@ -110,12 +110,11 @@ public class Bevande_DAO {
 
             }
         }
-        System.out.println(findPrice);
 
-        String updateTable = """
-                UPDATE Bevande
-                SET prezzo = '""" + price + """
-                WHERE prezzo = '""" + findPrice + "';";
+        String updateTable = "" +
+                "UPDATE bevande " +
+                "SET prezzo = " + price + " " +
+                "WHERE prezzo = " + findPrice + ";";
 
         statement.executeUpdate(updateTable);
 
