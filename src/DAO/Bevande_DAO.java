@@ -91,34 +91,38 @@ public class Bevande_DAO {
         System.out.println("Record cancellato");
 
     }
-//
-//    public void updateQuery() throws SQLException {
-//        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/team2ristorante", "root", "Lellipiselli2000");
-//        Statement statement = conn.createStatement();
-//        String printQuery = """
-//                  SELECT * from Bevande;
-//
-//                """;
-//        ResultSet resultSet = statement.executeQuery(printQuery);
-//
-//        String findPrezzo = null;
-//        while (resultSet.next()) {
-//            String descrizione = resultSet.getString("descrizione");
-//            String prezzo = resultSet.getString("prezzo");
-//            if (prezzo.equals(5)) {
-//                findPrezzo = prezzo;
-//            }
-//        }
-//        String updateTable = """
-//                UPDATE Bevande
-//                SET prezzo = 5.5
-//                WHERE prezzo = '""" + findPrezzo + "';";
-//
-//        statement.executeUpdate(updateTable);
-//
-//        conn.close();
-//        System.out.println("Update prezzo" +findPrezzo);
+
+    public void updateQueryBevande(Double price, Bevande bevanda) throws SQLException {
+        Connection conn = DriverManager.getConnection(SQLConnectorEnum.DB_URL.getValue(), SQLConnectorEnum.DB_USER.getValue(), SQLConnectorEnum.DB_PASS.getValue());
+        Statement statement = conn.createStatement();
+        String printQuery = """
+                  SELECT * from Bevande;
+
+                """;
+        ResultSet resultSet = statement.executeQuery(printQuery);
+
+        Double findPrice = 0.0;
+        while (resultSet.next()) {
+            String descrizione = resultSet.getString("descrizione");
+            Double prezzo = resultSet.getDouble("prezzo");
+            if (prezzo.equals(bevanda.getPrezzo())) {
+                findPrice = prezzo;
+
+            }
+        }
+        System.out.println(findPrice);
+
+        String updateTable = """
+                UPDATE Bevande
+                SET prezzo = '""" + price + """
+                WHERE prezzo = '""" + findPrice + "';";
+
+        statement.executeUpdate(updateTable);
+
+        conn.close();
+        System.out.println("Update prezzo di " + bevanda.getDescrizione());
 
 
-    //}
+    }
+
 }

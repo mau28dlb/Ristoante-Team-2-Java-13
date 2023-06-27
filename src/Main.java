@@ -259,6 +259,8 @@ public class Main {
 
 //        bevandeDao.printAllBevande();
 
+        bevandeDao.updateQueryBevande(6.5, bevanda4);
+
 
 
 
