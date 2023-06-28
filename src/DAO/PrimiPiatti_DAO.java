@@ -92,6 +92,38 @@ public class PrimiPiatti_DAO {
         System.out.println("Record cancellato");
 
     }
+
+    public void updateQueryPrimiPiatti(Double price, PrimiPiatti primo) throws SQLException {
+        Connection conn = DriverManager.getConnection(SQLConnectorEnum.DB_URL.getValue(), SQLConnectorEnum.DB_USER.getValue(), SQLConnectorEnum.DB_PASS.getValue());
+        Statement statement = conn.createStatement();
+        String printQuery = """
+                  SELECT * from PrimiPiatti;
+
+                """;
+        ResultSet resultSet = statement.executeQuery(printQuery);
+
+        Double findPrice = 0.0;
+        while (resultSet.next()) {
+            String descrizione = resultSet.getString("descrizione");
+            Double prezzo = resultSet.getDouble("prezzo");
+            if (prezzo.equals(primo.getPrezzo())) {
+                findPrice = prezzo;
+
+            }
+        }
+
+        String updateTable = "" +
+                "UPDATE PrimiPiatti " +
+                "SET prezzo = " + price + " " +
+                "WHERE prezzo = " + findPrice + ";";
+
+        statement.executeUpdate(updateTable);
+
+        conn.close();
+        System.out.println("Update prezzo di " + primo.getDescrizione());
+
+
+    }
 }
 
 

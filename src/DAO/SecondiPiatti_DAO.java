@@ -1,6 +1,7 @@
 package src.DAO;
 
 import src.enums.SQLConnectorEnum;
+import src.portate.Antipasti;
 import src.portate.PrimiPiatti;
 import src.portate.SecondiPiatti;
 
@@ -90,6 +91,38 @@ public class SecondiPiatti_DAO {
         conn.close();
 
         System.out.println("Record cancellato");
+
+    }
+
+    public void updateQuerySecondiPiatti(Double price, SecondiPiatti secondo) throws SQLException {
+        Connection conn = DriverManager.getConnection(SQLConnectorEnum.DB_URL.getValue(), SQLConnectorEnum.DB_USER.getValue(), SQLConnectorEnum.DB_PASS.getValue());
+        Statement statement = conn.createStatement();
+        String printQuery = """
+                  SELECT * from SecondiPiatti;
+
+                """;
+        ResultSet resultSet = statement.executeQuery(printQuery);
+
+        Double findPrice = 0.0;
+        while (resultSet.next()) {
+            String descrizione = resultSet.getString("descrizione");
+            Double prezzo = resultSet.getDouble("prezzo");
+            if (prezzo.equals(secondo.getPrezzo())) {
+                findPrice = prezzo;
+
+            }
+        }
+
+        String updateTable = "" +
+                "UPDATE SecondiPiatti " +
+                "SET prezzo = " + price + " " +
+                "WHERE prezzo = " + findPrice + ";";
+
+        statement.executeUpdate(updateTable);
+
+        conn.close();
+        System.out.println("Update prezzo di " + secondo.getDescrizione());
+
 
     }
     }

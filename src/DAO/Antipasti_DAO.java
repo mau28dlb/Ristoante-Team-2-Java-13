@@ -90,4 +90,37 @@ public class Antipasti_DAO {
         System.out.println("Record cancellato");
 
     }
+
+    public void updateQueryAntipasti(Double price, Antipasti antipasto) throws SQLException {
+        Connection conn = DriverManager.getConnection(SQLConnectorEnum.DB_URL.getValue(), SQLConnectorEnum.DB_USER.getValue(), SQLConnectorEnum.DB_PASS.getValue());
+        Statement statement = conn.createStatement();
+        String printQuery = """
+                  SELECT * from Antipasti;
+
+                """;
+        ResultSet resultSet = statement.executeQuery(printQuery);
+
+        Double findPrice = 0.0;
+        while (resultSet.next()) {
+            String descrizione = resultSet.getString("descrizione");
+            Double prezzo = resultSet.getDouble("prezzo");
+            if (prezzo.equals(antipasto.getPrezzo())) {
+                findPrice = prezzo;
+
+            }
+        }
+
+        String updateTable = "" +
+                "UPDATE antipasti " +
+                "SET prezzo = " + price + " " +
+                "WHERE prezzo = " + findPrice + ";";
+
+        statement.executeUpdate(updateTable);
+
+        conn.close();
+        System.out.println("Update prezzo di " + antipasto.getDescrizione());
+
+
+    }
+
 }
