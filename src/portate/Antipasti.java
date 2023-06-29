@@ -4,6 +4,7 @@ import src.enums.ColorEnum;
 
 public class Antipasti extends Portata{
 
+    protected Integer id;
    protected Integer porzione;
    protected String cottura;
 
@@ -21,6 +22,22 @@ public class Antipasti extends Portata{
 
     public Antipasti(String descrizione, Double prezzo) {
         super(descrizione, prezzo);
+    }
+
+    public Integer getPorzione() {
+        return porzione;
+    }
+
+    public void setPorzione(Integer porzione) {
+        this.porzione = porzione;
+    }
+
+    public String getCottura() {
+        return cottura;
+    }
+
+    public void setCottura(String cottura) {
+        this.cottura = cottura;
     }
 
     @Override

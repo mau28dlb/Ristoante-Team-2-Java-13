@@ -4,10 +4,11 @@ import src.enums.ColorEnum;
 
 public class Bevande extends Portata {
 
-    protected String gradazioneAlcolica;
+    protected Integer id;
+    protected Double gradazioneAlcolica;
 
 
-    public Bevande(String descrizione, Double prezzo, String gradazioneAlcolica) {
+    public Bevande(String descrizione, Double prezzo, Double gradazioneAlcolica) {
         super(descrizione, prezzo);
         this.gradazioneAlcolica = gradazioneAlcolica;
     }
@@ -16,11 +17,11 @@ public class Bevande extends Portata {
         super(descrizione, prezzo);
     }
 
-    public String getGradazioneAlcolica() {
+    public Double getGradazioneAlcolica() {
         return gradazioneAlcolica;
     }
 
-    public void setGradazioneAlcolica(String gradazioneAlcolica) {
+    public void setGradazioneAlcolica(Double gradazioneAlcolica) {
         this.gradazioneAlcolica = gradazioneAlcolica;
     }
 

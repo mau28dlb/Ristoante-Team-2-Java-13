@@ -1,11 +1,15 @@
 package src;
+import src.DAO.Bevande_DAO;
 import src.enums.MenuTypeEnum;
 import src.enums.TavoloEnum;
 import src.enums.TemperatureDessertEnum;
 import src.portate.*;
+import src.DAO.*;
+
+import java.sql.SQLException;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException, ClassNotFoundException {
         Ristorante ristorante = new Ristorante("RISTORANTE ROSSI", "via Roma 132, Palermo", "Luca Rossi");
 
         Tavolo tavolo1 = new Tavolo(TavoloEnum.TAVOLO_PER_DUE, "Tavolo 1");
@@ -31,15 +35,20 @@ public class Main {
         ristorante.addTavolo(tavolo10);
 
 
-        Cliente cliente1 = new Cliente("Barone", "20:00", 2);
-        Cliente cliente2 = new Cliente("Carnevale", "21:00", 4);
-        Cliente cliente3 = new Cliente("Diliberto", "22:00", 8);
-        Cliente cliente4 = new Cliente("Santonocito", "20:00", 5);
+        Cliente cliente1 = new Cliente("Barone",2);
+        Cliente cliente2 = new Cliente("Carnevale",  4);
+        Cliente cliente3 = new Cliente("Diliberto",  8);
+        Cliente cliente4 = new Cliente("Santonocito", 5);
 
-        ristorante.aggiungiPrenotazione(cliente1);
-        ristorante.aggiungiPrenotazione(cliente2);
-        ristorante.aggiungiPrenotazione(cliente3);
-        ristorante.aggiungiPrenotazione(cliente4);
+        Prenotazione prenotazione1 = new Prenotazione("22-06-2023", "20:00", cliente1);
+        Prenotazione prenotazione2 = new Prenotazione("23-06-2023", "19:30", cliente2);
+        Prenotazione prenotazione3 = new Prenotazione("24-06-2023", "20:30", cliente3);
+        Prenotazione prenotazione4 = new Prenotazione("26-06-2023", "19:00", cliente4);
+
+        ristorante.aggiungiPrenotazione(prenotazione1);
+        ristorante.aggiungiPrenotazione(prenotazione2);
+        ristorante.aggiungiPrenotazione(prenotazione3);
+        ristorante.aggiungiPrenotazione(prenotazione4);
 
         ristorante.printListaPrenotazioni();
 
@@ -78,9 +87,9 @@ public class Main {
 
         Bevande bevanda1 = new Bevande("Acqua minerale naturale", 1.5);
         Bevande bevanda2 = new Bevande("Coca-cola", 2.5);
-        Bevande bevanda3 = new Bevande("Vino Rosso", 5.0, "(alc. 12%)");
-        Bevande bevanda4 = new Bevande("Vino Bianco", 5.0, "(alc. 10,5%)");
-        Bevande bevanda5 = new Bevande("Birra alla spina", 3.0, "(alc. 4,5%)");
+        Bevande bevanda3 = new Bevande("Vino Rosso", 5.0, 12.0);
+        Bevande bevanda4 = new Bevande("Vino Bianco", 5.0, 10.5);
+        Bevande bevanda5 = new Bevande("Birra alla spina", 3.0, 4.5);
 
         menuCarne.addPortata(antipastoCarne1);
         menuCarne.addPortata(antipastoCarne2);
@@ -236,8 +245,24 @@ public class Main {
         menuVegan.addPortata(secondoPiattoDelGiornoVegano2);
 
 
-        //ristorante.stampaMenuSpecifico(MenuTypeEnum.CARNE, primoPiattoDelGiornoCarne1, secondoPiattoDelGiornoCarne1);
+     ristorante.stampaMenuSpecifico(MenuTypeEnum.VEGANO, primoPiattoDelGiornoCarne1, secondoPiattoDelGiornoCarne1);
         //ristorante.stampaMenuSpecifico(MenuTypeEnum.PESCE, primoPiattoDelGiornoPesce1, secondoPiattoDelGiornoPesce1);
-        ristorante.stampaMenuSpecifico(MenuTypeEnum.VEGANO, primoPiattoDelGiornoVegano1, secondoPiattoDelGiornoVegano1);
+        //ristorante.stampaMenuSpecifico(MenuTypeEnum.VEGANO, primoPiattoDelGiornoVegano1, secondoPiattoDelGiornoVegano1);
+
+        Bevande_DAO bevandeDao = new Bevande_DAO();
+        Antipasti_DAO antipastiDao = new Antipasti_DAO();
+        PrimiPiatti_DAO primiPiattiDao = new PrimiPiatti_DAO();
+        SecondiPiatti_DAO secondiPiattiDao = new SecondiPiatti_DAO();
+        Dessert_DAO dessertDao = new Dessert_DAO();
+
+//        dessertDao.createTable();
+
+//        bevandeDao.printAllBevande();
+
+        bevandeDao.updateQueryBevande(6.5, bevanda4);
+
+
+
+
     }
 }

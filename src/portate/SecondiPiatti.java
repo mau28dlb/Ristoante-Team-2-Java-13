@@ -4,6 +4,7 @@ import src.enums.ColorEnum;
 
 public class SecondiPiatti extends Portata {
 
+    protected Integer id;
    protected boolean isAlwaysAvailable;
    protected boolean isPiattoDelGiorno;
 
@@ -24,6 +25,14 @@ public class SecondiPiatti extends Portata {
 
     public void setIsPiattoDelGiorno(boolean piattoDelGiorno) {
         this.isPiattoDelGiorno = piattoDelGiorno;
+    }
+
+    public boolean isAlwaysAvailable() {
+        return isAlwaysAvailable;
+    }
+
+    public void setAlwaysAvailable(boolean alwaysAvailable) {
+        isAlwaysAvailable = alwaysAvailable;
     }
 
     @Override

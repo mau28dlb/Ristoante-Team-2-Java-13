@@ -6,6 +6,7 @@ import src.enums.TemperatureDessertEnum;
 
 public class Dessert extends Portata {
 
+    protected Integer id;
     protected boolean glutenFree;
     protected TemperatureDessertEnum temperatura;
 
